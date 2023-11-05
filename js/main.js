@@ -1,5 +1,5 @@
 // JS Main
 
-$(document).ready(function () {
-    //
-})
+// document.addEventListener('DOMContentLoaded', function () {
+//     console.log('DOMContentLoaded')
+// })

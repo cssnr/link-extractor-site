@@ -6,23 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.site_name }} - {{ page.title }}</title>
 
-    <meta name="author" content="Shane"/>
+    {% if page.noindex %}
+        <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    <meta name="author" content="{{ site.author }}"/>
     <meta name="title" content="{{ site.site_name }} - {{ page.title }}"/>
     <meta name="description" content="{{ site.site_name }} - {{ page.description }}"/>
 
-    <meta property="og:author" content="Shane">
+    <meta property="og:author" content="{{ site.author }}">
     <meta property="og:title" content="{{ site.site_name }} - {{ page.title }}">
     <meta property="og:description" content="{{ site.site_name }} - {{ page.description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.site_url }}">
-    <meta property="og:image" content="{{ site.site_url }}/images/logo.png">
+    <meta property="og:image" content="{{ site.site_url }}/media/logo.png">
 
     <script type="text/javascript" src="/js/theme.js"></script>
 
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
+
+    {% if page.title == "Uninstall" %}
+        <link rel="stylesheet" href="/css/uninstall.css">
+    {% endif %}
 
 </head>
 <body class="d-flex flex-column h-100">
@@ -31,7 +39,7 @@
     <nav class="navbar navbar-expand-sm bg-dark border-bottom" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ site.github_url }}">
-                <img src="/images/logo.png" width="30" height="30" alt="logo"></a>
+                <img src="/media/logo.png" width="30" height="30" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +48,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/docs.html">Docs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/screenshots.html" target="_blank">
+                    <li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/screenshots" target="_blank">
                         Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank">
                         GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
@@ -51,7 +59,7 @@
     </nav>
 </header>
 
-<main class="flex-shrink-0 p-3">
+<main class=" h-100 p-3">
 {{ content }}
 </main>
 
@@ -67,10 +75,10 @@
                     <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/">
                         Home</a></li>
                     <li class="list-inline-item">|</li>
-                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/docs.html">
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/docs">
                         Docs</a></li>
                     <li class="list-inline-item">|</li>
-                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/screenshots.html" target="_blank">
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/screenshots" target="_blank">
                         Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 </ul>
             </div>

@@ -1,6 +1,7 @@
 ---
+permalink: /screenshots/
 title: Screen Shots
-description: Link Extractor Screen Shots.
+description: Screen Shots of the Web Extension, Extracted Links and Other Features.
 ---
 
 <!doctype html>
@@ -11,16 +12,16 @@ description: Link Extractor Screen Shots.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.site_name }} - {{ page.title }}</title>
 
-    <meta name="author" content="Shane"/>
+    <meta name="author" content="{{ site.author }}"/>
     <meta name="title" content="{{ site.site_name }} - {{ page.title }}"/>
     <meta name="description" content="{{ site.site_name }} - {{ page.description }}"/>
 
-    <meta property="og:author" content="Shane">
+    <meta property="og:author" content="{{ site.author }}">
     <meta property="og:title" content="{{ site.site_name }} - {{ page.title }}">
     <meta property="og:description" content="{{ site.site_name }} - {{ page.description }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.site_url }}/shots.html">
-    <meta property="og:image" content="{{ site.site_url }}/images/logo.png">
+    <meta property="og:url" content="{{ site.site_url }}{{ page.dir }}">
+    <meta property="og:image" content="{{ site.site_url }}/media/logo.png">
 
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -92,10 +93,10 @@ description: Link Extractor Screen Shots.
 
 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="screenshots/main.jpg" alt="main.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/links.jpg" alt="links.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/options.jpg" alt="options.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/main.jpg" alt="main.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/links.jpg" alt="links.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/options.jpg" alt="options.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -103,10 +104,10 @@ description: Link Extractor Screen Shots.
 </div>
 <div thumbsSlider="" class="swiper mySwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="screenshots/main.jpg" alt="main.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/links.jpg" alt="links.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/options.jpg" alt="options.jpg"></div>
-        <div class="swiper-slide"><img src="screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/main.jpg" alt="main.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/links.jpg" alt="links.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/options.jpg" alt="options.jpg"></div>
+        <div class="swiper-slide"><img src="/media/screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
     </div>
 </div>
 

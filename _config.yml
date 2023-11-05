@@ -1,6 +1,7 @@
 timezone: America/Los_Angeles
 encoding: utf-8
 
+author: Shane
 site_name: Link Extractor
 site_url: https://link-extractor.cssnr.com
 github_url: https://github.com/cssnr/link-extractor
