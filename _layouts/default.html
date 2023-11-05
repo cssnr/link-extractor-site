@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link Extractor - {{ page.title }}</title>
+
+    <meta name="author" content="Shane"/>
+    <meta name="title" content="Link Extractor - {{ page.title }}"/>
+    <meta name="description" content="Link Extractor - Easily extract, parse, or open all links/domains from a site or text with optional filters."/>
+
+    <meta property="og:author" content="Shane">
+    <meta property="og:title" content="Link Extractor - {{ page.title }}">
+    <meta property="og:description" content="Link Extractor - Easily extract, parse, or open all links/domains from a site or text with optional filters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://link-extractor.github.io/">
+    <meta property="og:image" content="https://link-extractor.github.io/images/logo.png">
+
+    <script type="text/javascript" src="/js/theme.js"></script>
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark border-bottom" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://github.com/cssnr/link-extractor">
+                <img src="/images/logo.png" width="30" height="30" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs.html">Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/screenshots.html" target="_blank">
+                        Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/cssnr/link-extractor#readme" target="_blank">
+                        GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="flex-shrink-0 p-3">
+{{ content }}
+</main>
+
+<footer class="footer mt-auto p-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <p><a class="link-body-emphasis text-decoration-none" href="https://github.com/cssnr/link-extractor#readme" target="_blank">
+                    <i class="fab fa-github"></i> Link Extractor</a></p>
+            </div>
+            <div class="col-12 col-sm-8 text-sm-end">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/">
+                        Home</a></li>
+                    <li class="list-inline-item">|</li>
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/docs.html">
+                        Docs</a></li>
+                    <li class="list-inline-item">|</li>
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/screenshots.html" target="_blank">
+                        Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</body>
+</html>

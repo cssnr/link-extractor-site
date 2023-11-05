@@ -1,3 +1,0 @@
-# Link Extractor Website
-
-Coming Soon...

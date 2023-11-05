@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link Extractor Screen Shots</title>
+
+    <meta name="author" content="Shane"/>
+    <meta name="title" content="Link Extractor Screen Shots"/>
+    <meta name="description" content="Link Extractor - Browse Screen Shots."/>
+
+    <meta property="og:author" content="Shane">
+    <meta property="og:title" content="Link Extractor Screen Shots">
+    <meta property="og:description" content="Link Extractor - Browse Screen Shots.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://django-files.github.io/shots.html">
+    <meta property="og:image" content="https://django-files.github.io/images/logo.png">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        html,
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: 100%;
+            background: #111;
+            color: #111;
+        }
+        body {
+            background: #343432;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #111;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background: #343432 center;
+        }
+        .swiper-slide img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .mySwiper2 {
+            height: 80%;
+            width: 100%;
+        }
+        .mySwiper {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 8px 0;
+        }
+        .mySwiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        .mySwiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+        .swiper-pagination {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="screenshots/main.jpg" alt="main.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/links.jpg" alt="links.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/options.jpg" alt="options.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+<div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="screenshots/main.jpg" alt="main.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/links.jpg" alt="links.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/options.jpg" alt="options.jpg"></div>
+        <div class="swiper-slide"><img src="screenshots/keybinds.jpg" alt="keybinds.jpg"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        freeMode: true,
+        grabCursor: true,
+        loop: true,
+        mousewheel: true,
+        slidesPerView: 5,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        grabCursor: true,
+        effect: 'fade',
+        loop: true,
+        mousewheel: true,
+        spaceBetween: 10,
+        zoom: true,
+        keyboard: {
+            enabled: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+</script>
+
+</body>
+</html>
