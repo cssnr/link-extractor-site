@@ -2,7 +2,6 @@ timezone: America/Los_Angeles
 encoding: utf-8
 
 site_name: Link Extractor
-site_description: Easily extract, parse, or open all links/domains from a site or text with optional filters.
 site_url: https://link-extractor.cssnr.com
 github_url: https://github.com/cssnr/link-extractor
 
