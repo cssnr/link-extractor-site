@@ -4,18 +4,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Link Extractor - {{ page.title }}</title>
+    <title>{{ site.site_name }} - {{ page.title }}</title>
 
     <meta name="author" content="Shane"/>
-    <meta name="title" content="Link Extractor - {{ page.title }}"/>
-    <meta name="description" content="Link Extractor - Easily extract, parse, or open all links/domains from a site or text with optional filters."/>
+    <meta name="title" content="{{ site.site_name }} - {{ page.title }}"/>
+    <meta name="description" content="{{ site.site_name }} - {{ site.site_description }}"/>
 
     <meta property="og:author" content="Shane">
-    <meta property="og:title" content="Link Extractor - {{ page.title }}">
-    <meta property="og:description" content="Link Extractor - Easily extract, parse, or open all links/domains from a site or text with optional filters.">
+    <meta property="og:title" content="{{ site.site_name }} - {{ page.title }}">
+    <meta property="og:description" content="{{ site.site_name }} - {{ site.site_description }}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://link-extractor.github.io/">
-    <meta property="og:image" content="https://link-extractor.github.io/images/logo.png">
+    <meta property="og:url" content="{{ site.site_url }}">
+    <meta property="og:image" content="{{ site.site_url }}/images/logo.png">
 
     <script type="text/javascript" src="/js/theme.js"></script>
 
@@ -30,7 +30,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-dark border-bottom" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://github.com/cssnr/link-extractor">
+            <a class="navbar-brand" href="{{ site.github_url }}">
                 <img src="/images/logo.png" width="30" height="30" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -43,7 +43,7 @@
                     <li class="nav-item"><a class="nav-link" href="/docs.html">Docs</a></li>
                     <li class="nav-item"><a class="nav-link" href="/screenshots.html" target="_blank">
                         Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/cssnr/link-extractor#readme" target="_blank">
+                    <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank">
                         GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 </ul>
             </div>
@@ -59,8 +59,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-4">
-                <p><a class="link-body-emphasis text-decoration-none" href="https://github.com/cssnr/link-extractor#readme" target="_blank">
-                    <i class="fab fa-github"></i> Link Extractor</a></p>
+                <p><a class="link-body-emphasis text-decoration-none" href="{{ site.github_url }}#readme" target="_blank">
+                    <i class="fab fa-github"></i> {{ site.site_name }}</a></p>
             </div>
             <div class="col-12 col-sm-8 text-sm-end">
                 <ul class="list-inline">
