@@ -21,15 +21,15 @@ document.getElementById('uninstall').addEventListener('submit', formSubmit)
 function formSubmit(event) {
     console.log('formSubmit:', event, this)
     event.preventDefault()
-    if (!(this[0].value || this[1].checked || this[2].checked)) {
+    if (!(this[0].checked || this[1].checked || this[2].value)) {
         console.warn('No Data to Send.')
     } else {
         submitBtn.classList.add('disabled')
         const lines = [
             'Uninstall Feedback.',
-            `Not Used: **${this[1].checked}**`,
-            `Not Working: **${this[2].checked}**`,
-            '```\n' + `${this[0].value || 'No Reason Provided.'}` + '\n```',
+            `Not Used: **${this[0].checked}**`,
+            `Not Working: **${this[1].checked}**`,
+            '```\n' + `${this[2].value || 'No Reason Provided.'}` + '\n```',
         ]
         const xhr = new XMLHttpRequest()
         xhr.open('POST', webhook)
