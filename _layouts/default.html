@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en" class="h-100" {% if page.dark %}data-bs-theme="dark"{% endif %}>
 <head>
 
     <meta charset="utf-8">
@@ -21,7 +21,9 @@
     <meta property="og:url" content="{{ site.site_url }}">
     <meta property="og:image" content="{{ site.site_url }}/media/logo.png">
 
+    {% if page.dark != true %}
     <script type="text/javascript" src="/js/theme.js"></script>
+    {% endif %}
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,7 +38,7 @@
 <body class="d-flex flex-column h-100">
 
 <header>
-    <nav class="navbar navbar-expand-sm" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/media/logo.png" width="30" height="30" alt="logo"></a>
