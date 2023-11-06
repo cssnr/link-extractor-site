@@ -38,7 +38,7 @@
 <header>
     <nav class="navbar navbar-expand-sm bg-dark border-bottom" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ site.github_url }}">
+            <a class="navbar-brand" href="{{ site.github_url }}" target="_blank">
                 <img src="/media/logo.png" width="30" height="30" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -59,11 +59,12 @@
     </nav>
 </header>
 
-<main class=" h-100 p-3">
-{{ content }}
+<main class="flex-grow-1 p-3">
+    {{ content }}
+    <div class="clearfix"></div>
 </main>
 
-<footer class="footer mt-auto p-2">
+<footer class="footer mt-auto p-2 flex-shrink-0">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-4">
