@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
 
-    {% if page.title == "Uninstall" %}
+    {% if page.title == 'Uninstall' %}
         <link rel="stylesheet" href="/css/uninstall.css">
     {% endif %}
 
@@ -47,8 +47,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li>
+                    <li class="nav-item"><a class="nav-link {% if page.title == 'Home' %}active{% endif %}" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {% if page.title == 'Docs' %}active{% endif %}" href="/docs">Docs</a></li>
                     <li class="nav-item"><a class="nav-link" href="/screenshots" target="_blank">
                         Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank">
@@ -73,11 +73,9 @@
             </div>
             <div class="col-12 col-sm-8 text-sm-end">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/">
-                        Home</a></li>
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none {% if page.title == 'Home' %}fw-bold{% endif %}" href="/">Home</a></li>
                     <li class="list-inline-item">|</li>
-                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/docs">
-                        Docs</a></li>
+                    <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none {% if page.title == 'Docs' %}fw-bold{% endif %}" href="/docs">Docs</a></li>
                     <li class="list-inline-item">|</li>
                     <li class="list-inline-item"><a class="link-body-emphasis text-decoration-none" href="/screenshots" target="_blank">
                         Screen Shots <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
