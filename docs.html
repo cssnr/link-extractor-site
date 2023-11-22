@@ -7,7 +7,58 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <h1><i class="fa-regular fa-file-lines"></i> {{ page.title }}</h1>
 
-<p class="lead">Docs are Coming Soon...</p>
+<p class="lead"><a href="#configure">Configure</a> | <a href="#usage">Usage</a> | <a href="#options">Options</a></p>
 
-<p>Please view the <a href="{{ site.github_url }}#readme" target="_blank">
-    README.md</a> for more information.</p>
+<p>Please view the <a href="{{ site.github_url }}#readme" target="_blank">README.md</a> for more information.</p>
+
+<h2 id="configure">Configure</h2>
+
+<p>You can access Link Extractor through the Icon on the Extension Toolbar or Right Click Context Menu.</p>
+<p>You can pin the Addon by locating the Link Extractor icon on the Extension Toolbar, then;</p>
+<ul>
+    <li><strong>Firefox</strong>, click the Settings Wheel and Pin to Toolbar.<br></li>
+    <li><strong>Chrome</strong>, click the Pin icon.<br></li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>Activate 1 of 3 ways:</p>
+<ul>
+    <li>Toolbar Icon Popup</li>
+    <li>Right Click Context Menu</li>
+    <li>Keyboard Shortcuts for Extract/Popup</li>
+</ul>
+
+<p>Extract all links, just domains, use a filter, or a saved filter.</p>
+<p>You may also select text with your mouse, and right click to extract links from the selection.</p>
+
+<h2 id="options">Options</h2>
+
+<h5>Keyboard Shortcuts</h5>
+<p>These can be configured on your browser's extension management page and varies by browser.</p>
+
+<h5>Regex Flags</h5>
+<p>
+    This is the default flags used when filtering links via quick filter or a saved filter.
+    For more information
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags"
+       target="_blank" rel="noopener">read this document</a>.
+</p>
+
+<h5>Filters</h5>
+<p>
+    Add as many saved filters as you need.
+    They will show up on the Popup Filter Dropdown, and on the Right Click Context Menu.
+</p>
+
+<h5>Enable Right Click Menu</h5>
+<p>Enable or Disable Right Click Context Menu.</p>
+
+<h5>Use Default Link Filtering</h5>
+<p>
+    Filter <strong>out</strong> any links that do not contain <kbd>://</kbd>.
+    Turn this off this to include links such as <code>magnet:</code> and <code>mailto:</code> etc.
+</p>
+
+<h5>Show Release Notes on Update</h5>
+<p>Open the Release Notes after a new update has been installed.</p>
