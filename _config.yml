@@ -4,7 +4,14 @@ encoding: utf-8
 author: Shane
 site_name: Link Extractor
 site_url: https://link-extractor.cssnr.com
+
+github_name: cssnr/link-extractor
 github_url: https://github.com/cssnr/link-extractor
 
-chrome_url: https://chrome.google.com/webstore/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp
+chrome_id: ifefifghpkllfibejafbakmflidjcjfp
+chrome_url: https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp
+
+firefox_id: link-extractor
 firefox_url: https://addons.mozilla.org/addon/link-extractor
+
+discord_webhook: https://discord.com/api/webhooks/242137648028712961/4xM7SXClH_i8we_epG6AXMaqhueg5L5oAVf1dnLw1_el05OxZ-JVfph-QrcQwPkOMJem
