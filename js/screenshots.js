@@ -4,7 +4,7 @@ const shotsEl = document.getElementById('swiper-shots')
 const thumbsEl = document.getElementById('swiper-thumbs')
 
 for (const shot of screenShots) {
-    console.debug('shot', shot)
+    // console.debug('shot', shot)
     const div = document.createElement('div')
     div.classList.add('swiper-slide')
     const img = document.createElement('img')
