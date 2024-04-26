@@ -1,57 +1,78 @@
 // JS uninstall.html
 
-const webhook =
-    'https://discord.com/api/webhooks/242137648028712961/4xM7SXClH_i8we_epG6AXMaqhueg5L5oAVf1dnLw1_el05OxZ-JVfph-QrcQwPkOMJem'
+const uninstallMessage = 'Uninstall Feedback for Link Extractor.'
+const discordUsername = 'Link Extractor'
+const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
 
-const countEl = document.getElementById('inputCount')
-const submitBtn = document.getElementById('submit')
+const uninstallForm = document.getElementById('uninstall-form')
+const uninstallResponse = document.getElementById('uninstall-response')
+const inputCount = document.getElementById('input-count')
+const submitBtn = document.getElementById('submit-btn')
+const errorAlert = document.getElementById('error-alert')
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOMContentLoaded')
+uninstallForm.addEventListener('submit', formSubmit)
+uninstallResponse.addEventListener('input', function (e) {
+    inputCount.textContent = this.value.length
 })
 
-document
-    .getElementById('uninstallFeedback')
-    .addEventListener('input', function (event) {
-        countEl.innerHTML = this.value.length
-    })
-
-document.getElementById('uninstall').addEventListener('submit', formSubmit)
-
-function formSubmit(event) {
-    console.log('formSubmit:', event, this)
+async function formSubmit(event) {
+    console.debug('formSubmit:', event, this)
     event.preventDefault()
-    if (!(this[0].checked || this[1].checked || this[2].value)) {
-        console.warn('No Data to Send.')
+    errorAlert.style.display = 'none'
+    const url = this[0].value
+    const notUsed = this[1].checked
+    const notExpected = this[2].checked
+    const notWorking = this[3].checked
+    const feedbackText = this[4].value
+    if (!(notUsed || notExpected || notWorking || feedbackText)) {
+        return console.warn('No Data to Send.')
+    }
+    submitBtn.classList.add('disabled')
+    const lines = [
+        uninstallMessage,
+        `\`${navigator.userAgent}\``,
+        `${getBoolIcon(notUsed)} Not Used`,
+        `${getBoolIcon(notExpected)} Not as Expected`,
+        `${getBoolIcon(notWorking)} Not Working`,
+    ]
+    if (feedbackText) {
+        lines.push(`\`\`\`\n${feedbackText}\n\`\`\``)
+    }
+    // console.debug('lines:', lines)
+    const response = await sendDiscord(url, lines.join('\n'))
+    console.debug('response:', response)
+    submitBtn.classList.remove('disabled')
+    if (response.status >= 200 && response.status <= 299) {
+        console.debug('Success')
+        window.location = '/'
     } else {
-        submitBtn.classList.add('disabled')
-        const lines = [
-            'Uninstall Feedback.',
-            `Not Used: **${this[0].checked}**`,
-            `Not Working: **${this[1].checked}**`,
-            '```\n' + `${this[2].value || 'No Reason Provided.'}` + '\n```',
-        ]
-        const xhr = new XMLHttpRequest()
-        xhr.open('POST', webhook)
-        xhr.setRequestHeader('Content-type', 'application/json')
-        const params = {
-            username: 'Link Extractor',
-            avatar_url: 'https://link-extractor.cssnr.com/images/logo.png',
-            content: lines.join('\n'),
-        }
-        xhr.onload = () => {
-            console.log('xhr.status: ', xhr.status)
-            submitBtn.classList.remove('disabled')
-            if (xhr.status >= 200 && xhr.status <= 299) {
-                console.log('SUCCESS')
-                window.location = '/'
-            } else {
-                console.log(`ERROR: ${xhr.status}`)
-                const errorEl = document.getElementById('error')
-                errorEl.textContent = `Submission Error: ${xhr.status}`
-                errorEl.style.display = 'block'
-            }
-        }
-        xhr.send(JSON.stringify(params))
+        console.warn(`Error ${response.status}`, response)
+        errorAlert.textContent = `Error ${response.status}: ${response.statusText}`
+        errorAlert.style.display = 'block'
+    }
+}
+
+async function sendDiscord(url, content) {
+    // console.debug('sendDiscord', url, content)
+    const body = {
+        username: discordUsername,
+        avatar_url: discordAvatar,
+        content: content,
+    }
+    const opts = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    }
+    return await fetch(url, opts)
+}
+
+function getBoolIcon(value) {
+    if (value) {
+        return '✅'
+    } else {
+        return '🔳'
     }
 }
