@@ -8,22 +8,26 @@ description: Easily extract, parse, or open all links/domains from a site or tex
 <h1><i class="fa-solid fa-link"></i> {{ site.site_name }}</h1>
 
 <div class="mb-2" style="min-height: 20px;">
-<a href="{{ site.chrome_url }}" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/chrome-web-store/users/ifefifghpkllfibejafbakmflidjcjfp?logo=google&logoColor=white&label=google%20users" alt="Chrome Web Store Users" style="max-width: 100%;"></a>
-<a href="{{ site.firefox_url }}" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/amo/users/{{ site.firefox_id }}?logo=mozilla&label=mozilla%20users" alt="Mozilla Add-on Users" style="max-width: 100%;"></a>
-<a href="{{ site.chrome_url }}" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/chrome-web-store/v/ifefifghpkllfibejafbakmflidjcjfp?label=chrome&logo=googlechrome" alt="Chrome Web Store Version" style="max-width: 100%;"></a>
-<a href="{{ site.firefox_url }}" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version" style="max-width: 100%;"></a>
-<a href="{{ site.github_url }}/releases/latest" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version" style="max-width: 100%;"></a>
-<a href="{{ site.github_url }}/blob/master/manifest.json" rel="nofollow" target="_blank">
-    <img src="https://img.shields.io/github/manifest-json/v/{{ site.github_name }}?filename=manifest.json&logo=json&label=manifest" alt="Manifest Version" style="max-width: 100%;"></a>
+    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?logo=google&logoColor=white&label=google%20users" alt="Chrome Web Store Users" style="max-width: 100%;"></a>
+    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/amo/users/{{ site.firefox_id }}?logo=mozilla&label=mozilla%20users" alt="Mozilla Add-on Users" style="max-width: 100%;"></a>
+    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}" alt="Chrome Web Store Users" style="max-width: 100%;"></a>
+    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/amo/stars/{{ site.firefox_id }}" alt="Mozilla Add-on Users" style="max-width: 100%;"></a>
+    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?label=chrome&logo=googlechrome" alt="Chrome Web Store Version" style="max-width: 100%;"></a>
+    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version" style="max-width: 100%;"></a>
+    <a href="{{ site.github_url }}/releases/latest" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version" style="max-width: 100%;"></a>
+    <a href="{{ site.github_url }}/blob/master/manifest.json" rel="nofollow" target="_blank">
+        <img src="https://img.shields.io/github/manifest-json/v/{{ site.github_name }}?filename=manifest.json&logo=json&label=manifest" alt="Manifest Version" style="max-width: 100%;"></a>
 </div>
 
 <p class="lead">
-    Modern Chrome and Firefox Addon to easily extract, parse, or open all links/domains from a site or text with optional filters.
+    Modern Chrome Web Extension and Firefox Browser Addon to easily extract, parse, or open all links/domains from a site or text with optional filters.
     Feature packed with automatic dark/light mode, copy to clipboard, keyboard shortcuts, custom options, and much more...
 </p>
 
@@ -48,11 +52,13 @@ description: Easily extract, parse, or open all links/domains from a site or tex
     <li>Extract All Links and Domains from Any Site</li>
     <li>Extract Links from Selected Text on any Site</li>
     <li>Extract Links from Clipboard or Any Text</li>
+    <li>Extract Links from All Selected Tabs</li>
     <li>Open Multiple Links in Tabs from Text</li>
     <li>Download Links and Domains as a Text File</li>
     <li>Copy the Text from a Link via Context Menu</li>
     <li>Quick Filter Links with a Regular Expression</li>
     <li>Store Regular Expressions for Quick Filtering</li>
+    <li>Import and Export Saved Regular Expressions</li>
     <li>Automatic Dark/Light Mode based on Browser Setting</li>
     <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
 </ul>
@@ -78,9 +84,9 @@ description: Easily extract, parse, or open all links/domains from a site or tex
 
 <p>
     Please submit an
-    <a href="{{ site.github_url }}/issues/new" target="_blank">Issue</a>
+    <a href="{{ site.github_url }}/issues" target="_blank">Issue</a>
     if you find bugs and open a
-    <a href="{{ site.github_url }}/discussions/new?category=feature-requests" target="_blank">Feature Request</a>
+    <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank">Feature Request</a>
     if you have any ideas, suggestions, or requests.
 </p>
 
