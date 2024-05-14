@@ -21,24 +21,46 @@ description: Documentation and Instructions for configuring and using Link Extra
     <li><strong>Chrome</strong>, click the Pin icon.<br></li>
 </ul>
 
+<div class="mb-2">
+    <img src="/media/images/chrome-pin.jpg" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
+    <img src="/media/images/firefox-pin.jpg" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
+</div>
+
 <h4>Host Permissions</h4>
-<p>In order to extract links from multiple tabs, the web extension needs host permissions granted. This can be granted from popup window or on the Options page.</p>
+<p>
+    In order to extract links from multiple tabs, the web extension needs host permissions granted.
+    This can be granted from popup window or on the Options page.
+    Firefox also requires Host Permissions for Omnibox usage.
+</p>
 
 <h2 id="usage">Usage</h2>
 <hr class="mt-0">
 
-<p>Activate 1 of 3 ways:</p>
+<p>Activate 1 of 4 ways:</p>
 <ul>
     <li>Toolbar Icon Popup</li>
+    <li>Keyboard Shortcuts</li>
     <li>Right Click Context Menu</li>
-    <li>Keyboard Shortcuts for Extract/Popup</li>
+    <li>Omnibox Keyword: <kbd>link</kbd></li>
 </ul>
 
-<p>Extract all links, just domains, use a quick filter, or a saved filter.</p>
 <p>
     <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
     Tip: You may also select text with your mouse, and right click to extract links from the selection.
 </p>
+
+<h4>Omnibox</h4>
+<p><span class="fw-bold">Keyword</span>: <kbd>link</kbd></p>
+<p>
+    Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
+    Additionally you can start typing to show saved filters matching your entry.<br>
+    <span class="fw-bold">Chrome</span> does not allow an empty omnibox entry. To extract all links, simply enter a second space after activating the Omnibox.<br>
+    <span class="fw-bold">Firefox</span> does not allow using the Omnibox unless you have granted host permissions to the web extension.<br>
+</p>
+
+<div class="mb-2">
+    <img src="/media/images/chrome-omnibox.jpg" class="img-thumbnail" alt="Chrome Pin Extension" width="560">
+</div>
 
 <h2 id="options">Options</h2>
 <hr class="mt-0">
@@ -75,7 +97,7 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <h5><i class="fa-solid fa-filter"></i> Filters</h5>
 <p class="ps-4">
-    Add as many saved filters as you need. They will show up on the Popup Filter Dropdown, and on the Right Click Context Menu.<br>
+    Add as many saved filters as you need. They will show up on the Popup Filter Dropdown, the Right Click Context Menu and Omnibox suggestions.<br>
     Edit an existing filter by clicking on it.<br>
     Reorder filters by clicking on the grip and dragging.
 </p>
