@@ -32,11 +32,19 @@ description: Documentation and Instructions for configuring and using Link Extra
     This can be granted from popup window or on the Options page.
     Firefox also requires Host Permissions for Omnibox usage.
 </p>
+<p>
+    Note: This extension does NOT inject a content-script into every site and only injects a script when you extract links.
+    Therefore, granting host permissions does not reduce overall performance in any way.
+</p>
+<p>
+    <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+    Tip: You can select multiple tabs by holding the <kbd>Ctrl</kbd> key and selecting additional tabs.
+</p>
 
 <h2 id="usage">Usage</h2>
 <hr class="mt-0">
 
-<p>Activate 1 of 4 ways:</p>
+<p>Activate with any one of these 4 ways:</p>
 <ul>
     <li>Toolbar Icon Popup</li>
     <li>Keyboard Shortcuts</li>
@@ -56,7 +64,7 @@ description: Documentation and Instructions for configuring and using Link Extra
 </p>
 <p>
     Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
-    Additionally you can start typing to show saved filters matching your entry.<br>
+    Additionally you can start typing to show saved filters matching your entry or enter an on-the-fly filter.<br>
     <span class="fw-bold">Chrome</span> does not allow an empty omnibox entry. To extract all links, simply enter a second space after activating the Omnibox.<br>
     <span class="fw-bold">Firefox</span> does not allow using the Omnibox unless you have granted host permissions to the web extension.<br>
 </p>
@@ -101,7 +109,7 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <h5><i class="fa-solid fa-toggle-off"></i> Save Links Page Options</h5>
 <p class="ps-4">
-    Save Links Page settings, such as number of links show, link sorting, and extra fields shown.
+    Save Links Page settings, such as number of links shown, extra fields displayed, and column sorting.
 </p>
 
 <h5><i class="fa-solid fa-toggle-off"></i> Enable Right Click Menu</h5>
