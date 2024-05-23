@@ -41,7 +41,7 @@ description: Documentation and Instructions for configuring and using Link Extra
     <li>Toolbar Icon Popup</li>
     <li>Keyboard Shortcuts</li>
     <li>Right Click Context Menu</li>
-    <li>Omnibox Keyword: <kbd>link</kbd></li>
+    <li>Omnibox Keyword: <kbd role="button" data-clipboard-text="link">link</kbd></li>
 </ul>
 
 <p>
@@ -50,7 +50,10 @@ description: Documentation and Instructions for configuring and using Link Extra
 </p>
 
 <h4>Omnibox</h4>
-<p><span class="fw-bold">Keyword</span>: <kbd>link</kbd></p>
+<p>
+    <span class="fw-bold">Keyword</span>: <kbd role="button" data-clipboard-text="link">link</kbd>
+    {% comment %}<a href="#" data-clipboard-text="link"><i class="fa-solid fa-copy"></i></a>{% endcomment %}
+</p>
 <p>
     Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
     Additionally you can start typing to show saved filters matching your entry.<br>
@@ -66,10 +69,17 @@ description: Documentation and Instructions for configuring and using Link Extra
 <hr class="mt-0">
 
 <h5><i class="fa-regular fa-keyboard"></i> Keyboard Shortcuts</h5>
-<p class="ps-4">These can be configured on your browser's extension management page and varies by browser.</p>
-
-<h5><i class="fa-solid fa-list-ol"></i> Links to Show</h5>
-<p class="ps-4">Default Number of Links to Display per Page on Extraction Results.</p>
+<p class="ps-4">
+    These can be configured on your browser's extension management page and varies by browser.
+    <br>
+    <strong>Firefox:</strong> <a href="https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox" target="_blank" rel="noopener">
+        https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox</a>
+    <br>
+    <strong>Chrome:</strong> Google does not provide documentation on extension shortcuts.
+    However, you can manage these by entering the following into your address bar:
+    <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
+    {% comment %}<a href="#" data-clipboard-text="chrome://extensions/shortcuts"><i class="fa-solid fa-copy"></i></a>{% endcomment %}
+</p>
 
 <h5><i class="fa-solid fa-code"></i> Regex Flags</h5>
 <p class="ps-4">
@@ -78,15 +88,20 @@ description: Documentation and Instructions for configuring and using Link Extra
        target="_blank" rel="noopener">read this document</a>.
 </p>
 
+<h5><i class="fa-solid fa-toggle-off"></i> Remove Duplicate Links</h5>
+<p class="ps-4">
+    Remove duplicate links from the results page. Disable this to see all links on the page for auditing and extra fields.
+</p>
+
 <h5><i class="fa-solid fa-toggle-off"></i> Use Default Link Filtering</h5>
 <p class="ps-4">
     Filter <strong>out</strong> any links that do not contain <kbd>://</kbd>.
     Turn this off this to include links such as <code>magnet:</code> and <code>mailto:</code> etc.
 </p>
 
-<h5><i class="fa-solid fa-toggle-off"></i> Automatically Sort Alphabetically</h5>
+<h5><i class="fa-solid fa-toggle-off"></i> Save Links Page Options</h5>
 <p class="ps-4">
-    Sort Links Alphabetically by Default on Results Page. Links may also be manually sorted after extracting.
+    Save Links Page settings, such as number of links show, link sorting, and extra fields shown.
 </p>
 
 <h5><i class="fa-solid fa-toggle-off"></i> Enable Right Click Menu</h5>
