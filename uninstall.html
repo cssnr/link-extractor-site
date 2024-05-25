@@ -14,7 +14,7 @@ description: Uninstall Feedback
 <div class="d-flex flex-column h-100 align-items-center">
     <div class="d-flex flex-grow-1 justify-content-center align-items-center w-100">
         <div class="row flex-grow-1">
-            <div class="col-sm-12 col-md-8 col-lg-6 m-auto">
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xxl-6 m-auto">
                 <div id="login-outer" class="m-auto p-3">
                     <div class="justify-content-center align-items-center mb-2 d-flex">
                         <img src="/media/logo.png" class="img-fluid float-start me-2" alt="{{ site.site_name }}" height="42" width="42">
@@ -49,6 +49,7 @@ description: Uninstall Feedback
                             Submit Feedback <i class="fa-regular fa-comment-dots ms-2"></i></button>
                     </form>
                     <div id="error-alert" class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert" style="display: none;"></div>
+                    {% include alerts.html %}
                 </div>
             </div>
         </div>
