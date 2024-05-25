@@ -25,6 +25,9 @@ description: Uninstall Feedback
                         All <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">bugs that get reported</a> will be fixed!
                         <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Requests</a> are also greatly appreciated...
                     </p>
+
+                    {% include alerts.html %}
+
                     <form id="uninstall-form">
                         <input type="hidden" value="{{ site.discord_webhook }}" id="discord-webhook" hidden="hidden">
                         <div class="form-check form-switch fs-5">
