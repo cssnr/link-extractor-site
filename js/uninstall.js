@@ -18,6 +18,13 @@ uninstallResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
 })
 
+document.addEventListener('DOMContentLoaded', function (event) {
+    if (version !== '0.6.1') {
+        console.debug(`Show Warning for Version: ${version}`)
+        document.getElementById('alerts')?.classList.remove('d-none')
+    }
+})
+
 async function formSubmit(event) {
     console.debug('formSubmit:', event)
     event.preventDefault()
