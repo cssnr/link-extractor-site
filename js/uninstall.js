@@ -19,9 +19,19 @@ uninstallResponse.addEventListener('input', function () {
 })
 
 document.addEventListener('DOMContentLoaded', function (event) {
-    if (version !== '0.6.1') {
-        console.debug(`Show Warning for Version: ${version}`)
-        document.getElementById('alerts')?.classList.remove('d-none')
+    const ver = searchParams.get('version')
+    const ok = '0.6.1'
+    if (ver) {
+        // const div = document.getElementById('version')
+        // div.textContent = `v${ver}`
+        const res = ver.localeCompare(ok, undefined, {
+            numeric: true,
+            sensitivity: 'base',
+        })
+        if (res === -1) {
+            console.debug(`Show Warning for Version: ${version}`)
+            document.getElementById('alerts')?.classList.remove('d-none')
+        }
     }
 })
 
