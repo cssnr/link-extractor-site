@@ -5,7 +5,7 @@
 [![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/ifefifghpkllfibejafbakmflidjcjfp?label=chrome&logo=googlechrome)](https://chrome.google.com/webstore/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Mozilla Add-on Version](https://img.shields.io/amo/v/link-extractor?label=firefox&logo=firefox)](https://addons.mozilla.org/addon/link-extractor)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/link-extractor?logo=github)](https://github.com/cssnr/link-extractor/releases/latest)
-[![Pages](https://github.com/cssnr/link-extractor/actions/workflows/build.yaml/badge.svg)](https://github.com/cssnr/link-extractor/actions/workflows/build.yaml)
+[![Pages](https://github.com/cssnr/link-extractor.cssnr.com/actions/workflows/build.yaml/badge.svg)](https://github.com/cssnr/link-extractor.cssnr.com/actions/workflows/build.yaml)
 # Link Extractor Site
 
 *   Website: https://link-extractor.cssnr.com
