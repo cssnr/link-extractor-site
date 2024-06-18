@@ -3,6 +3,7 @@
 const searchParams = new URLSearchParams(window.location.search)
 const version = searchParams.get('version') || 'unknown'
 
+const noAlertVersion = '0.6.1'
 const uninstallMessage = `Link Extractor Uninstall, Version: **${version}**`
 const discordUsername = 'Link Extractor'
 const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
@@ -12,19 +13,19 @@ const uninstallResponse = document.getElementById('uninstall-response')
 const inputCount = document.getElementById('input-count')
 const submitBtn = document.getElementById('submit-btn')
 const errorAlert = document.getElementById('error-alert')
+const notWorkingExtra = document.getElementById('not-working-extra')
 
+uninstallForm.addEventListener('change', formChange)
 uninstallForm.addEventListener('submit', formSubmit)
+
 uninstallResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
 })
 
 document.addEventListener('DOMContentLoaded', function (event) {
     const ver = searchParams.get('version')
-    const ok = '0.6.1'
     if (ver) {
-        // const div = document.getElementById('version')
-        // div.textContent = `v${ver}`
-        const res = ver.localeCompare(ok, undefined, {
+        const res = ver.localeCompare(noAlertVersion, undefined, {
             numeric: true,
             sensitivity: 'base',
         })
@@ -34,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 })
+
+function formChange(event) {
+    console.debug('formChange:', event)
+    if (event.target.id === 'not-working') {
+        if (event.target.checked) {
+            notWorkingExtra.classList.remove('d-none')
+        } else {
+            notWorkingExtra.classList.add('d-none')
+        }
+    }
+}
 
 async function formSubmit(event) {
     console.debug('formSubmit:', event)
@@ -48,9 +60,13 @@ async function formSubmit(event) {
         return console.warn('No Data to Send.')
     }
     submitBtn.classList.add('disabled')
+
+    const parser = new UAParser()
+    const res = parser.getResult()
     const lines = [
         uninstallMessage,
-        `\`${navigator.userAgent}\``,
+        `**Browser**: ${res.browser.name} ${res.browser.version} (${res.engine.name})`,
+        `**System**: ${res.os.name} ${res.os.version} (${res.cpu.architecture})`,
         `${getBoolIcon(notUsed)} Not Used`,
         `${getBoolIcon(notExpected)} Not as Expected`,
         `${getBoolIcon(notWorking)} Not Working`,
@@ -59,12 +75,13 @@ async function formSubmit(event) {
         lines.push(`\`\`\`\n${feedbackText}\n\`\`\``)
     }
     // console.debug('lines:', lines)
+
     const response = await sendDiscord(url, lines.join('\n'))
     console.debug('response:', response)
     submitBtn.classList.remove('disabled')
     if (response.status >= 200 && response.status <= 299) {
         console.debug('Success')
-        window.location = '/'
+        window.location = '/docs/'
     } else {
         console.warn(`Error ${response.status}`, response)
         errorAlert.textContent = `Error ${response.status}: ${response.statusText}`
@@ -74,6 +91,7 @@ async function formSubmit(event) {
 
 async function sendDiscord(url, content) {
     // console.debug('sendDiscord', url, content)
+    // console.debug('content.length', content.length)
     const body = {
         username: discordUsername,
         avatar_url: discordAvatar,
