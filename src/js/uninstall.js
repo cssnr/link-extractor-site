@@ -57,6 +57,7 @@ async function formSubmit(event) {
     const notWorking = event.target.elements['not-working'].checked
     const feedbackText = event.target.elements['uninstall-response'].value
     if (!(notUsed || notExpected || notWorking || feedbackText)) {
+        uninstallResponse.focus()
         return console.warn('No Data to Send.')
     }
     submitBtn.classList.add('disabled')
