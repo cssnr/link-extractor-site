@@ -7,49 +7,47 @@ title: Uninstall
 description: Uninstall Feedback
 ---
 
-<div class="d-flex flex-column h-100 align-items-center">
+<div class="d-flex align-items-center h-100">
     <div class="d-flex flex-grow-1 justify-content-center align-items-center w-100 my-2">
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-lg-8 col-xxl-6 m-auto">
-                <div id="login-outer" class="m-auto p-3">
-                    <div class="justify-content-center align-items-center mb-2 d-flex">
-                        <img src="{{ "/media/logo.png" | relative_url }}" class="img-fluid float-start me-2" alt="{{ site.site_name }}" height="42" width="42">
-                        <h1 class="align-middle mb-0">{{ site.site_name }}</h1>
-                    </div>
-                    <p class="text-center">
-                        Please let us know why you uninstalled {{ site.site_name }}.
-                        All <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">bugs that get reported</a> will be fixed!
-                        <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Requests</a> are also greatly appreciated...
-                    </p>
-                    {% include alerts.html %}
-                    <form id="uninstall-form">
-                        <input type="hidden" value="{{ site.discord_webhook }}" id="discord-webhook" hidden="hidden">
-                        <div class="form-check form-switch fs-5">
-                            <input class="form-check-input" type="checkbox" role="switch" id="not-used">
-                            <label class="form-check-label text-success-emphasis" for="not-used">Do Not Need or Not Used</label>
-                        </div>
-                        <div class="form-check form-switch fs-5">
-                            <input class="form-check-input" type="checkbox" role="switch" id="not-expected">
-                            <label class="form-check-label text-warning-emphasis" for="not-expected">Does Not Work as Expected</label>
-                        </div>
-                        <div class="form-check form-switch fs-5">
-                            <input class="form-check-input" type="checkbox" role="switch" id="not-working">
-                            <label class="form-check-label text-danger-emphasis" for="not-working">Not Working or Broken</label>
-                        </div>
-                        <div id="not-working-extra" class="alert alert-warning text-center p-2 mt-2 mb-0 mx-2 d-none">
-                            Please provide a <strong>link to the site</strong> that is not functioning and we will investigate.
-                        </div>
-                        <div class="my-2">
-                            <label for="uninstall-response" class="form-label visually-hidden">Uninstall Feedback</label>
-                            <textarea class="form-control" id="uninstall-response" rows="4" maxlength="1000"
-                                      placeholder="Optional Feedback. Bugs, Missing Features, etc..." autofocus></textarea>
-                            <span id="inputCounter" class="float-end label label-default"><span id="input-count">0</span> / 1000</span>
-                        </div>
-                        <button id="submit-btn" class="btn btn-success w-100" type="submit">
-                            Submit Feedback <i class="fa-regular fa-comment-dots ms-2"></i></button>
-                    </form>
-                    <div id="error-alert" class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert" style="display: none;"></div>
+        <div class="col-sm-12 col-md-10 col-lg-8 col-xxl-6 m-auto">
+            <div id="login-outer" class="m-auto p-3">
+                <div class="justify-content-center align-items-center mb-2 d-flex">
+                    <img src="{{ "/media/logo.png" | relative_url }}" class="img-fluid float-start me-2" alt="{{ site.site_name }}" height="42" width="42">
+                    <h1 class="align-middle mb-0">{{ site.site_name }}</h1>
                 </div>
+                <p class="text-center">
+                    Please let us know why you uninstalled {{ site.site_name }}.
+                    All <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">bugs that get reported</a> will be fixed!
+                    <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Requests</a> are also greatly appreciated...
+                </p>
+                {% include alerts.html %}
+                <form id="uninstall-form">
+                    <input type="hidden" value="{{ site.discord_webhook }}" id="discord-webhook" hidden="hidden">
+                    <div class="form-check form-switch fs-5">
+                        <input class="form-check-input" type="checkbox" role="switch" id="not-used">
+                        <label class="form-check-label text-success-emphasis" for="not-used">Do Not Need or Not Used</label>
+                    </div>
+                    <div class="form-check form-switch fs-5">
+                        <input class="form-check-input" type="checkbox" role="switch" id="not-expected">
+                        <label class="form-check-label text-warning-emphasis" for="not-expected">Does Not Work as Expected</label>
+                    </div>
+                    <div class="form-check form-switch fs-5">
+                        <input class="form-check-input" type="checkbox" role="switch" id="not-working">
+                        <label class="form-check-label text-danger-emphasis" for="not-working">Not Working or Broken</label>
+                    </div>
+                    <div id="not-working-extra" class="alert alert-warning text-center p-2 mt-2 mb-0 d-none">
+                        Please provide a <strong>link to the site</strong> that is not functioning and we will investigate.
+                    </div>
+                    <div class="my-2">
+                        <label for="uninstall-response" class="form-label visually-hidden">Uninstall Feedback</label>
+                        <textarea class="form-control" id="uninstall-response" rows="4" maxlength="1000"
+                                  placeholder="Optional Feedback. Bugs, Missing Features, etc..." autofocus></textarea>
+                        <span id="inputCounter" class="float-end label label-default"><span id="input-count">0</span> / 1000</span>
+                    </div>
+                    <button id="submit-btn" class="btn btn-success w-100" type="submit">
+                        Submit Feedback <i class="fa-regular fa-comment-dots ms-2"></i></button>
+                </form>
+                <div id="error-alert" class="alert alert-danger alert-dismissible fade show text-center mt-3" role="alert" style="display: none;"></div>
             </div>
         </div>
     </div>
