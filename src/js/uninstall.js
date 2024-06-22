@@ -4,8 +4,8 @@ const searchParams = new URLSearchParams(window.location.search)
 const version = searchParams.get('version') || 'unknown'
 
 const noAlertVersion = '0.6.1'
-const uninstallMessage = `Link Extractor Uninstall, Version: **${version}**`
 const discordUsername = 'Link Extractor'
+const uninstallMessage = `${discordUsername} Uninstall, Version: **${version}**`
 const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
 
 const uninstallForm = document.getElementById('uninstall-form')
