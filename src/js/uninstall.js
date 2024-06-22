@@ -3,7 +3,7 @@
 const searchParams = new URLSearchParams(window.location.search)
 const version = searchParams.get('version') || 'unknown'
 
-const noAlertVersion = '0.6.1'
+const noAlertVersion = '0.7.0'
 const discordUsername = 'Link Extractor'
 const uninstallMessage = `${discordUsername} Uninstall, Version: **${version}**`
 const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
