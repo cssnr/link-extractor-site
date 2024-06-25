@@ -8,19 +8,19 @@ description: Easily extract, parse, or open all links/domains from a site or tex
 <h1><i class="fa-solid fa-link"></i> {{ site.site_name }}</h1>
 
 <div class="mb-2" style="min-height: 20px;">
-    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank" title="Google">
+    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
         <img src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?logo=google&logoColor=white&label=google%20users" alt="Chrome Web Store Users" style="max-width: 100%;"></a>
-    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank" title="Mozilla">
+    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
         <img src="https://img.shields.io/amo/users/{{ site.firefox_id }}?logo=mozilla&label=mozilla%20users" alt="Mozilla Add-on Users" style="max-width: 100%;"></a>
-    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank" title="Google">
+    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
         <img src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?logo=google&logoColor=white" alt="Chrome Web Store Users" style="max-width: 100%;"></a>
-    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank" title="Mozilla">
+    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
         <img src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?logo=mozilla&logoColor=white" alt="Mozilla Add-on Users" style="max-width: 100%;"></a>
-    <a href="{{ site.chrome_url }}" rel="nofollow" target="_blank" title="Google">
+    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
         <img src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?label=chrome&logo=googlechrome" alt="Chrome Web Store Version" style="max-width: 100%;"></a>
-    <a href="{{ site.firefox_url }}" rel="nofollow" target="_blank" title="Mozilla">
+    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
         <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version" style="max-width: 100%;"></a>
-    <a href="{{ site.github_url }}/releases/latest" rel="nofollow" target="_blank" title="GitHub">
+    <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
         <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version" style="max-width: 100%;"></a>
 </div>
 
@@ -32,19 +32,19 @@ description: Easily extract, parse, or open all links/domains from a site or tex
 {% comment %}{% include alerts.html %}{% endcomment %}
 
 <div class="ms-1 mb-3">
-    <a href="{{ site.chrome_url }}" target="_blank" title="Chrome">
+    <a href="{{ site.chrome_url }}" title="Chrome" target="_blank" rel="noopener">
         <img alt="Chrome" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png" width="48" height="48" /></a>
-    <a href="{{ site.firefox_url }}" target="_blank" title="Firefox">
+    <a href="{{ site.firefox_url }}" title="Firefox" target="_blank" rel="noopener">
         <img alt="Firefox" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" target="_blank" title="Edge">
+    <a href="{{ site.chrome_url }}" title="Edge" target="_blank" rel="noopener">
         <img alt="Edge" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" target="_blank" title="Opera">
+    <a href="{{ site.chrome_url }}" title="Opera" target="_blank" rel="noopener">
         <img alt="Opera" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" target="_blank" title="Brave">
+    <a href="{{ site.chrome_url }}" title="Brave" target="_blank" rel="noopener">
         <img alt="Brave" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" target="_blank" title="Chromium">
+    <a href="{{ site.chrome_url }}" title="Chromium" target="_blank" rel="noopener">
         <img alt="Chromium" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" target="_blank" title="Yandex">
+    <a href="{{ site.chrome_url }}" title="Yandex" target="_blank" rel="noopener">
         <img alt="Yandex" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png" width="48" height="48" /></a>
 </div>
 
@@ -69,28 +69,29 @@ description: Easily extract, parse, or open all links/domains from a site or tex
 
 <p class="ms-3">
     <i class="fa-brands fa-chrome me-1"></i>
-    <a href="{{ site.chrome_url }}" target="_blank">Google Chrome Web Store</a>
+    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Google Chrome Web Store</a>
     <br>
     <i class="fa-brands fa-firefox-browser me-1"></i>
-    <a href="{{ site.firefox_url }}" target="_blank">Mozilla Firefox Add-ons</a>
+    <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
 </p>
 
 <p>
     All <strong>Chromium</strong> based browsers can install the extension from the
-    <a href="{{ site.chrome_url }}" target="_blank">Chrome Web Store</a>.
+    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Chrome Web Store</a>.
 </p>
 
-Mobile browser support available for
-<a href="{{ site.firefox_url }}" target="_blank">Firefox</a> and
-<a href="{{ site.chrome_url }}" target="_blank">Yandex</a>.
+<p>
+    Mobile browser support available for
+    <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a> and
+    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Yandex</a>.
+</p>
 
 <h2>Support</h2>
 
 <p>
     Please submit an
-    <a href="{{ site.github_url }}/issues" target="_blank">Issue</a>
-    if you find bugs and open a
-    <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank">Feature Request</a>
+    <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Issue</a> if you find bugs and open a
+    <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Request</a>
     if you have any ideas, suggestions, or requests.
 </p>
 
