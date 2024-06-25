@@ -9,6 +9,14 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <p class="lead"><a href="#configure">Configure</a> | <a href="#usage">Usage</a> | <a href="#options">Options</a> | <a href="#links">Link Results</a></p>
 
+<div id="feedback" class="alert alert-success d-none" role="alert">
+    <p>Thank you for providing feedback. If you provided details we will look into them.</p>
+    <p class="mb-0">
+        If you would like feedback from the developer you can open an
+        <a href="{{ site.github_url }}/issues" class="alert-link" target="_blank" rel="noopener">Issue</a> on GitHub.
+    </p>
+</div>
+
 {% comment %}{% include alerts.html %}{% endcomment %}
 
 <h2 id="configure">Configure</h2>
@@ -60,7 +68,6 @@ description: Documentation and Instructions for configuring and using Link Extra
 <h4>Omnibox</h4>
 <p>
     <span class="fw-bold">Keyword</span>: <kbd role="button" data-clipboard-text="link">link</kbd>
-    {% comment %}<a href="#" data-clipboard-text="link"><i class="fa-solid fa-copy"></i></a>{% endcomment %}
 </p>
 <p>
     Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
@@ -140,7 +147,8 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <p>
     <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-    Tip: You can show the available keyboard shortcuts by pressing the <kbd>K</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>Z</kbd> keys on the results page.
+    Tip: You can show the available keyboard shortcuts by pressing the
+    <kbd>K</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>Z</kbd> keys on the results page.
 </p>
 
 <h5><i class="fa-solid fa-tablet-button"></i> Show Additional Data</h5>
@@ -160,8 +168,10 @@ description: Documentation and Instructions for configuring and using Link Extra
 
 <h5><i class="fa-solid fa-i-cursor"></i> Filter</h5>
 <p>
-    You can filter links on the fly by typing into the Filter box..<br>
-    <strong class="text-warning-emphasis">Note:</strong> DataTables Search Filter does <strong>not</strong> support <code>$</code> or <code>^</code> in regular expressions
+    You can filter links on the fly by typing into the Filter box...
+    <br>
+    <strong class="text-warning-emphasis">Note:</strong> DataTables Search Filter does
+    <strong>not</strong> support <code>$</code> or <code>^</code> in regular expressions
     (a custom search will be added in a future release).
 </p>
 
@@ -171,4 +181,9 @@ description: Documentation and Instructions for configuring and using Link Extra
     across sessions if you enable the <code>Save Links Page Options</code> Option.
 </p>
 
-<p class="mt-5">For more information you can view <a href="{{ site.github_url }}?tab=readme-ov-file#readme" target="_blank">README.md</a> on GitHub.</p>
+<p class="mt-5">
+    For more information you can view
+    <a href="{{ site.github_url }}?tab=readme-ov-file#readme" target="_blank" rel="noopener">README.md</a> on GitHub.
+</p>
+
+<script type="text/javascript" src="{{ "/js/docs.js" | relative_url }}"></script>
