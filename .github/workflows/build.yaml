@@ -3,6 +3,8 @@ name: 'Pages'
 on:
   push:
     branches: ['master']
+    paths:
+      - src/**
   repository_dispatch:
     types:
       - webhook
