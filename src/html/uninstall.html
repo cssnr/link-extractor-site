@@ -9,8 +9,8 @@ description: Uninstall Feedback.
 
 <div class="d-flex align-items-center h-100">
     <div class="col-sm-12 col-md-10 col-lg-8 col-xxl-6 m-auto">
-        <div id="login-outer" class="p-3 mt-2 mb-3 me-1 rounded rounded-4">
-            <div class="justify-content-center align-items-center  d-flex">
+        <div id="login-outer" class="py-3 px-1 px-sm-3 mb-3 me-1 rounded rounded-4">
+            <div class="justify-content-center align-items-center d-flex">
                 <img src="{{ "/media/logo.png" | relative_url }}" class="img-fluid float-start me-2" alt="{{ site.site_name }}" height="42" width="42">
                 <h1 class="align-middle mb-0">{{ site.site_name }}</h1>
             </div>
@@ -18,7 +18,7 @@ description: Uninstall Feedback.
                 Please let us know why you uninstalled {{ site.site_name }}.
                 <br>
                 <span class="fs-4">
-                    All <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">bugs that get reported</a> <b>will be fixed!</b>
+                    All <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">bugs that get reported</a> <span class="d-inline-block fw-bold">will be fixed!</span>
                 </span>
                 <br>
                 Any <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Requests</a> are appreciated.
@@ -40,7 +40,7 @@ description: Uninstall Feedback.
                     <label class="form-check-label text-danger-emphasis" for="not-working">Not Working or Broken</label>
                 </div>
                 <div id="not-working-extra" class="alert alert-warning text-center p-2 mt-2 mb-0 d-none">
-                    Please provide a <strong>link to the site</strong> that is not functioning and we will investigate.
+                    Please provide a <strong>link to the site</strong> that is not functioning.
                 </div>
                 <div class="my-2">
                     <label for="uninstall-response" class="form-label visually-hidden">Uninstall Feedback</label>

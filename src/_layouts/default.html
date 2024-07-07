@@ -40,7 +40,7 @@
 <body class="d-flex flex-column h-100">
 
 <header>
-    <nav class="navbar navbar-expand-sm bg-body-tertiary" aria-label="Primary Navigation">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary mb-2" aria-label="Primary Navigation">
         <div class="container-fluid">
             <a class="mx-2" href="{{ "/" | relative_url }}">
                 <img src="{{ "/media/logo.png" | relative_url }}" width="24" height="24" alt="logo" class="my-auto"></a>
@@ -52,11 +52,12 @@
             <div class="collapse navbar-collapse me-auto " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     {% for item in site.menu %}
-                        <li class="nav-item"><a class="nav-link {% if page.title == item.name %}active{% endif %}" href="{{ item.link | relative_url }}">
-                                {{ item.name }}</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.title == item.name %}active{% endif %}"
+                               href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
+                                {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
+                        </li>
                     {% endfor %}
-                    <li class="nav-item"><a class="nav-link" href="{{ "/screenshots/" | relative_url }}" target="_blank">
-                            Screen Shots <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a></li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
@@ -69,7 +70,7 @@
     </nav>
 </header>
 
-<main class="flex-grow-1 px-3">
+<main class="flex-grow-1 px-2 px-sm-3">
     {{ content }}
 </main>
 
@@ -85,14 +86,11 @@
                     <ol class="list-inline mb-1 d-flex flex-column flex-sm-row">
                         {% for item in site.menu %}
                             <li class="list-inline-item">
-                                <a class="link-body-emphasis text-decoration-none {% if page.title == item.name %}fw-bold{% endif %}" href="{{ item.link | relative_url }}">
-                                    {{ item.name }}</a>
+                                <a class="link-body-emphasis text-decoration-none {% if page.title == item.name %}fw-bold{% endif %}"
+                                   href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
+                                    {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
                             </li>
                         {% endfor %}
-                        <li class="list-inline-item">
-                            <a class="link-body-emphasis text-decoration-none" href="{{ "/screenshots/" | relative_url }}" target="_blank">
-                                Screen Shots <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a>
-                        </li>
                         <li class="list-inline-item">
                             <a class="link-body-emphasis text-decoration-none" href="{{ site.discord_invite }}" target="_blank">
                                 Discord <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a>
