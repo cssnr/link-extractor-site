@@ -40,7 +40,7 @@
 <body class="d-flex flex-column h-100">
 
 <header>
-    <nav class="navbar navbar-expand-sm" aria-label="Primary Navigation">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary" aria-label="Primary Navigation">
         <div class="container-fluid">
             <a class="mx-2" href="{{ "/" | relative_url }}">
                 <img src="{{ "/media/logo.png" | relative_url }}" width="24" height="24" alt="logo" class="my-auto"></a>
@@ -49,18 +49,20 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <div class="collapse navbar-collapse me-auto " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link {% if page.title == 'Home' %}active{% endif %}" href="{{ "/" | relative_url }}">
                             Home</a></li>
                     <li class="nav-item"><a class="nav-link {% if page.title == 'Docs' %}active{% endif %}" href="{{ "/docs/" | relative_url }}">
                             Docs</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ "/screenshots/" | relative_url }}" target="_blank">
                             Screen Shots <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank" rel="noopener">
-                            GitHub <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
                             Discord <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank" rel="noopener">
+                            GitHub <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -69,19 +71,18 @@
 
 <main class="flex-grow-1 px-3">
     {{ content }}
-    <div class="clearfix"></div>
 </main>
 
-<footer class="footer mt-auto px-1 flex-shrink-0">
-    <div class="container-fluid">
-        <div class="d-flex flex-column flex-md-row py-2">
+<footer class="footer mt-auto px-1 flex-shrink-0 bg-body-tertiary">
+    <div class="container-fluid py-2">
+        <div class="d-flex flex-column flex-md-row">
             <div class="me-md-auto">
                 <a class="link-body-emphasis text-decoration-none" href="{{ site.github_url }}" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> {{ site.site_name }}</a>
             </div>
             <div class="ms-md-auto">
                 <nav aria-label="Secondary Navigation">
-                    <ol class="list-inline mb-1">
+                    <ol class="list-inline mb-1 d-flex flex-column flex-sm-row">
                         <li class="list-inline-item">
                             <a class="link-body-emphasis text-decoration-none {% if page.title == 'Home' %}fw-bold{% endif %}" href="{{ "/" | relative_url }}">
                                 Home</a>
@@ -100,6 +101,7 @@
                         </li>
                     </ol>
                 </nav>
+
             </div>
         </div>
     </div>
