@@ -6,6 +6,15 @@ url: https://link-extractor.cssnr.com
 author: Shane
 site_name: Link Extractor
 
+menu:
+    - name: Home
+      link: /
+    - name: Docs
+      link: /docs/
+    - name: Screen Shots
+      link: /screenshots/
+      external: true
+
 github_name: cssnr/link-extractor
 github_url: https://github.com/cssnr/link-extractor
 
