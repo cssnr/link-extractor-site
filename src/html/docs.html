@@ -5,196 +5,199 @@ title: Docs
 description: Documentation and Instructions for configuring and using Link Extractor.
 ---
 
-<h1><i class="fa-regular fa-file-lines"></i> {{ page.title }}</h1>
+<div class="container-fluid">
+    <h1><i class="fa-regular fa-file-lines"></i> {{ page.title }}</h1>
 
-<p class="lead">
-    <a href="#configure" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Configure</a> &bull;
-    <a href="#usage" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Usage</a> &bull;
-    <a href="#options" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Options</a> &bull;
-    <a href="#links" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Link Results</a>
-</p>
+    <p class="lead">
+        <a href="#configure" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Configure</a> &bull;
+        <a href="#usage" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Usage</a> &bull;
+        <a href="#options" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Options</a> &bull;
+        <a href="#links" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">Link Results</a>
+    </p>
 
-<div id="feedback" class="alert alert-success d-none" role="alert">
-    <p>Thank you for providing feedback. If you provided details we will look into them.</p>
+    <div id="feedback" class="alert alert-success d-none" role="alert">
+        <p>Thank you for providing feedback. If you provided details we will look into them.</p>
+        <p>
+            If you would like feedback from the developer you can open an
+            <a href="{{ site.github_url }}/issues" class="alert-link" target="_blank" rel="noopener">Issue</a> on GitHub.
+        </p>
+        <p class="mb-0">
+            You may also request support and get help on the <a href="{{ site.discord_invite }}" class="alert-link" target="_blank" rel="noopener">Discord Server</a>.
+        </p>
+    </div>
+
+    {% comment %}{% include alerts.html %}{% endcomment %}
+
+    <h2 id="configure">Configure</h2>
+    <hr class="mt-0">
+
+    <p>You can access {{ site.site_name }} through the Icon on the Extension Toolbar or Right Click Context Menu.</p>
+    <p>You can pin the Addon by locating the {{ site.site_name }} icon on the Extension Toolbar, then;</p>
+    <p class="ms-3">
+        <i class="fa-brands fa-firefox-browser me-1"></i>
+        <strong>Firefox</strong>, click the Settings Wheel and Pin to Toolbar.
+        <br>
+        <i class="fa-brands fa-chrome me-1"></i>
+        <strong>Chrome</strong>, click the Pin icon.
+    </p>
+
+    <div class="mb-3">
+        <img src="{{ "/media/images/firefox-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
+        <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
+    </div>
+
+    <h4>Host Permissions</h4>
     <p>
-        If you would like feedback from the developer you can open an
-        <a href="{{ site.github_url }}/issues" class="alert-link" target="_blank" rel="noopener">Issue</a> on GitHub.
+        In order to extract links from multiple tabs, the web extension needs host permissions granted.
+        This can be granted from popup window or on the Options page.
+        Firefox also requires Host Permissions for Omnibox usage.
     </p>
-    <p class="mb-0">
-        You may also request support and get help on the <a href="{{ site.discord_invite }}" class="alert-link" target="_blank" rel="noopener">Discord Server</a>.
+    <p>
+        Note: This extension does NOT inject a content-script into every site and only injects a script when you extract links.
+        Therefore, granting host permissions does not reduce overall performance in any way.
     </p>
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        Tip: You can select multiple tabs by holding the <kbd>Ctrl</kbd> key and selecting additional tabs.
+    </p>
+
+    <h2 id="usage">Usage</h2>
+    <hr class="mt-0">
+
+    <p>Activate with any one of these 4 ways:</p>
+    <ul>
+        <li>Toolbar Icon Popup</li>
+        <li>Keyboard Shortcuts</li>
+        <li>Right Click Context Menu</li>
+        <li>Omnibox Keyword: <kbd role="button" data-clipboard-text="link">link</kbd></li>
+    </ul>
+
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        Tip: You may also select text with your mouse, and right click to extract links from the selection.
+    </p>
+
+    <h4>Omnibox</h4>
+    <p>
+        <span class="fw-bold">Keyword</span>: <kbd role="button" data-clipboard-text="link">link</kbd>
+    </p>
+    <p>
+        Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
+        Additionally, you can start typing to show saved filters matching your entry or enter an on-the-fly filter.<br>
+        <span class="fw-bold">Chrome</span> does not allow an empty omnibox entry. To extract all links, simply enter a second space after activating the Omnibox.<br>
+        <span class="fw-bold">Firefox</span> does not allow using the Omnibox unless you have granted host permissions to the web extension.<br>
+    </p>
+
+    <div class="mb-3"><img src="{{ "/media/images/chrome-omnibox.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="560"></div>
+
+    <h2 id="options">Options</h2>
+    <hr class="mt-0">
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Lazy Load Opened Tabs</h5>
+    <p class="ms-4">This will prevent links opened by the extension from loading until the tab is focused.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Remove Duplicate Links</h5>
+    <p class="ms-4">Remove duplicate links from the results page. Disable this to see all links on the page for auditing and extra fields.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Use Default Link Filtering</h5>
+    <p class="ms-4">
+        Filter <strong>out</strong> any links that do not contain <kbd>://</kbd>.
+        Turn this off this to include links such as <code>magnet:</code> and <code>mailto:</code> etc.
+    </p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Save Link Page Options</h5>
+    <p class="ms-4">Save link results page settings, such as number of links shown, extra fields displayed, and column sorting.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Truncate Long Links </h5>
+    <p class="ms-4">Truncate long links with ellipsis. Warning: This may cause performance while resizing with large datasets.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Don't Wrap Long Links </h5>
+    <p class="ms-4">Force long links on a single line. This may cause a horizontal scroll bar if not used with Truncate Long Links.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Enable Right Click Menu</h5>
+    <p class="ms-4">Enable or Disable Right Click Context Menu.</p>
+
+    <h5><i class="fa-solid fa-toggle-off"></i> Show Release Notes on Update</h5>
+    <p class="ms-4">Open the Release Notes after a new update has been installed.</p>
+
+    <h5><i class="fa-regular fa-keyboard"></i> Keyboard Shortcuts</h5>
+    <p class="ms-4">
+        Keyboard shortcuts are available for extracting all links or showing the popup action to reduce toolbar clutter.
+        <br>
+        These can be configured on your browser's extension management page and varies by browser.
+        <br>
+        <strong>Firefox:</strong> <a href="https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox" target="_blank" rel="noopener">
+            https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox</a>
+        <br>
+        <strong>Chrome:</strong> Enter the following into your address bar:
+        <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
+    </p>
+
+    <h5><i class="fa-solid fa-filter"></i> Filters</h5>
+    <p class="ms-4 mb-1">
+        Add as many saved filters as you need. They will show up on the Popup Filter Dropdown, the Right Click Context Menu and Omnibox suggestions.
+    </p>
+    <ul class="ms-2">
+        <li>Edit an existing filter by clicking on it.</li>
+        <li>Reorder filters by clicking on the grip and dragging.</li>
+    </ul>
+
+    <h5><i class="fa-solid fa-code"></i> Regex Flags</h5>
+    <p class="ms-4">
+        This is the default flags used when filtering links via quick filter or a saved filter. For more information
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags"
+           target="_blank" rel="noopener">read this document</a>.
+    </p>
+
+    <h2 id="links">Link Results</h2>
+    <hr class="mt-0">
+
+    <p>
+        The Link Results Page utilizes <a href="https://datatables.net/" target="_blank" rel="noopener">DataTables.net</a>
+        to display, sort, page, and filter the results.
+    </p>
+
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        Tip: You can show the available keyboard shortcuts by pressing the
+        <kbd>K</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>Z</kbd> keys on the results page.
+    </p>
+
+    <h5><i class="fa-solid fa-tablet-button"></i> Show Additional Data</h5>
+    <p>You can show additional details about the extracted links; including text, title, label, rel, and target.</p>
+
+    <h5><i class="fa-solid fa-tablet-button"></i> Copy Table</h5>
+    <p>
+        This copies the entire table, including the headers, and additional fields.
+        <br>
+        If you just want to copy the links, use the Copy Links button or Keyboard Shortcuts
+        <kbd>C</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>L</kbd> for links and
+        <kbd>D</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>M</kbd> for domains.
+    </p>
+
+    <h5><i class="fa-solid fa-tablet-button"></i> CSV Export</h5>
+    <p>This downloads the entire table, including the headers, and additional fields, as a CSV file.</p>
+
+    <h5><i class="fa-solid fa-i-cursor"></i> Filter</h5>
+    <p>
+        You can filter links on the fly by typing into the Filter box...
+        <br>
+        <strong class="text-warning-emphasis">Note:</strong> DataTables Search Filter does
+        <strong>not</strong> support <code>$</code> or <code>^</code> in regular expressions
+        (a custom search will be added in a future release).
+    </p>
+
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        Tip: Additional Data, Number of Links Shown, and Column Sorting options will be saved
+        across sessions if you enable the <code>Save Links Page Options</code> Option.
+    </p>
+
+    <p>
+        For more information view the <a href="{{ site.github_url }}?tab=readme-ov-file#readme" target="_blank">README.md</a> on GitHub
+        or join the <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
+    </p>
+
 </div>
-
-{% comment %}{% include alerts.html %}{% endcomment %}
-
-<h2 id="configure">Configure</h2>
-<hr class="mt-0">
-
-<p>You can access {{ site.site_name }} through the Icon on the Extension Toolbar or Right Click Context Menu.</p>
-<p>You can pin the Addon by locating the {{ site.site_name }} icon on the Extension Toolbar, then;</p>
-<p class="ms-3">
-    <i class="fa-brands fa-firefox-browser me-1"></i>
-    <strong>Firefox</strong>, click the Settings Wheel and Pin to Toolbar.
-    <br>
-    <i class="fa-brands fa-chrome me-1"></i>
-    <strong>Chrome</strong>, click the Pin icon.
-</p>
-
-<div class="mb-3">
-    <img src="{{ "/media/images/firefox-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
-    <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
-</div>
-
-<h4>Host Permissions</h4>
-<p>
-    In order to extract links from multiple tabs, the web extension needs host permissions granted.
-    This can be granted from popup window or on the Options page.
-    Firefox also requires Host Permissions for Omnibox usage.
-</p>
-<p>
-    Note: This extension does NOT inject a content-script into every site and only injects a script when you extract links.
-    Therefore, granting host permissions does not reduce overall performance in any way.
-</p>
-<p>
-    <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-    Tip: You can select multiple tabs by holding the <kbd>Ctrl</kbd> key and selecting additional tabs.
-</p>
-
-<h2 id="usage">Usage</h2>
-<hr class="mt-0">
-
-<p>Activate with any one of these 4 ways:</p>
-<ul>
-    <li>Toolbar Icon Popup</li>
-    <li>Keyboard Shortcuts</li>
-    <li>Right Click Context Menu</li>
-    <li>Omnibox Keyword: <kbd role="button" data-clipboard-text="link">link</kbd></li>
-</ul>
-
-<p>
-    <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-    Tip: You may also select text with your mouse, and right click to extract links from the selection.
-</p>
-
-<h4>Omnibox</h4>
-<p>
-    <span class="fw-bold">Keyword</span>: <kbd role="button" data-clipboard-text="link">link</kbd>
-</p>
-<p>
-    Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
-    Additionally, you can start typing to show saved filters matching your entry or enter an on-the-fly filter.<br>
-    <span class="fw-bold">Chrome</span> does not allow an empty omnibox entry. To extract all links, simply enter a second space after activating the Omnibox.<br>
-    <span class="fw-bold">Firefox</span> does not allow using the Omnibox unless you have granted host permissions to the web extension.<br>
-</p>
-
-<div class="mb-3"><img src="{{ "/media/images/chrome-omnibox.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="560"></div>
-
-<h2 id="options">Options</h2>
-<hr class="mt-0">
-
-<h5><i class="fa-solid fa-toggle-off"></i> Lazy Load Opened Tabs</h5>
-<p class="ms-4">This will prevent links opened by the extension from loading until the tab is focused.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Remove Duplicate Links</h5>
-<p class="ms-4">Remove duplicate links from the results page. Disable this to see all links on the page for auditing and extra fields.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Use Default Link Filtering</h5>
-<p class="ms-4">
-    Filter <strong>out</strong> any links that do not contain <kbd>://</kbd>.
-    Turn this off this to include links such as <code>magnet:</code> and <code>mailto:</code> etc.
-</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Save Link Page Options</h5>
-<p class="ms-4">Save link results page settings, such as number of links shown, extra fields displayed, and column sorting.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Truncate Long Links </h5>
-<p class="ms-4">Truncate long links with ellipsis. Warning: This may cause performance while resizing with large datasets.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Don't Wrap Long Links </h5>
-<p class="ms-4">Force long links on a single line. This may cause a horizontal scroll bar if not used with Truncate Long Links.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Enable Right Click Menu</h5>
-<p class="ms-4">Enable or Disable Right Click Context Menu.</p>
-
-<h5><i class="fa-solid fa-toggle-off"></i> Show Release Notes on Update</h5>
-<p class="ms-4">Open the Release Notes after a new update has been installed.</p>
-
-<h5><i class="fa-regular fa-keyboard"></i> Keyboard Shortcuts</h5>
-<p class="ms-4">
-    Keyboard shortcuts are available for extracting all links or showing the popup action to reduce toolbar clutter.
-    <br>
-    These can be configured on your browser's extension management page and varies by browser.
-    <br>
-    <strong>Firefox:</strong> <a href="https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox" target="_blank" rel="noopener">
-        https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox</a>
-    <br>
-    <strong>Chrome:</strong> Enter the following into your address bar:
-    <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
-</p>
-
-<h5><i class="fa-solid fa-filter"></i> Filters</h5>
-<p class="ms-4 mb-1">
-    Add as many saved filters as you need. They will show up on the Popup Filter Dropdown, the Right Click Context Menu and Omnibox suggestions.
-</p>
-<ul class="ms-2">
-    <li>Edit an existing filter by clicking on it.</li>
-    <li>Reorder filters by clicking on the grip and dragging.</li>
-</ul>
-
-<h5><i class="fa-solid fa-code"></i> Regex Flags</h5>
-<p class="ms-4">
-    This is the default flags used when filtering links via quick filter or a saved filter. For more information
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags"
-       target="_blank" rel="noopener">read this document</a>.
-</p>
-
-<h2 id="links">Link Results</h2>
-<hr class="mt-0">
-
-<p>
-    The Link Results Page utilizes <a href="https://datatables.net/" target="_blank" rel="noopener">DataTables.net</a>
-    to display, sort, page, and filter the results.
-</p>
-
-<p>
-    <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-    Tip: You can show the available keyboard shortcuts by pressing the
-    <kbd>K</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>Z</kbd> keys on the results page.
-</p>
-
-<h5><i class="fa-solid fa-tablet-button"></i> Show Additional Data</h5>
-<p>You can show additional details about the extracted links; including text, title, label, rel, and target.</p>
-
-<h5><i class="fa-solid fa-tablet-button"></i> Copy Table</h5>
-<p>
-    This copies the entire table, including the headers, and additional fields.
-    <br>
-    If you just want to copy the links, use the Copy Links button or Keyboard Shortcuts
-    <kbd>C</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>L</kbd> for links and
-    <kbd>D</kbd> <i class="fa-regular fa-keyboard"></i> <kbd>M</kbd> for domains.
-</p>
-
-<h5><i class="fa-solid fa-tablet-button"></i> CSV Export</h5>
-<p>This downloads the entire table, including the headers, and additional fields, as a CSV file.</p>
-
-<h5><i class="fa-solid fa-i-cursor"></i> Filter</h5>
-<p>
-    You can filter links on the fly by typing into the Filter box...
-    <br>
-    <strong class="text-warning-emphasis">Note:</strong> DataTables Search Filter does
-    <strong>not</strong> support <code>$</code> or <code>^</code> in regular expressions
-    (a custom search will be added in a future release).
-</p>
-
-<p>
-    <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-    Tip: Additional Data, Number of Links Shown, and Column Sorting options will be saved
-    across sessions if you enable the <code>Save Links Page Options</code> Option.
-</p>
-
-<p>
-    For more information view the <a href="{{ site.github_url }}?tab=readme-ov-file#readme" target="_blank">README.md</a> on GitHub
-    or join the <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
-</p>
 
 <script type="text/javascript" src="{{ "/js/docs.js" | relative_url }}"></script>

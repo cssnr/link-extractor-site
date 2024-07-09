@@ -5,102 +5,104 @@ title: Home
 description: Easily extract, parse, or open all links/domains from a site or text with optional filters.
 ---
 
-<h1><i class="fa-solid fa-link"></i> {{ site.site_name }}</h1>
+<div class="container-fluid">
+    <h1><i class="fa-solid fa-link"></i> {{ site.site_name }}</h1>
 
-<div class="mb-2" style="min-height: 20px;">
-    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?logo=google&logoColor=white&label=google%20users" alt="Chrome Web Store Users"></a>
-    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/amo/users/{{ site.firefox_id }}?logo=mozilla&label=mozilla%20users" alt="Mozilla Add-on Users"></a>
-    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?logo=google&logoColor=white" alt="Chrome Web Store Users"></a>
-    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?logo=mozilla&logoColor=white" alt="Mozilla Add-on Users"></a>
-    <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?label=chrome&logo=googlechrome" alt="Chrome Web Store Version"></a>
-    <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version"></a>
-    <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version"></a>
-    <a href="{{ site.discord_invite }}" title="GitHub" target="_blank" rel="noopener">
-        <img src="https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da" alt="Join Discord"></a>
+    <div class="mb-2" style="min-height: 20px;">
+        <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?logo=google&logoColor=white&label=google%20users" alt="Chrome Web Store Users"></a>
+        <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/amo/users/{{ site.firefox_id }}?logo=mozilla&label=mozilla%20users" alt="Mozilla Add-on Users"></a>
+        <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?logo=google&logoColor=white" alt="Chrome Web Store Users"></a>
+        <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?logo=mozilla&logoColor=white" alt="Mozilla Add-on Users"></a>
+        <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?label=chrome&logo=googlechrome" alt="Chrome Web Store Version"></a>
+        <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version"></a>
+        <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version"></a>
+        <a href="{{ site.discord_invite }}" title="GitHub" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da" alt="Join Discord"></a>
+    </div>
+
+    <p class="lead">
+        Modern Chrome Web Extension and Firefox Browser Addon to easily extract, parse, or open all links/domains from a site or text with optional filters.
+        Feature packed with automatic dark/light mode, copy to clipboard, keyboard shortcuts, custom options, and much more...
+    </p>
+
+    {% comment %}{% include alerts.html %}{% endcomment %}
+
+    <div class="ms-1 mb-3" style="min-height: 48px;">
+        <a href="{{ site.chrome_url }}" title="Chrome" target="_blank" rel="noopener">
+            <img alt="Chrome" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png" width="48" height="48" /></a>
+        <a href="{{ site.firefox_url }}" title="Firefox" target="_blank" rel="noopener">
+            <img alt="Firefox" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png" width="48" height="48" /></a>
+        <a href="{{ site.chrome_url }}" title="Edge" target="_blank" rel="noopener">
+            <img alt="Edge" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png" width="48" height="48" /></a>
+        <a href="{{ site.chrome_url }}" title="Opera" target="_blank" rel="noopener">
+            <img alt="Opera" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png" width="48" height="48" /></a>
+        <a href="{{ site.chrome_url }}" title="Brave" target="_blank" rel="noopener">
+            <img alt="Brave" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png" width="48" height="48" /></a>
+        <a href="{{ site.chrome_url }}" title="Chromium" target="_blank" rel="noopener">
+            <img alt="Chromium" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png" width="48" height="48" /></a>
+        <a href="{{ site.chrome_url }}" title="Yandex" target="_blank" rel="noopener">
+            <img alt="Yandex" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png" width="48" height="48" /></a>
+    </div>
+
+    <ul>
+        <li>Extract All Links and Domains from Any Site</li>
+        <li>Extract Links from Selected Text on any Site</li>
+        <li>Extract Links from Clipboard or Any Text</li>
+        <li>Extract Links from All Selected Tabs</li>
+        <li>Open Multiple Links in Tabs from Text</li>
+        <li>Download Links and Domains as a Text File</li>
+        <li>Copy the Text from a Link via Context Menu</li>
+        <li>Quick Filter Links with a Regular Expression</li>
+        <li>Store Regular Expressions for Quick Filtering</li>
+        <li>Import and Export Saved Regular Expressions</li>
+        <li>Automatic Dark/Light Mode based on Browser Setting</li>
+        <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
+    </ul>
+
+    <p>To see more, view the <a class="" href="{{ "/screenshots/" | relative_url }}" target="_blank">Screen Shot Gallery</a>.</p>
+
+    <h2>Install</h2>
+
+    <p class="ms-3">
+        <i class="fa-brands fa-chrome fa-lg me-1"></i>
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Google Chrome Web Store</a>
+        <br>
+        <i class="fa-brands fa-firefox-browser fa-lg me-1"></i>
+        <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
+    </p>
+
+    <p>
+        All <strong>Chromium</strong> based browsers can install the extension from the
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Chrome Web Store</a>.
+    </p>
+
+    <p>
+        Mobile browser support available for
+        <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a> and
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Yandex</a>.
+    </p>
+
+    <h2>Support</h2>
+
+    <p>
+        For usage instructions, head over to the
+        <a href="{{ "/docs/" | relative_url }}" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">
+            Documentation</a>.
+    </p>
+
+    <p>
+        If you find any bugs please
+        <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Open an Issue</a>.
+        If you have any ideas, suggestions, or requests; submit a
+        <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Request</a>.
+        You may also get support on the
+        <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
+    </p>
 </div>
-
-<p class="lead">
-    Modern Chrome Web Extension and Firefox Browser Addon to easily extract, parse, or open all links/domains from a site or text with optional filters.
-    Feature packed with automatic dark/light mode, copy to clipboard, keyboard shortcuts, custom options, and much more...
-</p>
-
-{% comment %}{% include alerts.html %}{% endcomment %}
-
-<div class="ms-1 mb-3" style="min-height: 48px;">
-    <a href="{{ site.chrome_url }}" title="Chrome" target="_blank" rel="noopener">
-        <img alt="Chrome" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png" width="48" height="48" /></a>
-    <a href="{{ site.firefox_url }}" title="Firefox" target="_blank" rel="noopener">
-        <img alt="Firefox" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" title="Edge" target="_blank" rel="noopener">
-        <img alt="Edge" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" title="Opera" target="_blank" rel="noopener">
-        <img alt="Opera" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" title="Brave" target="_blank" rel="noopener">
-        <img alt="Brave" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" title="Chromium" target="_blank" rel="noopener">
-        <img alt="Chromium" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png" width="48" height="48" /></a>
-    <a href="{{ site.chrome_url }}" title="Yandex" target="_blank" rel="noopener">
-        <img alt="Yandex" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png" width="48" height="48" /></a>
-</div>
-
-<ul>
-    <li>Extract All Links and Domains from Any Site</li>
-    <li>Extract Links from Selected Text on any Site</li>
-    <li>Extract Links from Clipboard or Any Text</li>
-    <li>Extract Links from All Selected Tabs</li>
-    <li>Open Multiple Links in Tabs from Text</li>
-    <li>Download Links and Domains as a Text File</li>
-    <li>Copy the Text from a Link via Context Menu</li>
-    <li>Quick Filter Links with a Regular Expression</li>
-    <li>Store Regular Expressions for Quick Filtering</li>
-    <li>Import and Export Saved Regular Expressions</li>
-    <li>Automatic Dark/Light Mode based on Browser Setting</li>
-    <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
-</ul>
-
-<p>To see more, view the <a class="" href="{{ "/screenshots/" | relative_url }}" target="_blank">Screen Shot Gallery</a>.</p>
-
-<h2>Install</h2>
-
-<p class="ms-3">
-    <i class="fa-brands fa-chrome fa-lg me-1"></i>
-    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Google Chrome Web Store</a>
-    <br>
-    <i class="fa-brands fa-firefox-browser fa-lg me-1"></i>
-    <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
-</p>
-
-<p>
-    All <strong>Chromium</strong> based browsers can install the extension from the
-    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Chrome Web Store</a>.
-</p>
-
-<p>
-    Mobile browser support available for
-    <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a> and
-    <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Yandex</a>.
-</p>
-
-<h2>Support</h2>
-
-<p>
-    For usage instructions, head over to the
-    <a href="{{ "/docs/" | relative_url }}" class="link-body-emphasis link-offset-1 link-underline-opacity-50 link-underline-opacity-75-hover">
-        Documentation</a>.
-</p>
-
-<p>
-    If you find any bugs please
-    <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Open an Issue</a>.
-    If you have any ideas, suggestions, or requests; submit a
-    <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Request</a>.
-    You may also get support on the
-    <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
-</p>
