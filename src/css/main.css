@@ -14,14 +14,10 @@
 }
 
 @media (max-width: 575px) {
-    .right-icons {
-        display: flex;
-        flex-direction: row;
-    }
-    .right-icons .nav-link {
+    .nav-icons .nav-link {
         padding-right: 7px;
     }
-    .right-icons .nav-item + .nav-item .nav-link {
+    .nav-icons .nav-item + .nav-item .nav-link {
         padding-left: 7px;
     }
 }

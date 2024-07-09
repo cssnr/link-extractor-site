@@ -1,8 +1,5 @@
 body {
-    background: url('https://picsum.photos/1920/1080') no-repeat center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url('https://picsum.photos/1920/1080');
     background-size: cover;
 }
 
