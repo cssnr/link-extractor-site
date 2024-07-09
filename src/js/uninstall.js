@@ -26,7 +26,7 @@ uninstallResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
 })
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     if (version) {
         const res = version.localeCompare(noAlertVersion, undefined, {
             numeric: true,
@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('alerts')?.classList.remove('d-none')
         }
     }
+
+    await tsParticles.load({
+        id: 'tsparticles',
+        url: '/config/tsparticles.json',
+    })
+    // const particles = tsParticles.domItem(0)
+    // console.debug('particles:', particles)
+    // particles.play()
 })
 
 function formChange(event) {
