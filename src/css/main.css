@@ -1,5 +1,9 @@
 /* CSS for global */
 
+body {
+    overflow-x: hidden;
+}
+
 #back-to-top {
     position: fixed;
     bottom: 64px;
