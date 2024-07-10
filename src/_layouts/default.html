@@ -63,10 +63,14 @@
                     {% endfor %}
                 </ul>
                 <ul class="navbar-nav nav-icons d-flex flex-row">
-                    <li class="nav-item"><a class="nav-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-discord fa-xl"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ site.github_url }}" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-github fa-xl"></i></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-discord fa-xl"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ site.github_url }}" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github fa-xl"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -81,7 +85,7 @@
     <div class="container-fluid py-2">
         <div class="d-flex flex-column flex-md-row">
             <div class="me-md-auto">
-                <a class="text-decoration-none" href="{{ site.github_url }}" target="_blank" rel="noopener">
+                <a class="text-decoration-none link-body-emphasis" href="{{ site.github_url }}" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> {{ site.site_name }}</a>
             </div>
             <div class="ms-md-auto">
@@ -89,13 +93,13 @@
                     <ol class="list-inline mb-1 d-flex flex-column flex-sm-row">
                         {% for item in site.menu %}
                             <li class="list-inline-item">
-                                <a class="text-decoration-none {% if page.title == item.name %}fw-bold{% endif %}"
+                                <a class="text-decoration-none link-body-emphasis {% if page.title == item.name %}fw-bold{% endif %}"
                                    href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
                                     {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
                             </li>
                         {% endfor %}
                         <li class="list-inline-item">
-                            <a class="text-decoration-none" href="{{ site.discord_invite }}" target="_blank">
+                            <a class="text-decoration-none link-body-emphasis" href="{{ site.discord_invite }}" target="_blank">
                                 Discord <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a>
                         </li>
                     </ol>
