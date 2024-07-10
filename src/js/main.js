@@ -32,6 +32,10 @@ if (typeof ClipboardJS !== 'undefined') {
     })
 }
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     console.debug('DOMContentLoaded')
+// })
+
 /**
  * On Scroll Callback
  * @function onScroll

@@ -4,6 +4,19 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: RGBA(var(--bs-emphasis-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    text-underline-offset: 0.125em;
+}
+
+a:hover,
+a:focus {
+    color: var(--bs-link-hover-color-rgb);
+    text-decoration-color: rgba(255, 255, 255, 0.8);
+}
+
 #back-to-top {
     position: fixed;
     bottom: 64px;
