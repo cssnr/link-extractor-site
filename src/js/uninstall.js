@@ -18,12 +18,19 @@ const inputCount = document.getElementById('input-count')
 const submitBtn = document.getElementById('submit-btn')
 const errorAlert = document.getElementById('error-alert')
 const notWorkingExtra = document.getElementById('not-working-extra')
+const bugReport = document.getElementById('bug-report')
 
 uninstallForm.addEventListener('change', formChange)
 uninstallForm.addEventListener('submit', formSubmit)
 
 uninstallResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
+})
+
+window.addEventListener('focus', function () {
+    if (!bugReport.classList.contains('animate__shakeX')) {
+        bugReport.classList.add('animate__shakeX')
+    }
 })
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -36,6 +43,10 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.debug(`Show Warning for Version: ${version}`)
             document.getElementById('alerts')?.classList.remove('d-none')
         }
+    }
+
+    if (document.hasFocus()) {
+        bugReport.classList.add('animate__shakeX')
     }
 
     await tsParticles.load({
