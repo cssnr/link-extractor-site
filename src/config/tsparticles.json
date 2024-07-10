@@ -1,15 +1,5 @@
 {
   "autoPlay": true,
-  "background": {
-    "color": {
-      "value": "#212529"
-    },
-    "image": "url('https://picsum.photos/1280/720')",
-    "position": "50% 50%",
-    "repeat": "no-repeat",
-    "size": "cover",
-    "opacity": 1
-  },
   "backgroundMask": {
     "composite": "destination-out",
     "cover": {
