@@ -15,8 +15,11 @@ description: Documentation and Instructions for configuring and using Link Extra
         <a href="#links" class="link-default">Link Results</a>
     </p>
 
-    <div id="feedback" class="alert alert-success d-none animate__animated animate__bounceIn" role="alert">
-        <p>Thank you for providing feedback. If you provided details we will look into them.</p>
+    <div id="feedback" class="alert alert-success alert-dismissible animate__animated animate__bounceIn d-none" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <p>
+            <i class="fa-regular fa-thumbs-up me-2"></i> Thank you for providing feedback. If you provided details we will look into them.
+        </p>
         <p>
             If you would like feedback from the developer you can open an
             <a href="{{ site.github_url }}/issues" class="alert-link" target="_blank" rel="noopener">Issue</a> on GitHub.
