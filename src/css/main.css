@@ -25,6 +25,10 @@ a {
     width: 100%;
 }
 
+.browser-icons {
+    --animate-duration: 1.5s;
+}
+
 #back-to-top {
     position: fixed;
     bottom: 64px;
