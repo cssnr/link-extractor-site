@@ -1,5 +1,34 @@
 /* CSS for global */
 
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-underline-offset: 0.125em;
+}
+
+.link-default {
+    color: RGBA(var(--bs-emphasis-color-rgb), var(--bs-link-opacity, 1));
+    /*text-decoration: underline;*/
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+.link-default:hover,
+.link-default:focus {
+    color: var(--bs-link-hover-color-rgb);
+    text-decoration-color: rgba(255, 255, 255, 0.8);
+}
+
+.toast-container {
+    max-width: 260px;
+    width: 100%;
+}
+
+.browser-icons {
+    --animate-duration: 1.5s;
+}
+
 #back-to-top {
     position: fixed;
     bottom: 64px;
@@ -8,24 +37,18 @@
     z-index: 3;
 }
 
-.toast-container {
-    max-width: 260px;
-    width: 100%;
-}
-
 @media (max-width: 575px) {
-    .right-icons {
-        display: flex;
-        flex-direction: row;
+    .nav-icons .nav-link {
+        padding-right: 7px;
     }
-    .right-icons .nav-item {
-        margin-right: 15px;
+    .nav-icons .nav-item + .nav-item .nav-link {
+        padding-left: 7px;
     }
 }
 
 @media (min-width: 576px) {
     footer li + li::before {
         content: '•';
-        margin-right: 0.3rem;
+        margin-right: 0.3em;
     }
 }
