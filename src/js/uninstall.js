@@ -17,7 +17,7 @@ const uninstallResponse = document.getElementById('uninstall-response')
 const inputCount = document.getElementById('input-count')
 const submitBtn = document.getElementById('submit-btn')
 const errorAlert = document.getElementById('error-alert')
-const notWorkingExtra = document.getElementById('not-working-extra')
+const notWorkingAlert = document.getElementById('not-working-alert')
 const bugReport = document.getElementById('bug-report')
 
 uninstallForm.addEventListener('change', formChange)
@@ -62,9 +62,9 @@ function formChange(event) {
     // console.debug('formChange:', event)
     if (event.target.id === 'not-working') {
         if (event.target.checked) {
-            notWorkingExtra.classList.remove('d-none')
+            notWorkingAlert.classList.remove('d-none')
         } else {
-            notWorkingExtra.classList.add('d-none')
+            notWorkingAlert.classList.add('d-none')
         }
     }
 }
@@ -98,20 +98,25 @@ async function formSubmit(event) {
         lines.push(`\`\`\`\n${feedbackText}\n\`\`\``)
     }
     // console.debug('lines:', lines)
-
-    const response = await sendDiscord(url, lines.join('\n'))
-    // console.debug('response:', response)
-    submitBtn.classList.remove('disabled')
-    if (response.status >= 200 && response.status <= 299) {
-        document
-            .querySelector('#content-wrapper')
-            .classList.add('animate__animated', 'animate__backOutUp')
-        window.location = redirect
-    } else {
-        console.warn(`Error ${response.status}`, response)
-        errorAlert.textContent = `Error ${response.status}: ${response.statusText}`
+    try {
+        const response = await sendDiscord(url, lines.join('\n'))
+        // console.debug('response:', response)
+        if (response.status >= 200 && response.status <= 299) {
+            document
+                .querySelector('#content-wrapper')
+                .classList.add('animate__animated', 'animate__backOutUp')
+            window.location = redirect
+        } else {
+            console.warn(`Error ${response.status}`, response)
+            errorAlert.textContent = `Error ${response.status}: ${response.statusText}`
+            errorAlert.style.display = 'block'
+        }
+    } catch (e) {
+        console.error(e)
+        errorAlert.textContent = `Error: ${e.message}`
         errorAlert.style.display = 'block'
     }
+    submitBtn.classList.remove('disabled')
 }
 
 async function sendDiscord(url, content) {
