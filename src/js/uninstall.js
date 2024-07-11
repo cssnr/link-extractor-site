@@ -103,6 +103,9 @@ async function formSubmit(event) {
     // console.debug('response:', response)
     submitBtn.classList.remove('disabled')
     if (response.status >= 200 && response.status <= 299) {
+        document
+            .querySelector('#content-wrapper')
+            .classList.add('animate__animated', 'animate__backOutUp')
         window.location = redirect
     } else {
         console.warn(`Error ${response.status}`, response)
