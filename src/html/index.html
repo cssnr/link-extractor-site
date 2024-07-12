@@ -23,7 +23,7 @@ description: Easily extract, parse, or open all links/domains from a site or tex
             <img src="https://img.shields.io/amo/v/{{ site.firefox_id }}?label=firefox&logo=firefox" alt="Mozilla Add-on Version"></a>
         <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
             <img src="https://img.shields.io/github/v/release/{{ site.github_name }}?logo=github" alt="GitHub Release Version"></a>
-        <a href="{{ site.discord_invite }}" title="GitHub" target="_blank" rel="noopener">
+        <a href="{{ site.discord_invite }}" title="Discord" target="_blank" rel="noopener">
             <img src="https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da" alt="Join Discord"></a>
     </div>
 
@@ -35,25 +35,25 @@ description: Easily extract, parse, or open all links/domains from a site or tex
     {% comment %}{% include alerts.html %}{% endcomment %}
 
     <div class="d-flex mb-3 browser-icons" style="min-height: 48px;">
-        <a href="{{ site.chrome_url }}" title="Chrome" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Chrome" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Chrome" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.firefox_url }}" title="Firefox" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.firefox_url }}" title="Firefox" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Firefox" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.chrome_url }}" title="Edge" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Edge" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Edge" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.chrome_url }}" title="Opera" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Opera" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Opera" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.chrome_url }}" title="Brave" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Brave" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Brave" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.chrome_url }}" title="Chromium" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Chromium" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Chromium" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
-        <a href="{{ site.chrome_url }}" title="Yandex" class="px-1" target="_blank" rel="noopener">
+        <a href="{{ site.chrome_url }}" title="Yandex" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Yandex" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn" /></a>
     </div>
@@ -73,42 +73,52 @@ description: Easily extract, parse, or open all links/domains from a site or tex
         <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
     </ul>
 
-    <p>To see more, view the <a href="{{ "/screenshots/" | relative_url }}" class="link-default" target="_blank">Screen Shot Gallery</a>.</p>
+    <p>To see more, view the <a href="{{ "/screenshots/" | relative_url }}" class="link-body-emphasis" target="_blank">Screen Shot Gallery</a>.</p>
 
     <h2>Install</h2>
 
-    <p class="ms-3">
+    <p class="ms-3 lead">
         <i class="fa-brands fa-chrome fa-lg me-1"></i>
-        <a href="{{ site.chrome_url }}" class="link-default" target="_blank" rel="noopener">Google Chrome Web Store</a>
+        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Google Chrome Web Store</a>
         <br>
         <i class="fa-brands fa-firefox-browser fa-lg me-1"></i>
-        <a href="{{ site.firefox_url }}" class="link-default" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
+        <a href="{{ site.firefox_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
     </p>
 
     <p>
         All <strong>Chromium</strong> based browsers can install the extension from the
-        <a href="{{ site.chrome_url }}" class="link-default" target="_blank" rel="noopener">Chrome Web Store</a>.
+        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Chrome Web Store</a>.
     </p>
 
     <p>
         Mobile browser support available for
-        <a href="{{ site.firefox_url }}" class="link-default" target="_blank" rel="noopener">Firefox</a> and
-        <a href="{{ site.chrome_url }}" class="link-default" target="_blank" rel="noopener">Yandex</a>.
+        <a href="{{ site.firefox_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Firefox</a> and
+        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Yandex</a>.
     </p>
 
     <h2>Support</h2>
 
     <p>
         For usage instructions, head over to the
-        <a href="{{ "/docs/" | relative_url }}" class="link-default">Documentation</a>.
+        <a href="{{ "/docs/" | relative_url }}" class="link-body-emphasis">Documentation</a>.
     </p>
 
     <p>
         If you find any bugs please
-        <a href="{{ site.github_url }}/issues" class="link-default" target="_blank" rel="noopener">Open an Issue</a>.
+        <a href="{{ site.github_url }}/issues" class="link-body-emphasis" target="_blank" rel="noopener">Open an Issue</a>.
+        <br>
         If you have any ideas, suggestions, or requests; submit a
-        <a href="{{ site.github_url }}/discussions/categories/feature-requests" class="link-default" target="_blank" rel="noopener">Feature Request</a>.
+        <a href="{{ site.github_url }}/discussions/categories/feature-requests" class="link-body-emphasis" target="_blank" rel="noopener">Feature Request</a>.
+        <br>
         You may also get support on the
-        <a href="{{ site.discord_invite }}" class="link-default" target="_blank" rel="noopener">Discord Server</a>.
+        <a href="{{ site.discord_invite }}" class="link-body-emphasis" target="_blank" rel="noopener">Discord Server</a>.
+    </p>
+
+    <p>
+        You can find additional apps on the
+        <a href="https://cssnr.github.io/" class="link-body-emphasis" target="_blank" rel="noopener">CSSNR Website</a>
+        as well as submit
+        <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor" class="link-body-emphasis" target="_blank" rel="noopener">
+            General Feedback</a>.
     </p>
 </div>
