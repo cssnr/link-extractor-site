@@ -8,18 +8,6 @@ a {
     text-underline-offset: 0.125em;
 }
 
-.link-default {
-    color: RGBA(var(--bs-emphasis-color-rgb), var(--bs-link-opacity, 1));
-    /*text-decoration: underline;*/
-    text-decoration-color: rgba(255, 255, 255, 0.4);
-}
-
-.link-default:hover,
-.link-default:focus {
-    color: var(--bs-link-hover-color-rgb);
-    text-decoration-color: rgba(255, 255, 255, 0.8);
-}
-
 .toast-container {
     max-width: 260px;
     width: 100%;
