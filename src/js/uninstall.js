@@ -12,6 +12,7 @@ const discordUsername = 'Link Extractor'
 const uninstallMessage = `${discordUsername} Uninstall, Version: **${version}**`
 const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
 
+const contentWrapper = document.getElementById('content-wrapper')
 const uninstallForm = document.getElementById('uninstall-form')
 const uninstallResponse = document.getElementById('uninstall-response')
 const inputCount = document.getElementById('input-count')
@@ -26,6 +27,18 @@ uninstallForm.addEventListener('submit', formSubmit)
 uninstallResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
 })
+
+contentWrapper.addEventListener(
+    'animationend',
+    () => {
+        // console.debug('contentWrapper: animationend')
+        contentWrapper.classList.remove(
+            'animate__animated',
+            'animate__backInDown'
+        )
+    },
+    { once: true }
+)
 
 window.addEventListener('focus', function () {
     if (!bugReport.classList.contains('animate__shakeX')) {
@@ -80,6 +93,7 @@ async function formSubmit(event) {
     const feedbackText = event.target.elements['uninstall-response'].value
     if (!(notUsed || notExpected || notWorking || feedbackText)) {
         uninstallResponse.focus()
+        animateCSS('textarea', 'shakeX')
         return console.warn('No Data to Send.')
     }
     submitBtn.classList.add('disabled')
@@ -102,9 +116,10 @@ async function formSubmit(event) {
         const response = await sendDiscord(url, lines.join('\n'))
         // console.debug('response:', response)
         if (response.status >= 200 && response.status <= 299) {
-            document
-                .querySelector('#content-wrapper')
-                .classList.add('animate__animated', 'animate__backOutUp')
+            contentWrapper.classList.add(
+                'animate__animated',
+                'animate__backOutUp'
+            )
             window.location = redirect
         } else {
             console.warn(`Error ${response.status}`, response)

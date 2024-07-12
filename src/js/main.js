@@ -86,3 +86,16 @@ function debounce(fn, timeout = 250) {
         timeoutID = setTimeout(() => fn(...args), timeout)
     }
 }
+
+const animateCSS = (selector, animation, prefix = 'animate__') => {
+    const name = `${prefix}${animation}`
+    const node = document.querySelector(selector)
+    node.classList.add(`${prefix}animated`, name)
+    function handleAnimationEnd(event) {
+        event.stopPropagation()
+        node.classList.remove(`${prefix}animated`, name)
+    }
+    node.addEventListener('animationend', handleAnimationEnd, {
+        once: true,
+    })
+}
