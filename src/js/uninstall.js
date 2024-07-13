@@ -99,11 +99,12 @@ async function formSubmit(event) {
     submitBtn.classList.add('disabled')
 
     const parser = new UAParser()
-    const res = parser.getResult()
+    const r = parser.getResult()
+    const type = r.browser.type ? ` - ${r.browser.type}` : ''
     const lines = [
         uninstallMessage,
-        `**Browser**: ${res.browser.name} ${res.browser.version} (${res.engine.name})`,
-        `**System**: ${res.os.name} ${res.os.version} (${res.cpu.architecture})`,
+        `**Browser**: ${r.browser.name} ${r.browser.major} (${r.engine.name} - ${r.browser.version})`,
+        `**System**: ${r.os.name} ${r.os.version} (${r.cpu.architecture}${type})`,
         `${getBoolIcon(notUsed)} Not Used`,
         `${getBoolIcon(notExpected)} Not as Expected`,
         `${getBoolIcon(notWorking)} Not Working`,
@@ -134,6 +135,14 @@ async function formSubmit(event) {
     submitBtn.classList.remove('disabled')
 }
 
+/**
+ * @function sendDiscord
+ * @global discordUsername
+ * @global discordAvatar
+ * @param {String} url Discord Webhook URL
+ * @param {String} content Message Contents
+ * @return {Promise<Response>}
+ */
 async function sendDiscord(url, content) {
     // console.debug('sendDiscord', url, content)
     // console.debug('content.length', content.length)
@@ -152,6 +161,11 @@ async function sendDiscord(url, content) {
     return await fetch(url, opts)
 }
 
+/**
+ * @function getBoolIcon
+ * @param {Boolean} value
+ * @return {String}
+ */
 function getBoolIcon(value) {
     if (value) {
         return '✅'
