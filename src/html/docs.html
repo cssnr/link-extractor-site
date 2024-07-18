@@ -35,33 +35,39 @@ description: Documentation and Instructions for configuring and using Link Extra
     <hr class="mt-0">
 
     <p>You can access {{ site.site_name }} through the Icon on the Extension Toolbar or Right Click Context Menu.</p>
-    <p>You can pin the Addon by locating the {{ site.site_name }} icon on the Extension Toolbar, then;</p>
-    <p class="ms-3">
-        <i class="fa-brands fa-firefox-browser me-1"></i>
-        <strong>Firefox</strong>, click the Settings Wheel and Pin to Toolbar.
-        <br>
-        <i class="fa-brands fa-chrome me-1"></i>
-        <strong>Chrome</strong>, click the Pin icon.
+    <p>You can pin the Addon by locating the {{ site.site_name }} icon on the Extension Toolbar, then
+        <span class="d-none firefox">clicking the Settings Wheel and Pin to Toolbar.</span>
+        <span class="d-none edge">clicking the Eye icon.</span>
+        <span class="d-none chromium">clicking the Pin icon.</span>
     </p>
 
-    <div class="mb-3">
-        <img src="{{ "/media/images/firefox-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
-        <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="360">
+    <p class="d-inline-flex gap-1">
+        <a class="link-body-emphasis text-decoration-none animate__animated animate__headShake animate__delay-1s" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa-solid fa-angles-down"></i>
+            Click to Expand <i class="fa-solid fa-thumbtack mx-1"></i> Pin Instructions
+            <i class="fa-solid fa-angles-down"></i>
+        </a>
+    </p>
+    <div class="collapse mb-3" id="collapseExample">
+        <img src="{{ "/media/images/firefox-pin.jpg" | relative_url }}" class="img-thumbnail d-none firefox" alt="Chrome Pin Extension" width="360">
+        <img src="{{ "/media/images/edge-pin.jpg" | relative_url }}" class="img-thumbnail d-none edge" alt="Chrome Pin Extension" width="360">
+        <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail d-none chromium" alt="Chrome Pin Extension" width="360">
     </div>
 
     <h4>Host Permissions</h4>
     <p>
-        In order to extract links from multiple tabs, the web extension needs host permissions granted.
-        This can be granted from popup window or on the Options page.
-        Firefox also requires Host Permissions for Omnibox usage.
+        In order to extract links from multiple tabs, the web extension needs host permissions granted.<br>
+        This can be granted from popup window or on the Options page.<br>
+        <a href="{{ "/screenshots/02.jpg" | relative_url }}" class="link-body-emphasis" target="_blank">
+            View Screen Shot of Host Permissions. <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i></a>
+    </p>
+    <p>
+        <span class="text-warning-emphasis">Important:</span> To extract links from multiple tabs, first select the tabs by holding the
+        <kbd>Ctrl</kbd> key and select additional tabs; then use Link Extractor as normal to extract from all selected tabs.
     </p>
     <p>
         Note: This extension does NOT inject a content-script into every site and only injects a script when you extract links.
         Therefore, granting host permissions does not reduce overall performance in any way.
-    </p>
-    <p>
-        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
-        Tip: You can select multiple tabs by holding the <kbd>Ctrl</kbd> key and selecting additional tabs.
     </p>
 
     <h2 id="usage">Usage</h2>
@@ -87,8 +93,13 @@ description: Documentation and Instructions for configuring and using Link Extra
     <p>
         Omnibox lets you extract links by typing <code>link</code> into the address bar followed by a <code>space</code>.<br>
         Additionally, you can start typing to show saved filters matching your entry or enter an on-the-fly filter.<br>
-        <span class="fw-bold">Chrome</span> does not allow an empty omnibox entry. To extract all links, simply enter a second space after activating the Omnibox.<br>
-        <span class="fw-bold">Firefox</span> does not allow using the Omnibox unless you have granted host permissions to the web extension.<br>
+    </p>
+    <p class="d-none firefox">
+        <span class="text-warning-emphasis">Important:</span> Firefox requires Host Permissions for Omnibox usage.
+    </p>
+    <p class="d-none chromium edge">
+        <span class="text-warning-emphasis">Note:</span> <b>Chrome/Edge</b> does not allow an empty omnibox entry.
+        To extract all links, simply enter a second space after activating the Omnibox, then press enter.
     </p>
 
     <div class="mb-3"><img src="{{ "/media/images/chrome-omnibox.jpg" | relative_url }}" class="img-thumbnail" alt="Chrome Pin Extension" width="560"></div>
@@ -104,7 +115,7 @@ description: Documentation and Instructions for configuring and using Link Extra
 
     <h5><i class="fa-solid fa-toggle-off"></i> Use Default Link Filtering</h5>
     <p class="ms-4">
-        Filter <strong>out</strong> any links that do not contain <kbd>://</kbd>.
+        Filter <b>out</b> any links that do not contain <kbd>://</kbd>.
         Turn this off this to include links such as <code>magnet:</code> and <code>mailto:</code> etc.
     </p>
 
@@ -129,12 +140,19 @@ description: Documentation and Instructions for configuring and using Link Extra
         <br>
         These can be configured on your browser's extension management page and varies by browser.
         <br>
-        <strong>Firefox:</strong>
+        <span class="d-none firefox">
+        Instructions for Firefox:
         <a href="https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox" class="link-body-emphasis" target="_blank" rel="noopener">
             https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox</a>
-        <br>
-        <strong>Chrome:</strong> Enter the following into your address bar:
-        <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
+        </span>
+        <span class="d-none edge">
+            On Edge shortcuts are managed by entering the following into your address bar:
+            <kbd role="button" data-clipboard-text="edge://extensions/shortcuts">edge://extensions/shortcuts</kbd>
+        </span>
+        <span class="d-none chromium">
+            On Chrome shortcuts are managed by entering the following into your address bar:
+            <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
+        </span>
     </p>
 
     <h5><i class="fa-solid fa-filter"></i> Filters</h5>
@@ -160,7 +178,6 @@ description: Documentation and Instructions for configuring and using Link Extra
         The Link Results Page utilizes <a href="https://datatables.net/" class="link-body-emphasis" target="_blank" rel="noopener">
             DataTables.net</a> to display, sort, page, and filter the results.
     </p>
-
     <p>
         <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
         Tip: You can show the available keyboard shortcuts by pressing the
@@ -184,13 +201,18 @@ description: Documentation and Instructions for configuring and using Link Extra
 
     <h5><i class="fa-solid fa-i-cursor"></i> Filter</h5>
     <p>
-        You can filter links on the fly by typing into the Filter box...
+        You can filter links on the fly by typing into the Filter box. This will automatically populate with your saved filters as you type.
         <br>
-        <strong class="text-warning-emphasis">Note:</strong> DataTables Search Filter does
-        <strong>not</strong> support <code>$</code> or <code>^</code> in regular expressions
+        <span class="text-warning-emphasis">Important:</span> DataTables Search Filter does
+        <b>not</b> support <code>$</code> or <code>^</code> in regular expressions
         (a custom search will be added in a future release).
     </p>
 
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        Tip: You can exclude results by adding a <code>!</code> to your filter term.
+        Example: <kbd>!github</kbd> will filter out all results containing the term <code>github</code>.
+    </p>
     <p>
         <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
         Tip: Additional Data, Number of Links Shown, and Column Sorting options will be saved
@@ -202,7 +224,23 @@ description: Documentation and Instructions for configuring and using Link Extra
         <a href="{{ site.github_url }}?tab=readme-ov-file#readme" class="link-body-emphasis" target="_blank" rel="noopener">README.md</a>
         on GitHub or join the <a href="{{ site.discord_invite }}" class="link-body-emphasis" target="_blank" rel="noopener">Discord Server</a>.
     </p>
+</div> <!-- container -->
 
-</div>
+<div id="pin-notice" class="text-center bounce p-2 d-none">
+    <i class="fa-solid fa-hand-point-up"></i>
+    <br>
+    To Add to Toolbar
+    <br>
+    Click the <i class="fa-solid fa-puzzle-piece mx-1"></i> Icon then
+    <br>
+    <span>
+        Find the
+        <img src="../media/logo.png" class="mx-1 mb-1" alt="ASN Plus" title="ASN Plus" style="height: 1.1em;">
+        Icon and Click
+        <i class="fa-solid fa-gear d-none firefox"></i>
+        <i class="fa-regular fa-eye-slash d-none edge"></i>
+        <i class="fa-solid fa-thumbtack ms-1 d-none chromium"></i>
+    </span>
+</div> <!-- pin-notice -->
 
 <script type="text/javascript" src="{{ "/js/docs.js" | relative_url }}"></script>
