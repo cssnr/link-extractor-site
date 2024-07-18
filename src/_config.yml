@@ -9,7 +9,7 @@ site_name: Link Extractor
 menu:
     - name: Home
       link: /
-    - name: Docs
+    - name: Documentation
       link: /docs/
     - name: Screen Shots
       link: /screenshots/
