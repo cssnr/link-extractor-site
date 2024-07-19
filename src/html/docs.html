@@ -40,7 +40,6 @@ description: Documentation and Instructions for configuring and using Link Extra
         <span class="d-none edge">clicking the Eye icon.</span>
         <span class="d-none chromium">clicking the Pin icon.</span>
     </p>
-
     <p class="d-inline-flex gap-1">
         <a class="link-body-emphasis text-decoration-none animate__animated animate__headShake animate__delay-1s" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa-solid fa-angles-down"></i>
@@ -66,8 +65,8 @@ description: Documentation and Instructions for configuring and using Link Extra
         <kbd>Ctrl</kbd> key and select additional tabs; then use Link Extractor as normal to extract from all selected tabs.
     </p>
     <p>
-        Note: This extension does NOT inject a content-script into every site and only injects a script when you extract links.
-        Therefore, granting host permissions does not reduce overall performance in any way.
+        Note: This extension only injects a content script when you extract links; therefore,
+        granting host permissions does not reduce performance in any way.
     </p>
 
     <h2 id="usage">Usage</h2>
@@ -173,7 +172,6 @@ description: Documentation and Instructions for configuring and using Link Extra
 
     <h2 id="links">Link Results</h2>
     <hr class="mt-0">
-
     <p>
         The Link Results Page utilizes <a href="https://datatables.net/" class="link-body-emphasis" target="_blank" rel="noopener">
             DataTables.net</a> to display, sort, page, and filter the results.
@@ -207,7 +205,6 @@ description: Documentation and Instructions for configuring and using Link Extra
         <b>not</b> support <code>$</code> or <code>^</code> in regular expressions
         (a custom search will be added in a future release).
     </p>
-
     <p>
         <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
         Tip: You can exclude results by adding a <code>!</code> to your filter term.
@@ -218,7 +215,6 @@ description: Documentation and Instructions for configuring and using Link Extra
         Tip: Additional Data, Number of Links Shown, and Column Sorting options will be saved
         across sessions if you enable the <code>Save Links Page Options</code> Option.
     </p>
-
     <p>
         For more information view the
         <a href="{{ site.github_url }}?tab=readme-ov-file#readme" class="link-body-emphasis" target="_blank" rel="noopener">README.md</a>

@@ -87,7 +87,7 @@
 <footer class="footer mt-auto px-1 flex-shrink-0 bg-body-tertiary">
     <div class="container-fluid py-2">
         <div class="d-flex flex-column flex-md-row">
-            <div class="me-md-auto">
+            <div class="me-md-auto mb-1 mb-md-0">
                 <a class="text-decoration-none link-body-emphasis" href="{{ site.github_url }}" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> {{ site.site_name }}</a>
             </div>
@@ -95,7 +95,7 @@
                 <nav aria-label="Secondary Navigation">
                     <ol class="list-inline mb-1 d-flex flex-column flex-sm-row">
                         {% for item in site.menu %}
-                            <li class="list-inline-item">
+                            <li class="list-inline-item mb-1 mb-sm-0">
                                 <a class="text-decoration-none link-body-emphasis {% if page.title == item.name %}fw-bold{% endif %}"
                                    href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
                                     {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
