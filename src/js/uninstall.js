@@ -86,7 +86,7 @@ async function formSubmit(event) {
     console.debug('formSubmit:', event)
     event.preventDefault()
     errorAlert.style.display = 'none'
-    const url = event.target.elements['discord-webhook'].value
+    const url = event.target.elements['relay-url'].value
     const notUsed = event.target.elements['not-used'].checked
     const notExpected = event.target.elements['not-expected'].checked
     const notWorking = event.target.elements['not-working'].checked

@@ -24,7 +24,7 @@ noindex: true
         </div>
         {% include alerts.html %}
         <form id="uninstall-form">
-            <input type="hidden" value="{{ site.discord_webhook }}" id="discord-webhook" hidden="hidden">
+            <input type="hidden" value="{{ site.relay_url }}" id="relay-url" hidden="hidden">
             <div class="form-check form-switch fs-5">
                 <input class="form-check-input" type="checkbox" role="switch" id="not-used">
                 <label class="form-check-label text-success-emphasis" for="not-used">Do Not Need or Not Used</label>
