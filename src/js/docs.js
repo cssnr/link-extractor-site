@@ -15,17 +15,17 @@ function domContentLoaded() {
         pinNotice.addEventListener('click', pinClick)
     }
     if (navigator.userAgent.includes('Firefox/')) {
-        console.log('Firefox')
+        console.log('Detected Browser: Firefox')
         document
             .querySelectorAll('.firefox')
             .forEach((el) => el.classList.remove('d-none'))
     } else if (navigator.userAgent.includes('Edg/')) {
-        console.log('Edge')
+        console.log('Detected Browser: Edge')
         document
             .querySelectorAll('.edge')
             .forEach((el) => el.classList.remove('d-none'))
     } else {
-        console.log('Chromium/Other')
+        console.log('Detected Browser: Chromium/Other')
         document
             .querySelectorAll('.chromium')
             .forEach((el) => el.classList.remove('d-none'))
