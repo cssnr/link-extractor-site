@@ -36,6 +36,10 @@
     {% if page.title == 'Documentation' %}
         <link rel="stylesheet" href="{{ "/css/docs.css" | relative_url }}">
     {% endif %}
+    {% if page.title == 'Screen Shots' %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.3/swiper-bundle.css" integrity="sha512-8L/PDtOcxXEvVD1mWAzCBco7FQ/AHyG/bhg7yQpekicDmRwZA/iNDKpn+MJkYNEVg+qSLkxWLjsHtK781oAaWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ "/css/screenshots.css" | relative_url }}">
+    {% endif %}
     {% if page.title == 'Uninstall' %}
         <link rel="stylesheet" href="{{ "/css/uninstall.css" | relative_url }}">
     {% endif %}
@@ -84,6 +88,8 @@
     {{ content }}
 </main>
 
+
+{% if page.nofooter != true %}
 <footer class="footer mt-auto px-1 flex-shrink-0 bg-body-tertiary">
     <div class="container-fluid py-2">
         <div class="d-flex flex-column flex-md-row">
@@ -111,6 +117,7 @@
         </div>
     </div>
 </footer>
+{% endif %}
 
 <button type="button" class="btn btn-outline-secondary" id="back-to-top">
     <i class="fa-regular fa-square-caret-up"></i>
