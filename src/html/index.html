@@ -2,7 +2,7 @@
 layout: default
 permalink: /
 title: Home
-description: Easily extract, parse, or open all links/domains from a site or text with optional filters.
+description: Easily extract, parse or open all links/domains from a site or text with optional filters.
 ---
 
 <div class="container-fluid">
@@ -26,7 +26,7 @@ description: Easily extract, parse, or open all links/domains from a site or tex
         <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
             <img alt="GitHub Release Version" class="mb-1" src="https://img.shields.io/github/v/release/{{ site.github_name }}?style=for-the-badge&logo=github"></a>
         <a href="{{ site.discord_invite }}" title="Discord" target="_blank" rel="noopener">
-            <img alt="Join Discord" class="mb-1" src="https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da"></a>
+            <img alt="Join Discord" class="mb-1" src="https://img.shields.io/discord/{{ site.discord_server }}?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da"></a>
     </div>
 
     <p class="lead">
@@ -120,7 +120,7 @@ description: Easily extract, parse, or open all links/domains from a site or tex
         You can find additional apps on the
         <a href="https://cssnr.github.io/" class="link-body-emphasis" target="_blank" rel="noopener">CSSNR Website</a>
         as well as submit
-        <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor" class="link-body-emphasis" target="_blank" rel="noopener">
+        <a href="{{ site.feedback_link }}" class="link-body-emphasis" target="_blank" rel="noopener">
             General Feedback</a>.
     </p>
 </div>
