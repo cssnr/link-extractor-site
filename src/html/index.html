@@ -14,10 +14,10 @@ description: Easily extract, parse or open all links/domains from a site or text
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
             <img alt="Mozilla Add-on Users" class="mb-1" src="https://img.shields.io/amo/users/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&label=mozilla%20users"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-            <img alt="Chrome Web Store Users" class="mb-1" src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white"></a>
+            <img alt="Chrome Web Store Rating" class="mb-1" src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-            <img alt="Mozilla Add-on Users" class="mb-1" src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&logoColor=white"></a>
-        <a href="{{ site.firefox_url }}" title="GitHub" target="_blank" rel="noopener">
+            <img alt="Mozilla Add-on Rating" class="mb-1" src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&logoColor=white"></a>
+        <a href="{{ site.github_url }}" title="GitHub" target="_blank" rel="noopener">
             <img alt="GitHub Stars" class="mb-1" src="https://img.shields.io/github/stars/{{ site.github_name }}?style=for-the-badge&logo=github&logoColor=white"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
             <img alt="Chrome Web Store Version" class="mb-1" src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?style=for-the-badge&label=chrome&logo=googlechrome"></a>
@@ -75,7 +75,7 @@ description: Easily extract, parse or open all links/domains from a site or text
         <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
     </ul>
 
-    <p>To see more, view the <a href="{{ "/screenshots/" | relative_url }}" class="link-body-emphasis" target="_blank">Screen Shot Gallery</a>.</p>
+    <p>To see more, view the <a class="link-body-emphasis" href="{{ "/screenshots/" | relative_url }}">Screen Shot Gallery</a>.</p>
 
     <h2>Install</h2>
 
@@ -123,4 +123,4 @@ description: Easily extract, parse or open all links/domains from a site or text
         <a href="{{ site.feedback_link }}" class="link-body-emphasis" target="_blank" rel="noopener">
             General Feedback</a>.
     </p>
-</div>
+</div> <!-- container -->
