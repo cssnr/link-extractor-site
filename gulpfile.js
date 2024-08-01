@@ -41,7 +41,7 @@ gulp.task('swiper', () => {
 
 gulp.task('tsparticles', () => {
     return gulp
-        .src(['node_modules/tsparticles/tsparticles.bundle.min.js'])
+        .src('node_modules/tsparticles/tsparticles.bundle.min.js')
         .pipe(gulp.dest('src/dist/tsparticles'))
 })
 
