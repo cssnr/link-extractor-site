@@ -80,9 +80,21 @@
                         <a class="nav-link hvr-grow-lg" href="{{ site.github_url }}" target="_blank" rel="noopener">
                             <i class="fa-brands fa-github fa-xl"></i></a>
                     </li>
-                </ul>
-            </div>
-        </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link hvr-grow ms-1" id="bd-theme-disabled" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 56px;">
+                            <i id="theme-icon" class="fa-solid fa-circle-half-stroke fa-lg" style="min-width: 20px;"></i> <i class="fa-solid fa-caret-down fa-xs mx-1"></i></a>
+                        <ul class="dropdown-menu auto dropdown-menu-end" aria-labelledby="bd-theme-disabled">
+                            <li><button class="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-regular fa-moon" style="min-width: 16px;"></i> <span class="ms-3">Dark</span></button></li>
+                            <li><button class="dropdown-item" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun" style="min-width: 16px;"></i> <span class="ms-3">Light</span></button></li>
+                            <li><button class="dropdown-item" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke" style="min-width: 16px;"></i> <span class="ms-3">Auto</span></button></li>
+                        </ul>
+                    </li>
+                </ul> <!-- icons -->
+            </div> <!-- navbar -->
+        </div> <!-- container -->
     </nav>
 </header>
 
@@ -115,9 +127,9 @@
                         </li>
                     </ol>
                 </nav>
-            </div>
-        </div>
-    </div>
+            </div> <!-- bottom navigation -->
+        </div> <!-- row -->
+    </div> <!-- container -->
 </footer>
 {% endif %}
 
