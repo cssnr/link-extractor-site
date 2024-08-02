@@ -8,25 +8,25 @@ description: Easily extract, parse or open all links/domains from a site or text
 <div class="container-fluid">
     <h1 class="animate__animated animate__zoomIn"><i class="fa-solid fa-link me-2"></i> {{ site.site_name }}</h1>
 
-    <div class="mb-2" style="min-height: 28px;">
+    <div class="mb-2 badges" style="min-height: 28px;">
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-            <img alt="Chrome Web Store Users" class="mb-1" src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white&label=google%20users"></a>
+            <img alt="Chrome Web Store Users" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white&label=google%20users"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-            <img alt="Mozilla Add-on Users" class="mb-1" src="https://img.shields.io/amo/users/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&label=mozilla%20users"></a>
+            <img alt="Mozilla Add-on Users" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/users/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&label=mozilla%20users"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-            <img alt="Chrome Web Store Rating" class="mb-1" src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white"></a>
+            <img alt="Chrome Web Store Rating" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-            <img alt="Mozilla Add-on Rating" class="mb-1" src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&logoColor=white"></a>
+            <img alt="Mozilla Add-on Rating" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&logoColor=white"></a>
         <a href="{{ site.github_url }}" title="GitHub" target="_blank" rel="noopener">
-            <img alt="GitHub Stars" class="mb-1" src="https://img.shields.io/github/stars/{{ site.github_name }}?style=for-the-badge&logo=github&logoColor=white"></a>
+            <img alt="GitHub Stars" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/github/stars/{{ site.github_name }}?style=for-the-badge&logo=github&logoColor=white"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
-            <img alt="Chrome Web Store Version" class="mb-1" src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?style=for-the-badge&label=chrome&logo=googlechrome"></a>
+            <img alt="Chrome Web Store Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?style=for-the-badge&label=chrome&logo=googlechrome"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
-            <img alt="Mozilla Add-on Version" class="mb-1" src="https://img.shields.io/amo/v/{{ site.firefox_id }}?style=for-the-badge&label=firefox&logo=firefox"></a>
+            <img alt="Mozilla Add-on Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/v/{{ site.firefox_id }}?style=for-the-badge&label=firefox&logo=firefox"></a>
         <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
-            <img alt="GitHub Release Version" class="mb-1" src="https://img.shields.io/github/v/release/{{ site.github_name }}?style=for-the-badge&logo=github"></a>
+            <img alt="GitHub Release Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/github/v/release/{{ site.github_name }}?style=for-the-badge&logo=github"></a>
         <a href="{{ site.discord_invite }}" title="Discord" target="_blank" rel="noopener">
-            <img alt="Join Discord" class="mb-1" src="https://img.shields.io/discord/{{ site.discord_server }}?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da"></a>
+            <img alt="Join Discord" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/discord/{{ site.discord_server }}?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da"></a>
     </div>
 
     <p class="lead">
@@ -75,52 +75,52 @@ description: Easily extract, parse or open all links/domains from a site or text
         <li>Activate from Icon, Context Menu, or Keyboard Shortcuts</li>
     </ul>
 
-    <p>To see more, view the <a class="link-body-emphasis" href="{{ "/screenshots/" | relative_url }}">Screen Shot Gallery</a>.</p>
+    <p>To see more, view the <a href="{{ "/screenshots/" | relative_url }}">Screen Shot Gallery</a>.</p>
 
     <h2>Install</h2>
 
     <p class="ms-3 lead">
         <i class="fa-brands fa-chrome fa-lg me-1"></i>
-        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Google Chrome Web Store</a>
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Google Chrome Web Store</a>
         <br>
         <i class="fa-brands fa-firefox-browser fa-lg me-1"></i>
-        <a href="{{ site.firefox_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
+        <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
     </p>
 
     <p>
         All <b>Chromium</b> based browsers can install the extension from the
-        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Chrome Web Store</a>.
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Chrome Web Store</a>.
     </p>
 
     <p>
         <b>Mobile</b> browser support available for
-        <a href="{{ site.firefox_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Firefox</a> and
-        <a href="{{ site.chrome_url }}" class="link-body-emphasis" target="_blank" rel="noopener">Yandex</a>.
+        <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a> and
+        <a href="{{ site.chrome_url }}" target="_blank" rel="noopener">Yandex</a>.
     </p>
 
     <h2>Support</h2>
 
     <p class="lead">
         For usage instructions, head over to the
-        <a href="{{ "/docs/" | relative_url }}" class="link-body-emphasis">Documentation</a>.
+        <a href="{{ "/docs/" | relative_url }}">Documentation</a>.
     </p>
 
     <p>
         If you find any bugs please
-        <a href="{{ site.github_url }}/issues" class="link-body-emphasis" target="_blank" rel="noopener">Open an Issue</a>.
+        <a href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Open an Issue</a>.
         <br>
         If you have any ideas, suggestions, or requests; submit a
-        <a href="{{ site.github_url }}/discussions/categories/feature-requests" class="link-body-emphasis" target="_blank" rel="noopener">Feature Request</a>.
+        <a href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Request</a>.
         <br>
         You may also get support on the
-        <a href="{{ site.discord_invite }}" class="link-body-emphasis" target="_blank" rel="noopener">Discord Server</a>.
+        <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
     </p>
 
     <p>
         You can find additional apps on the
-        <a href="https://cssnr.github.io/" class="link-body-emphasis" target="_blank" rel="noopener">CSSNR Website</a>
+        <a href="https://cssnr.github.io/" target="_blank" rel="noopener">CSSNR Website</a>
         as well as submit
-        <a href="{{ site.feedback_link }}" class="link-body-emphasis" target="_blank" rel="noopener">
+        <a href="{{ site.feedback_link }}" target="_blank" rel="noopener">
             General Feedback</a>.
     </p>
 </div> <!-- container -->
