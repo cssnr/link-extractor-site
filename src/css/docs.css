@@ -11,22 +11,6 @@
         0 0 8px var(--bs-body-bg);
 }
 
-/*[data-bs-theme='dark'] #pin-notice {*/
-/*    text-shadow:*/
-/*        0 0 3px #212529,*/
-/*        0 0 6px #212529,*/
-/*        0 0 9px #212529,*/
-/*        0 0 12px #212529;*/
-/*}*/
-
-/*[data-bs-theme='light'] #pin-notice {*/
-/*    text-shadow:*/
-/*        0 0 3px #fff,*/
-/*        0 0 6px #fff,*/
-/*        0 0 9px #fff,*/
-/*        0 0 12px #fff;*/
-/*}*/
-
 .bounce {
     animation: bounce 4s infinite;
 }

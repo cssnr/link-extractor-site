@@ -57,3 +57,7 @@ a {
 .hvr-grow-lg:hover {
     transform: scale(1.2);
 }
+
+.badges img {
+    min-width: 120px;
+}
