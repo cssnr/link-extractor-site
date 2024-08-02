@@ -32,9 +32,44 @@ if (typeof ClipboardJS !== 'undefined') {
     })
 }
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     console.debug('DOMContentLoaded')
-// })
+document.addEventListener('DOMContentLoaded', domContentLoaded)
+
+async function domContentLoaded() {
+    console.debug('DOMContentLoaded')
+
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+        await registerServiceWorker()
+    }
+}
+
+async function registerServiceWorker() {
+    try {
+        const registration = await navigator.serviceWorker.register('/sw.js', {
+            scope: '/',
+        })
+        console.debug('registration:', registration)
+        if (registration.installing) {
+            console.debug('Service worker installing')
+        } else if (registration.waiting) {
+            console.debug('Service worker installed')
+        } else if (registration.active) {
+            console.debug('Service worker active')
+        } else {
+            console.warn('Service worker UNKNOWN:', registration)
+        }
+
+        // // Push Subscription
+        // const subscription = await registration.pushManager.getSubscription()
+        // console.debug('subscription:', subscription)
+        // if (!subscription) {
+        //     const subscribe = await registration.pushManager.subscribe()
+        //     console.debug('subscribe:', subscribe)
+        // }
+    } catch (error) {
+        console.error('Service Worker Error:', error)
+    }
+}
 
 /**
  * On Scroll Callback
