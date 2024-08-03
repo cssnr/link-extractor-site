@@ -5,11 +5,11 @@ const resources = [
     '/docs/',
     '/screenshots/',
 
+    '/css/bootstrap.css',
     '/css/docs.css',
     '/css/main.css',
     '/css/screenshots.css',
     '/css/uninstall.css',
-    '/css/bootstrap.css',
 
     '/js/docs.js',
     '/js/main.js',
@@ -61,7 +61,7 @@ const addResourcesToCache = async (resources) => {
 }
 
 const putInCache = async (request, response) => {
-    console.debug('%c putInCache:', 'color: yellow', request, response)
+    console.debug('%c putInCache:', 'color: Yellow', request, response)
     const cache = await caches.open('v1')
     await cache.put(request, response)
 }
@@ -85,7 +85,7 @@ const fetchResponse = async (event) => {
         `${event.request.url}`,
         responseFromNetwork
     )
-    if (event.request.url.includes('/smashedr/logo-icons/master/browsers/')) {
+    if (event.request.url.includes('/smashedr/logo-icons/')) {
         await putInCache(event.request, responseFromNetwork.clone())
     }
     return responseFromNetwork
@@ -99,13 +99,3 @@ self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
     event.waitUntil(addResourcesToCache(resources))
 })
-
-// self.addEventListener('push', async (event) => {
-//     console.debug('push:', event)
-//     const body = event.data.text()
-//     console.debug('body:', body)
-//     let notification = await self.registration.showNotification('Title', {
-//         body: body,
-//     })
-//     console.debug('notification:', notification)
-// })

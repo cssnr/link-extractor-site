@@ -58,14 +58,6 @@ async function registerServiceWorker() {
         } else {
             console.warn('Service worker UNKNOWN:', registration)
         }
-
-        // // Push Subscription
-        // const subscription = await registration.pushManager.getSubscription()
-        // console.debug('subscription:', subscription)
-        // if (!subscription) {
-        //     const subscribe = await registration.pushManager.subscribe()
-        //     console.debug('subscribe:', subscribe)
-        // }
     } catch (error) {
         console.error('Service Worker Registration Error:', error)
     }
