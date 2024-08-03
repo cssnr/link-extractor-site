@@ -27,7 +27,7 @@ if (typeof ClipboardJS !== 'undefined') {
         }
     })
     clipboard.on('error', function (event) {
-        console.debug('clipboard.error:', event)
+        console.log('clipboard.error:', event)
         showToast('Clipboard Copy Failed', 'warning')
     })
 }
@@ -35,7 +35,7 @@ if (typeof ClipboardJS !== 'undefined') {
 document.addEventListener('DOMContentLoaded', domContentLoaded)
 
 async function domContentLoaded() {
-    console.debug('DOMContentLoaded')
+    // console.debug('DOMContentLoaded')
 
     // Register Service Worker
     if ('serviceWorker' in navigator) {
@@ -48,15 +48,15 @@ async function registerServiceWorker() {
         const registration = await navigator.serviceWorker.register('/sw.js', {
             scope: '/',
         })
-        console.debug('registerServiceWorker:', registration)
+        // console.debug('registerServiceWorker:', registration)
         if (registration.installing) {
             console.debug('Service worker: installing')
         } else if (registration.waiting) {
-            console.debug('Service worker: installed')
+            console.debug('Service worker: waiting')
         } else if (registration.active) {
             console.debug('Service worker: active')
         } else {
-            console.warn('Service worker UNKNOWN:', registration)
+            console.warn('Service worker unknown:', registration)
         }
     } catch (error) {
         console.error('Service Worker Registration Error:', error)
