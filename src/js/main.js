@@ -48,13 +48,13 @@ async function registerServiceWorker() {
         const registration = await navigator.serviceWorker.register('/sw.js', {
             scope: '/',
         })
-        console.debug('registration:', registration)
+        console.debug('registerServiceWorker:', registration)
         if (registration.installing) {
-            console.debug('Service worker installing')
+            console.debug('Service worker: installing')
         } else if (registration.waiting) {
-            console.debug('Service worker installed')
+            console.debug('Service worker: installed')
         } else if (registration.active) {
-            console.debug('Service worker active')
+            console.debug('Service worker: active')
         } else {
             console.warn('Service worker UNKNOWN:', registration)
         }
@@ -67,7 +67,7 @@ async function registerServiceWorker() {
         //     console.debug('subscribe:', subscribe)
         // }
     } catch (error) {
-        console.error('Service Worker Error:', error)
+        console.error('Service Worker Registration Error:', error)
     }
 }
 

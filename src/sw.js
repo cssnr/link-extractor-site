@@ -42,11 +42,20 @@ const resources = [
 
     '/dist/fontawesome/css/all.min.css',
     '/dist/fontawesome/webfonts/fa-brands-400.woff2',
-    '/dist/fontawesome/webfonts/fa-solid-900.woff2 ',
+    '/dist/fontawesome/webfonts/fa-regular-400.woff2',
+    '/dist/fontawesome/webfonts/fa-solid-900.woff2',
+
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png',
+    'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png',
 ]
 
 const addResourcesToCache = async (resources) => {
-    console.debug('resources:', resources)
+    console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
     const cache = await caches.open('v1')
     await cache.addAll(resources)
 }
@@ -57,19 +66,12 @@ const putInCache = async (request, response) => {
     await cache.put(request, response)
 }
 
-self.addEventListener('install', (event) => {
-    console.debug('install:', event)
-    event.waitUntil(addResourcesToCache(resources))
-})
-
-self.addEventListener('fetch', async (event) => {
-    // console.debug('fetch:', event.request.url)
-
+const fetchResponse = async (event) => {
     const responseFromCache = await caches.match(event.request)
     if (responseFromCache) {
         console.debug(
             `%c responseFromCache:`,
-            'color: green',
+            'color: LimeGreen',
             `${event.request.url}`,
             responseFromCache
         )
@@ -77,11 +79,9 @@ self.addEventListener('fetch', async (event) => {
     }
 
     const responseFromNetwork = await fetch(event.request)
-    // console.debug('event.request:', event.request)
-    // const url = new URL(event.request.url)
     console.debug(
         `%c responseFromNetwork:`,
-        'color: red',
+        'color: OrangeRed',
         `${event.request.url}`,
         responseFromNetwork
     )
@@ -89,6 +89,15 @@ self.addEventListener('fetch', async (event) => {
         await putInCache(event.request, responseFromNetwork.clone())
     }
     return responseFromNetwork
+}
+
+self.addEventListener('fetch', (event) => {
+    event.respondWith(fetchResponse(event))
+})
+
+self.addEventListener('install', (event) => {
+    console.debug('%c install:', 'color: Cyan', event)
+    event.waitUntil(addResourcesToCache(resources))
 })
 
 // self.addEventListener('push', async (event) => {
