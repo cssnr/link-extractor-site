@@ -61,14 +61,20 @@ const addResourcesToCache = async (resources) => {
 }
 
 const putInCache = async (request, response) => {
-    console.debug('%c putInCache:', 'color: Yellow', request, response)
+    console.debug(
+        '%c putInCache:',
+        'color: Yellow',
+        `${request.url}`,
+        request,
+        response
+    )
     const cache = await caches.open('v1')
     await cache.put(request, response)
 }
 
 const fetchResponse = async (event) => {
     const responseFromCache = await caches.match(event.request)
-    if (responseFromCache) {
+    if (responseFromCache?.ok) {
         console.debug(
             `%c responseFromCache:`,
             'color: LimeGreen',
@@ -85,8 +91,10 @@ const fetchResponse = async (event) => {
         `${event.request.url}`,
         responseFromNetwork
     )
-    if (event.request.url.includes('/smashedr/logo-icons/')) {
-        await putInCache(event.request, responseFromNetwork.clone())
+    if (responseFromNetwork?.ok) {
+        if (event.request.url.includes('/smashedr/logo-icons/')) {
+            await putInCache(event.request, responseFromNetwork.clone())
+        }
     }
     return responseFromNetwork
 }
