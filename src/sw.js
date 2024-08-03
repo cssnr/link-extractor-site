@@ -6,6 +6,7 @@ const resources = [
     '/',
     '/docs/',
     '/screenshots/',
+    '/uninstall/',
 
     '/css/bootstrap.css',
     '/css/docs.css',
@@ -38,6 +39,10 @@ const resources = [
     '/dist/animate/animate.min.css',
     '/dist/bootstrap/bootstrap.bundle.min.js',
     '/dist/clipboard/clipboard.min.js',
+    '/dist/ua-parser-js/ua-parser.min.js',
+
+    '/config/tsparticles.json ',
+    '/dist/tsparticles/tsparticles.bundle.min.js',
 
     '/dist/swiper/swiper-bundle.min.css',
     '/dist/swiper/swiper-bundle.min.js',
@@ -77,7 +82,7 @@ const putInCache = async (request, response) => {
 const cleanupCache = async (event) => {
     console.debug('%c cleanupCache:', 'color: Magenta', event)
     const keys = await caches.keys()
-    console.log('keys:', keys)
+    console.debug('keys:', keys)
     for (const key of keys) {
         if (key !== cacheName) {
             console.log('%c Removing Old Cache:', 'color: Yellow', `${key}`)
@@ -105,8 +110,10 @@ const fetchResponse = async (event) => {
         `${event.request.url}`,
         responseFromNetwork
     )
-    if (responseFromNetwork?.ok) {
-        if (event.request.url.includes('/smashedr/logo-icons/')) {
+    if (responseFromNetwork.ok) {
+        const url = new URL(event.request.url)
+        console.debug('%c checking url:', 'color: Magenta', url)
+        if (resources.some((p) => p === url.pathname)) {
             await putInCache(event.request, responseFromNetwork.clone())
         }
     }
