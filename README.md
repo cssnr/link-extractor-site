@@ -42,7 +42,7 @@ Install Jekyll: https://jekyllrb.com/docs/installation/
 Run: `jekyll serve -s src -o -l`
 
 This will build the site from the `src` directory, open it in your browser, watch for file changes, automatically
-rebuild the site and refresh the site in your browser; enjoy...
+rebuild the site and refresh the site in your browser, happy coding...
 
 For more information see `jekyll help` and `jekyll serve --help` or visit: https://jekyllrb.com/docs/
 
