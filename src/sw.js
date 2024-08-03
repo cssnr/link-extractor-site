@@ -1,5 +1,7 @@
 // Service Worker
 
+const cacheName = 'v1'
+
 const resources = [
     '/',
     '/docs/',
@@ -56,7 +58,7 @@ const resources = [
 
 const addResourcesToCache = async (resources) => {
     console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
-    const cache = await caches.open('v1')
+    const cache = await caches.open(cacheName)
     await cache.addAll(resources)
 }
 
@@ -68,8 +70,20 @@ const putInCache = async (request, response) => {
         request,
         response
     )
-    const cache = await caches.open('v1')
+    const cache = await caches.open(cacheName)
     await cache.put(request, response)
+}
+
+const cleanupCache = async (event) => {
+    console.debug('%c cleanupCache:', 'color: Magenta', event)
+    const keys = await caches.keys()
+    console.log('keys:', keys)
+    for (const key of keys) {
+        if (key !== cacheName) {
+            console.log('%c Removing Old Cache:', 'color: Yellow', `${key}`)
+            await caches.delete(key)
+        }
+    }
 }
 
 const fetchResponse = async (event) => {
@@ -106,4 +120,9 @@ self.addEventListener('fetch', (event) => {
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
     event.waitUntil(addResourcesToCache(resources))
+})
+
+self.addEventListener('activate', (event) => {
+    console.debug('%c activate:', 'color: Cyan', event)
+    event.waitUntil(cleanupCache(event))
 })
