@@ -40,11 +40,11 @@ contentWrapper.addEventListener(
     { once: true }
 )
 
-window.addEventListener('focus', function () {
-    if (!bugReport.classList.contains('animate__shakeX')) {
-        bugReport.classList.add('animate__shakeX')
-    }
-})
+window.addEventListener(
+    'focus',
+    () => bugReport.classList.add('animate__shakeX'),
+    { once: true }
+)
 
 document.addEventListener('DOMContentLoaded', async function () {
     if (version) {

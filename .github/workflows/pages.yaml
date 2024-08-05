@@ -39,6 +39,12 @@ jobs:
         run: |
           npm install
 
+      - name: "Update Cache Version"
+        run: |
+          echo "Updating Cache to Version: v${GITHUB_RUN_NUMBER}"
+          sed -i "0,/v1/s//v${GITHUB_RUN_NUMBER}/" src/sw.js
+          head src/sw.js -n 4
+
       - name: "Configure Pages"
         uses: actions/configure-pages@v5
 

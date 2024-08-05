@@ -13,10 +13,13 @@ function domContentLoaded() {
         const pinNotice = document.getElementById('pin-notice')
         pinNotice.classList.remove('d-none')
         pinNotice.addEventListener('click', pinClick)
-        window.addEventListener('scroll', () => setTimeout(pinClick, 5000), {
+        document.getElementById('new-install').classList.remove('d-none')
+        window.addEventListener('focus', () => setTimeout(pinClick, 5000), {
             once: true,
         })
-        document.getElementById('new-install').classList.remove('d-none')
+        if (document.hasFocus()) {
+            setTimeout(pinClick, 5000)
+        }
     }
     if (navigator.userAgent.includes('Firefox/')) {
         console.log('Detected Browser: Firefox')
@@ -42,6 +45,6 @@ function domContentLoaded() {
  */
 function pinClick() {
     const pinNotice = document.getElementById('pin-notice')
-    console.log('pinNotice:', pinNotice)
+    // console.debug('pinNotice:', pinNotice)
     pinNotice.classList.add('d-none')
 }
