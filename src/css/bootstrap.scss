@@ -3,12 +3,6 @@ $primary: #7289da;
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-// Change info button text to white
-.btn-info {
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-hover-color: var(--bs-white);
-}
-
 // Set default links to emulate link-body-emphasis
 a {
     color: rgba(var(--bs-emphasis-color-rgb), 1);

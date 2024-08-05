@@ -46,4 +46,4 @@ rebuild the site and refresh the site in your browser, happy coding...
 
 For more information see `jekyll help` and `jekyll serve --help` or visit: https://jekyllrb.com/docs/
 
-For production, this site is built with GitHub Actions: [.github/workflows/pages.yaml](.github%2Fworkflows%2Fpages.yaml)
+For production, this site is built with GitHub Actions: [.github/workflows/pages.yaml](.github/workflows/pages.yaml)

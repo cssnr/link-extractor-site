@@ -3,6 +3,9 @@
 document
     .querySelectorAll('[data-clipboard-text]')
     .forEach((el) => el.addEventListener('click', (e) => e.preventDefault()))
+document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el))
 
 const backToTop = document.getElementById('back-to-top')
 
