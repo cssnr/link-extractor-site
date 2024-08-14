@@ -143,13 +143,13 @@ function detectBrowser() {
     } else if (navigator.userAgent.includes('OPR/')) {
         console.log('Detected Browser: Opera')
         browser.name = 'Opera'
-        browser.id = 'chromium'
-        browser.class = '.chromium'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
     } else {
         console.log('Detected Browser: Chrome/Other')
         browser.name = 'Chrome/Other'
-        browser.id = 'chromium'
-        browser.class = '.chromium'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
     }
     return browser
 }

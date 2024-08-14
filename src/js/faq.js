@@ -45,6 +45,7 @@ collapses.forEach((el) => {
     // console.log('icon:', icon)
     el.addEventListener('show.bs.collapse', (event) => {
         // console.log('event:', event)
+        // window.location.hash = `#${el.id}`
         icon.classList.add('fa-rotate-90')
     })
     el.addEventListener('hide.bs.collapse', (event) => {
