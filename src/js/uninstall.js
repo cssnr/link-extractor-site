@@ -2,8 +2,8 @@
 
 const url = new URL(window.location)
 const redirect = new URL(url.origin)
-redirect.searchParams.append('feedback', 'yes')
-redirect.pathname = '/docs/'
+redirect.searchParams.append('feedback', 'true')
+redirect.pathname = '/faq/'
 
 const version = url.searchParams.get('version') || 'unknown'
 

@@ -4,16 +4,13 @@ document.addEventListener('DOMContentLoaded', domContentLoaded)
 
 function domContentLoaded() {
     // console.debug('DOMContentLoaded')
-    if (window.location.search.includes('?feedback=yes')) {
+    const url = new URL(window.location)
+    if (url.searchParams.has('install')) {
         history.pushState(null, '', location.href.split('?')[0])
-        document.getElementById('feedback').classList.remove('d-none')
-    }
-    if (window.location.search.includes('?install=new')) {
-        history.pushState(null, '', location.href.split('?')[0])
+        document.getElementById('new-install').classList.remove('d-none')
         const pinNotice = document.getElementById('pin-notice')
         pinNotice.classList.remove('d-none')
         pinNotice.addEventListener('click', pinClick)
-        document.getElementById('new-install').classList.remove('d-none')
         window.addEventListener('focus', () => setTimeout(pinClick, 6000), {
             once: true,
         })
