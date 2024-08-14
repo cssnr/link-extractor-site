@@ -140,9 +140,14 @@ function detectBrowser() {
         browser.name = 'Edge'
         browser.id = 'edge'
         browser.class = '.edge'
+    } else if (navigator.userAgent.includes('OPR/')) {
+        console.log('Detected Browser: Opera')
+        browser.name = 'Opera'
+        browser.id = 'chromium'
+        browser.class = '.chromium'
     } else {
-        console.log('Detected Browser: Chromium/Other')
-        browser.name = 'Chromium/Other'
+        console.log('Detected Browser: Chrome/Other')
+        browser.name = 'Chrome/Other'
         browser.id = 'chromium'
         browser.class = '.chromium'
     }

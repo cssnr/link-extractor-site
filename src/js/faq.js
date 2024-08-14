@@ -61,9 +61,9 @@ function domContentLoaded() {
         document.getElementById('feedback').classList.remove('d-none')
     }
     processBrowser()
-    if (window.location.hash) {
-        console.log('hash:', window.location.hash)
-        const bsCollapse = new bootstrap.Collapse(window.location.hash, {
+    if (url.hash) {
+        console.log('url.hash:', url.hash)
+        const bsCollapse = new bootstrap.Collapse(url.hash, {
             toggle: false,
         })
         // console.log('bsCollapse:', bsCollapse)

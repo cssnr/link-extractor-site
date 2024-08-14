@@ -86,14 +86,17 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
             </ol>
             <span>You should now be able to extract links from file URLs.</span>
         </div>
-        <div class="d-none edge">
-            <ol>
-                <li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>
-                <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
-                <li>Check the box labeled <b>Allow access to file URLs</b>.</li>
-            </ol>
-            <span>You should now be able to extract links from file URLs.</span>
+        <div class="alert alert-warning mb-0 d-none edge">
+            Edge does <b>not</b> allow access to file:/ URLs.
         </div>
+        {% comment %}<div class="d-none edge">{% endcomment %}
+            {% comment %}<ol>{% endcomment %}
+                {% comment %}<li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>{% endcomment %}
+                {% comment %}<li>Scroll until you find Link Extractor and click <b>Details</b>.</li>{% endcomment %}
+                {% comment %}<li>Check the box labeled <b>Allow access to file URLs</b>.</li>{% endcomment %}
+            {% comment %}</ol>{% endcomment %}
+            {% comment %}<span>You should now be able to extract links from file URLs.</span>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
     </div>
 
     <!-- privateAccess -->
@@ -162,6 +165,7 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
         on GitHub.
         {% comment %}<a href="https://github.com/cssnr/link-extractor" target="_blank" rel="noopener">GitHub</a>.{% endcomment %}
     </p>
+    <p>Additional information can be found on the <a href="{{ "/docs/" | relative_url }}">Documentation</a> Page.</p>
 </div>
 
 <script type="text/javascript" src="{{ "/js/faq.js" | relative_url }}"></script>
