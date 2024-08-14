@@ -65,7 +65,7 @@
                 <ul class="navbar-nav me-auto">
                     {% for item in site.menu %}
                         <li class="nav-item">
-                            <a class="nav-link {% if page.title == item.name %}active{% endif %}"
+                            <a class="nav-link {% if page.permalink == item.link %}active{% endif %}"
                                href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
                                 {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
                         </li>
@@ -116,7 +116,7 @@
                     <ol class="list-inline mb-1 d-flex flex-column flex-sm-row">
                         {% for item in site.menu %}
                             <li class="list-inline-item mb-2 mb-sm-0">
-                                <a class="link-body-emphasis text-decoration-none {% if page.title == item.name %}fw-bold{% endif %}"
+                                <a class="link-body-emphasis text-decoration-none {% if page.permalink == item.link %}fw-bold{% endif %}"
                                    href="{{ item.link | relative_url }}" {% if item.external %}target="_blank"{% endif %}>
                                     {{ item.name }}{% if item.external %} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>{% endif %}</a>
                             </li>
