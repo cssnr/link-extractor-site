@@ -9,7 +9,7 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
     <h1 class="animate__animated animate__zoomIn"><i class="fa-solid fa-person-circle-question me-2"></i> {{ page.title }}</h1>
 
     <p>
-        <i class="fa-regular fa-lightbulb text-warning-emphasis"></i>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis me-2"></i>
         Tip: Click on a question to expand the answer.
     </p>
     <p class="lead">
@@ -17,13 +17,47 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
             <i class="fa-solid fa-arrow-down-short-wide me-3"></i><span>Expand All</span></a>
     </p>
 
+    <!-- noLinks -->
+
     <h4 class="my-4">
-        <a class="body-link " role="button" data-bs-toggle="collapse" aria-expanded="false"
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="noLinks" href="#noLinks">
+            <i class="fa-solid fa-angle-right me-2"></i> No links are extracted?
+        </a>
+    </h4>
+    <div class="collapse" id="noLinks">
+        <div class="">
+            <ol>
+                <li>If you just installed the extension, you may need to close and re-open the tab to extract links.</li>
+                <li>Try re-starting your browser. Make sure to close all open windows then re-open the browser.</li>
+                <li>If you cant extract links from any tabs try re-installing the extension. Make sure to export any saved filters first.</li>
+                <li>
+                    If you are still unable to extract links, please
+                    <a href="https://github.com/cssnr/link-extractor/issues" target="_blank" rel="noopener">open an issue on GitHub</a>;
+                    and we will do our best to resolve the issue.
+                </li>
+            </ol>
+            <span>
+                If you don't have a GitHub account, you can
+                <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor" target="_blank" rel="noopener">submit feedback here</a>.
+                <br>
+                Make sure to <b>include a link to the site</b> you are having issues with.
+            </span>
+        </div>
+    </div>
+
+    <!-- fileAccess -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
            aria-controls="fileAccess" href="#fileAccess">
             <i class="fa-solid fa-angle-right me-2"></i> Allow access to file:/ URLs?
         </a>
     </h4>
     <div class="collapse" id="fileAccess">
+        <p class="">
+            Note: File extraction is currently experimental and only works on PDF files.
+        </p>
         <div class="alert alert-warning mb-0 d-none firefox">
             Firefox does <b>not</b> allow access to file:/ URLs.
         </div>
@@ -45,10 +79,12 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
         </div>
     </div>
 
+    <!-- privateAccess -->
+
     <h4 class="my-4">
-        <a class="body-link " role="button" data-bs-toggle="collapse" aria-expanded="false"
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
            aria-controls="privateAccess" href="#privateAccess">
-            <i class="fa-solid fa-angle-right me-2"></i> Allow access to private browsing or incognito tabs?
+            <i class="fa-solid fa-angle-right me-2"></i> Allow access to incognito or private browsing windows?
         </a>
     </h4>
     <div class="collapse" id="privateAccess">
@@ -78,8 +114,10 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
         </div>
     </div>
 
+    <!-- multipleTabs -->
+
     <h4 class="my-4">
-        <a class="body-link " role="button" data-bs-toggle="collapse" aria-expanded="false"
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
            aria-controls="multipleTabs" href="#multipleTabs">
             <i class="fa-solid fa-angle-right me-2"></i> Extract links from multiple tabs at the same time?
         </a>
@@ -87,7 +125,11 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
     <div class="collapse" id="multipleTabs">
         <div class="">
             <ol>
-                <li>Ensure you have granted Host Permission to the extension, from either the Popup or Options Page.</li>
+                <li>
+                    Ensure you have granted Host Permission to the extension, from the Popup or Options Page.
+                    <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
+                        Screen Shot. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+                </li>
                 <li>While pressing and holding the <kbd>Ctrl</kbd> key, select all the tabs you wish to extract from.</li>
                 <li>With the tabs highlighted, extract links as normal using either the Popup, Shortcuts, or Omnibox.</li>
             </ol>

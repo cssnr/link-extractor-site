@@ -85,7 +85,7 @@ function onScroll() {
  * Show Bootstrap Toast
  * @function showToast
  * @param {String} message
- * @param {String} type
+ * @param {String} [type]
  */
 function showToast(message, type = 'success') {
     console.debug(`showToast: ${type}: ${message}`)
@@ -118,11 +118,14 @@ function debounce(fn, timeout = 250) {
 }
 
 /**
- * @function detectBrowser
  * @typedef {Object} Browser
- * @property {String} Browser.name
- * @property {String} Browser.id
- * @property {String} Browser.class
+ * @property {String} name
+ * @property {String} id
+ * @property {String} class
+ */
+
+/**
+ * @function detectBrowser
  * @return {Browser}
  */
 function detectBrowser() {
@@ -156,22 +159,6 @@ function processBrowser() {
         .querySelectorAll(browser.class)
         .forEach((el) => el.classList.remove('d-none'))
     return browser
-    // if (navigator.userAgent.includes('Firefox/')) {
-    //     console.log('Detected Browser: Firefox')
-    //     document
-    //         .querySelectorAll('.firefox')
-    //         .forEach((el) => el.classList.remove('d-none'))
-    // } else if (navigator.userAgent.includes('Edg/')) {
-    //     console.log('Detected Browser: Edge')
-    //     document
-    //         .querySelectorAll('.edge')
-    //         .forEach((el) => el.classList.remove('d-none'))
-    // } else {
-    //     console.log('Detected Browser: Chromium/Other')
-    //     document
-    //         .querySelectorAll('.chromium')
-    //         .forEach((el) => el.classList.remove('d-none'))
-    // }
 }
 
 const animateCSS = (selector, animation, prefix = 'animate__') => {

@@ -61,7 +61,7 @@ function domContentLoaded() {
         const bsCollapse = new bootstrap.Collapse(window.location.hash, {
             toggle: false,
         })
-        console.log('bsCollapse:', bsCollapse)
+        // console.log('bsCollapse:', bsCollapse)
         bsCollapse.show()
     }
 }
