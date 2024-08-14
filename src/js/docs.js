@@ -14,11 +14,11 @@ function domContentLoaded() {
         pinNotice.classList.remove('d-none')
         pinNotice.addEventListener('click', pinClick)
         document.getElementById('new-install').classList.remove('d-none')
-        window.addEventListener('focus', () => setTimeout(pinClick, 5000), {
+        window.addEventListener('focus', () => setTimeout(pinClick, 6000), {
             once: true,
         })
         if (document.hasFocus()) {
-            setTimeout(pinClick, 5000)
+            setTimeout(pinClick, 6000)
         }
     }
     processBrowser()
