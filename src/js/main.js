@@ -117,6 +117,63 @@ function debounce(fn, timeout = 250) {
     }
 }
 
+/**
+ * @function detectBrowser
+ * @typedef {Object} Browser
+ * @property {String} Browser.name
+ * @property {String} Browser.id
+ * @property {String} Browser.class
+ * @return {Browser}
+ */
+function detectBrowser() {
+    const browser = {}
+    if (navigator.userAgent.includes('Firefox/')) {
+        console.log('Detected Browser: Firefox')
+        browser.name = 'Firefox'
+        browser.id = 'firefox'
+        browser.class = '.firefox'
+    } else if (navigator.userAgent.includes('Edg/')) {
+        console.log('Detected Browser: Edge')
+        browser.name = 'Edge'
+        browser.id = 'edge'
+        browser.class = '.edge'
+    } else {
+        console.log('Detected Browser: Chromium/Other')
+        browser.name = 'Chromium/Other'
+        browser.id = 'chromium'
+        browser.class = '.chromium'
+    }
+    return browser
+}
+
+/**
+ * @function processBrowser
+ * @return {Browser}
+ */
+function processBrowser() {
+    const browser = detectBrowser()
+    document
+        .querySelectorAll(browser.class)
+        .forEach((el) => el.classList.remove('d-none'))
+    return browser
+    // if (navigator.userAgent.includes('Firefox/')) {
+    //     console.log('Detected Browser: Firefox')
+    //     document
+    //         .querySelectorAll('.firefox')
+    //         .forEach((el) => el.classList.remove('d-none'))
+    // } else if (navigator.userAgent.includes('Edg/')) {
+    //     console.log('Detected Browser: Edge')
+    //     document
+    //         .querySelectorAll('.edge')
+    //         .forEach((el) => el.classList.remove('d-none'))
+    // } else {
+    //     console.log('Detected Browser: Chromium/Other')
+    //     document
+    //         .querySelectorAll('.chromium')
+    //         .forEach((el) => el.classList.remove('d-none'))
+    // }
+}
+
 const animateCSS = (selector, animation, prefix = 'animate__') => {
     const name = `${prefix}${animation}`
     const node = document.querySelector(selector)

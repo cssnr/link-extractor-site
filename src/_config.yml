@@ -11,6 +11,8 @@ menu:
     link: /
   - name: Documentation
     link: /docs/
+  - name: FAQ
+    link: /faq/
   - name: Screen Shots
     link: /screenshots/
 

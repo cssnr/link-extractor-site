@@ -21,22 +21,7 @@ function domContentLoaded() {
             setTimeout(pinClick, 5000)
         }
     }
-    if (navigator.userAgent.includes('Firefox/')) {
-        console.log('Detected Browser: Firefox')
-        document
-            .querySelectorAll('.firefox')
-            .forEach((el) => el.classList.remove('d-none'))
-    } else if (navigator.userAgent.includes('Edg/')) {
-        console.log('Detected Browser: Edge')
-        document
-            .querySelectorAll('.edge')
-            .forEach((el) => el.classList.remove('d-none'))
-    } else {
-        console.log('Detected Browser: Chromium/Other')
-        document
-            .querySelectorAll('.chromium')
-            .forEach((el) => el.classList.remove('d-none'))
-    }
+    processBrowser()
 }
 
 /**
