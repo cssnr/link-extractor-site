@@ -14,7 +14,7 @@ const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
 
 const contentWrapper = document.getElementById('content-wrapper')
 const uninstallForm = document.getElementById('uninstall-form')
-const uninstallResponse = document.getElementById('uninstall-response')
+const userResponse = document.getElementById('user-response')
 const inputCount = document.getElementById('input-count')
 const submitBtn = document.getElementById('submit-btn')
 const errorAlert = document.getElementById('error-alert')
@@ -24,7 +24,7 @@ const bugReport = document.getElementById('bug-report')
 uninstallForm.addEventListener('change', formChange)
 uninstallForm.addEventListener('submit', formSubmit)
 
-uninstallResponse.addEventListener('input', function () {
+userResponse.addEventListener('input', function () {
     inputCount.textContent = this.value.length
 })
 
@@ -90,9 +90,9 @@ async function formSubmit(event) {
     const notUsed = event.target.elements['not-used'].checked
     const notExpected = event.target.elements['not-expected'].checked
     const notWorking = event.target.elements['not-working'].checked
-    const feedbackText = event.target.elements['uninstall-response'].value
+    const feedbackText = event.target.elements['user-response'].value.trim()
     if (!(notUsed || notExpected || notWorking || feedbackText)) {
-        uninstallResponse.focus()
+        userResponse.focus()
         animateCSS('textarea', 'shakeX')
         return console.warn('No Data to Send.')
     }
