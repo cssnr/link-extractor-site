@@ -56,12 +56,13 @@ collapses.forEach((el) => {
 
 function domContentLoaded() {
     // console.debug('DOMContentLoaded')
+    const browser = processBrowser()
+    document.getElementById('browser-name').textContent = browser.name
     const url = new URL(window.location)
     if (url.searchParams.has('feedback')) {
         history.pushState(null, '', location.href.split('?')[0])
         document.getElementById('feedback').classList.remove('d-none')
     }
-    processBrowser()
     if (url.hash) {
         console.log('url.hash:', url.hash)
         const bsCollapse = new bootstrap.Collapse(url.hash, {

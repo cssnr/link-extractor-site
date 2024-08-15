@@ -145,6 +145,11 @@ function detectBrowser() {
         browser.name = 'Opera'
         browser.id = 'chrome'
         browser.class = '.chrome'
+    } else if (navigator.brave) {
+        console.log('Detected Browser: Brave')
+        browser.name = 'Brave'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
     } else {
         console.log('Detected Browser: Chrome/Other')
         browser.name = 'Chrome/Other'

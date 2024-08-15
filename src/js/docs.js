@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', domContentLoaded)
 
 function domContentLoaded() {
     // console.debug('DOMContentLoaded')
+    const browser = processBrowser()
+    document.getElementById('browser-name').textContent = browser.name
     const url = new URL(window.location)
     if (url.searchParams.has('install')) {
         history.pushState(null, '', location.href.split('?')[0])

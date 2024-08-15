@@ -29,6 +29,8 @@ description: Documentation and instructions for configuring and using the Link E
 
     {% comment %}{% include alerts.html %}{% endcomment %}
 
+    <p>Note: Documentation is specific to your browser, <span id="browser-name"></span>.</p>
+
     <h2 id="configure">Configure</h2>
     <hr class="mt-0">
 
@@ -59,6 +61,7 @@ description: Documentation and instructions for configuring and using the Link E
         <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
             View Screen Shot of Host Permissions. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
     </p>
+    <p class="d-none firefox">Firefox requires host permission in order to extract links from PDF documents.</p>
     <p>
         <span class="text-warning-emphasis">Important:</span> To extract links from multiple tabs, first select the tabs by holding the
         <kbd>Ctrl</kbd> key and select additional tabs; then use Link Extractor as normal to extract from all selected tabs.
