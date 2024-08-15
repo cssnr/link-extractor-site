@@ -15,31 +15,21 @@ description: Documentation and instructions for configuring and using the Link E
         <a class="body-link" href="#links">Link Results</a>
     </p>
 
-    <div id="feedback" class="alert alert-success alert-dismissible d-none animate__animated animate__zoomInDown" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <p>
-            <i class="fa-regular fa-thumbs-up me-2"></i> Thank you for providing feedback. If you provided details we will look into them.
-        </p>
-        <p>
-            If you would like feedback from the developer you can open an
-            <a class="alert-link" href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Issue</a> on GitHub.
-        </p>
-        <p class="mb-0">
-            You may also request support and get help on the <a class="alert-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
-        </p>
-    </div>
-
-    <div id="new-install" class="alert alert-success alert-dismissible d-none" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <h4 class="alert-heading">Thank You...</h4>
-        <p class="mb-0">
-            for installing {{ site.site_name }}. {{ site.site_name }}'s goal is to be the ultimate link extraction web extension.
-            <br>
-            If you run into any issues or want to see new features, please <a class="alert-link" href="{{ "/#support" | relative_url }}">let us know</a>.
-        </p>
+    <div id="new-install" class="d-none">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <h4 class="alert-heading">Thank You...</h4>
+            <p class="mb-0">
+                for installing {{ site.site_name }}. {{ site.site_name }}'s goal is to be the ultimate link extraction web extension.
+                <br>
+                If you run into any issues or want to see new features, please <a class="alert-link" href="{{ "/#support" | relative_url }}">let us know</a>.
+            </p>
+        </div>
     </div>
 
     {% comment %}{% include alerts.html %}{% endcomment %}
+
+    <p>Note: Documentation is specific to your browser, <span id="browser-name"></span>.</p>
 
     <h2 id="configure">Configure</h2>
     <hr class="mt-0">
@@ -49,7 +39,7 @@ description: Documentation and instructions for configuring and using the Link E
         You can pin the Addon by locating the {{ site.site_name }} icon on the Extension Toolbar, then
         <span class="d-none firefox">clicking the Settings Wheel and Pin to Toolbar.</span>
         <span class="d-none edge">clicking the Eye icon.</span>
-        <span class="d-none chromium">clicking the Pin icon.</span>
+        <span class="d-none chrome">clicking the Pin icon.</span>
     </p>
     <p class="d-inline-flex gap-1">
         <a class="body-link text-decoration-none animate__animated animate__headShake animate__delay-1s" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -61,7 +51,7 @@ description: Documentation and instructions for configuring and using the Link E
     <div class="collapse mb-3" id="collapseExample">
         <img src="{{ "/media/images/firefox-pin.jpg" | relative_url }}" class="img-thumbnail d-none firefox" alt="Chrome Pin Extension" width="360">
         <img src="{{ "/media/images/edge-pin.jpg" | relative_url }}" class="img-thumbnail d-none edge" alt="Chrome Pin Extension" width="360">
-        <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail d-none chromium" alt="Chrome Pin Extension" width="360">
+        <img src="{{ "/media/images/chrome-pin.jpg" | relative_url }}" class="img-thumbnail d-none chrome" alt="Chrome Pin Extension" width="360">
     </div>
 
     <h4>Host Permissions</h4>
@@ -71,6 +61,7 @@ description: Documentation and instructions for configuring and using the Link E
         <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
             View Screen Shot of Host Permissions. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
     </p>
+    <p class="d-none firefox">Firefox requires host permission in order to extract links from PDF documents.</p>
     <p>
         <span class="text-warning-emphasis">Important:</span> To extract links from multiple tabs, first select the tabs by holding the
         <kbd>Ctrl</kbd> key and select additional tabs; then use Link Extractor as normal to extract from all selected tabs.
@@ -107,7 +98,7 @@ description: Documentation and instructions for configuring and using the Link E
     <p class="d-none firefox">
         <span class="text-warning-emphasis">Important:</span> Firefox requires Host Permissions for Omnibox usage.
     </p>
-    <p class="d-none chromium edge">
+    <p class="d-none chrome edge">
         <span class="text-warning-emphasis">Note:</span> <b>Chrome/Edge</b> does not allow an empty omnibox entry.
         To extract all links, simply enter a second space after activating the Omnibox, then press enter.
     </p>
@@ -159,7 +150,7 @@ description: Documentation and instructions for configuring and using the Link E
             On Edge shortcuts are managed by entering the following into your address bar:
             <kbd role="button" data-clipboard-text="edge://extensions/shortcuts">edge://extensions/shortcuts</kbd>
         </span>
-        <span class="d-none chromium">
+        <span class="d-none chrome">
             On Chrome shortcuts are managed by entering the following into your address bar:
             <kbd role="button" data-clipboard-text="chrome://extensions/shortcuts">chrome://extensions/shortcuts</kbd>
         </span>
@@ -246,7 +237,7 @@ description: Documentation and instructions for configuring and using the Link E
         Icon and Click
         <i class="fa-solid fa-gear d-none firefox"></i>
         <i class="fa-regular fa-eye-slash d-none edge"></i>
-        <i class="fa-solid fa-thumbtack ms-1 d-none chromium"></i>
+        <i class="fa-solid fa-thumbtack ms-1 d-none chrome"></i>
     </span>
 </div> <!-- pin-notice -->
 

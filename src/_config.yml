@@ -9,8 +9,10 @@ site_name: Link Extractor
 menu:
   - name: Home
     link: /
-  - name: Documentation
+  - name: Docs
     link: /docs/
+  - name: FAQ
+    link: /faq/
   - name: Screen Shots
     link: /screenshots/
 

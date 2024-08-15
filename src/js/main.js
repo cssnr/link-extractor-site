@@ -85,7 +85,7 @@ function onScroll() {
  * Show Bootstrap Toast
  * @function showToast
  * @param {String} message
- * @param {String} type
+ * @param {String} [type]
  */
 function showToast(message, type = 'success') {
     console.debug(`showToast: ${type}: ${message}`)
@@ -115,6 +115,62 @@ function debounce(fn, timeout = 250) {
         clearTimeout(timeoutID)
         timeoutID = setTimeout(() => fn(...args), timeout)
     }
+}
+
+/**
+ * @typedef {Object} Browser
+ * @property {String} name
+ * @property {String} id
+ * @property {String} class
+ */
+
+/**
+ * @function detectBrowser
+ * @return {Browser}
+ */
+function detectBrowser() {
+    const browser = {}
+    if (navigator.userAgent.includes('Firefox/')) {
+        console.log('Detected Browser: Firefox')
+        browser.name = 'Firefox'
+        browser.id = 'firefox'
+        browser.class = '.firefox'
+    } else if (navigator.userAgent.includes('Edg/')) {
+        console.log('Detected Browser: Edge')
+        browser.name = 'Edge'
+        browser.id = 'edge'
+        browser.class = '.edge'
+    } else if (navigator.userAgent.includes('OPR/')) {
+        console.log('Detected Browser: Opera')
+        browser.name = 'Opera'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
+    } else if (navigator.brave) {
+        console.log('Detected Browser: Brave')
+        browser.name = 'Brave'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
+    } else {
+        console.log('Detected Browser: Chrome/Other')
+        browser.name = 'Chrome/Other'
+        browser.id = 'chrome'
+        browser.class = '.chrome'
+    }
+    return browser
+}
+
+/**
+ * @function processBrowser
+ * @return {Promise<Browser>}
+ */
+function processBrowser() {
+    return new Promise((resolve) => {
+        const browser = detectBrowser()
+        document
+            .querySelectorAll(browser.class)
+            .forEach((el) => el.classList.remove('d-none'))
+        resolve(browser)
+    })
 }
 
 const animateCSS = (selector, animation, prefix = 'animate__') => {

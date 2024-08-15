@@ -5,6 +5,7 @@ const cacheName = 'v1'
 const resources = [
     '/',
     '/docs/',
+    '/faq/',
     '/screenshots/',
     '/uninstall/',
 
@@ -15,6 +16,7 @@ const resources = [
     '/css/uninstall.css',
 
     '/js/docs.js',
+    '/js/faq.js',
     '/js/main.js',
     '/js/screenshots.js',
     '/js/theme.js',

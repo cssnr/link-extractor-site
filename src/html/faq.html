@@ -1,0 +1,181 @@
+---
+layout: default
+permalink: /faq/
+title: Frequently Asked Questions
+description: Frequently Asked Questions about the Link Extractor Web Extension.
+---
+
+<div id="faq" class="container-fluid">
+    <h1 class="animate__animated animate__zoomIn"><i class="fa-solid fa-person-circle-question me-2"></i> {{ page.title }}</h1>
+
+    <p>
+        <i class="fa-regular fa-lightbulb text-warning-emphasis me-2"></i>
+        Tip: Click on a question to expand the answer.
+    </p>
+
+    <div id="feedback" class="d-none ">
+        <div class="alert alert-success alert-dismissible animate__animated animate__zoomInDown" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <p>
+                <i class="fa-regular fa-thumbs-up me-2"></i> Thank you for providing feedback. If you provided details we will look into them.
+            </p>
+            <p>
+                If you would like feedback from the developer you can open an
+                <a class="alert-link" href="{{ site.github_url }}/issues" target="_blank" rel="noopener">Issue</a> on GitHub.
+            </p>
+            <p class="mb-0">
+                You may also request support and get help on the <a class="alert-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord Server</a>.
+            </p>
+        </div>
+    </div>
+
+    <p>Note: Answers are specific to your browser, <span id="browser-name"></span>.</p>
+
+    <p class="lead">
+        <a id="expand-all" class="link-body-emphasis" data-expand="true" role="button">
+            <i class="fa-solid fa-arrow-down-short-wide me-3"></i><span>Expand All</span></a>
+    </p>
+
+    <!-- noLinks -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="noLinks" href="#noLinks">
+            <i class="fa-solid fa-angle-right me-2"></i> No links are extracted?
+        </a>
+    </h4>
+    <div class="collapse" id="noLinks">
+        <div class="">
+            <ol>
+                <li>If you just installed the extension, you may need to close and re-open the tab to extract links.</li>
+                <li>Try re-starting your browser. Make sure to close all open windows then re-open the browser.</li>
+                <li>If you cant extract links from any tabs try re-installing the extension. Make sure to export any saved filters first.</li>
+                <li>
+                    If you are still unable to extract links, please
+                    <a href="https://github.com/cssnr/link-extractor/issues" target="_blank" rel="noopener">open an issue on GitHub</a>;
+                    and we will do our best to resolve the issue.
+                </li>
+            </ol>
+            <span>
+                If you don't have a GitHub account, you can
+                <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor" target="_blank" rel="noopener">submit feedback here</a>.
+                <br>
+                Make sure to <b>include a link to the site</b> you are having issues with.
+            </span>
+        </div>
+    </div>
+
+    <!-- fileAccess -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="fileAccess" href="#fileAccess">
+            <i class="fa-solid fa-angle-right me-2"></i> Allow access to file:/ URLs?
+        </a>
+    </h4>
+    <div class="collapse" id="fileAccess">
+        <p class="">
+            Note: File extraction is currently experimental and only works on PDF files.
+        </p>
+        <div class="alert alert-warning mb-0 d-none firefox">
+            Firefox does <b>not</b> allow access to file:/ URLs.
+        </div>
+        <div class="d-none chrome">
+            <ol>
+                <li>Navigate to: <kbd role="button" data-clipboard-text="chrome://extensions">chrome://extensions</kbd></li>
+                <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
+                <li>Scroll until you find <b>Allow access to file URLs</b> and enable the toggle.</li>
+            </ol>
+            <span>You should now be able to extract links from file URLs.</span>
+        </div>
+        <div class="alert alert-warning mb-0 d-none edge">
+            Edge does <b>not</b> allow access to file:/ URLs.
+        </div>
+        {% comment %}<div class="d-none edge">{% endcomment %}
+            {% comment %}<ol>{% endcomment %}
+                {% comment %}<li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>{% endcomment %}
+                {% comment %}<li>Scroll until you find Link Extractor and click <b>Details</b>.</li>{% endcomment %}
+                {% comment %}<li>Check the box labeled <b>Allow access to file URLs</b>.</li>{% endcomment %}
+            {% comment %}</ol>{% endcomment %}
+            {% comment %}<span>You should now be able to extract links from file URLs.</span>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+    </div>
+
+    <!-- privateAccess -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="privateAccess" href="#privateAccess">
+            <i class="fa-solid fa-angle-right me-2"></i> Allow access to incognito or private browsing windows?
+        </a>
+    </h4>
+    <div class="collapse" id="privateAccess">
+        <div class="d-none firefox">
+            <ol>
+                <li>Navigate to <kbd role="button" data-clipboard-text="chrome://extensions">about:addons</kbd> or press <kbd>Ctrl+Shift+A</kbd></li>
+                <li>Scroll until you find Link Extractor and click on the tile.</li>
+                <li>Scroll until you find <b>Run in Private Windows</b> and toggle the Allow radio.</li>
+            </ol>
+            <span>The extension should now load in new Private Windows.</span>
+        </div>
+        <div class="d-none chrome">
+            <ol>
+                <li>Navigate to: <kbd role="button" data-clipboard-text="chrome://extensions">chrome://extensions</kbd></li>
+                <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
+                <li>Scroll until you find <b>Allow in Incognito</b> and enable the toggle.</li>
+            </ol>
+            <span>The extension should now load in new Incognito Windows.</span>
+        </div>
+        <div class="d-none edge">
+            <ol>
+                <li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>
+                <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
+                <li>Check the box labeled <b>Allow in InPrivate</b>.</li>
+            </ol>
+            <span>The extension should now load in new IniPrivate Windows.</span>
+        </div>
+    </div>
+
+    <!-- multipleTabs -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="multipleTabs" href="#multipleTabs">
+            <i class="fa-solid fa-angle-right me-2"></i> Extract links from multiple tabs at the same time?
+        </a>
+    </h4>
+    <div class="collapse" id="multipleTabs">
+        <div class="">
+            <ol>
+                <li>
+                    Ensure you have granted Host Permission to the extension, from the Popup or Options Page.
+                    <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
+                        Screen Shot. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+                </li>
+                <li>While pressing and holding the <kbd>Ctrl</kbd> key, select all the tabs you wish to extract from.</li>
+                <li>With the tabs highlighted, extract links as normal using either the Popup, Shortcuts, or Omnibox.</li>
+            </ol>
+            <span>The link results page should have results from all the tabs you selected.</span>
+        </div>
+    </div>
+
+    <hr class="mt-4">
+
+    <p>
+        Don't see your question here? Ask on the
+        <a href="https://github.com/cssnr/link-extractor/discussions/categories/q-a" target="_blank" rel="noopener">Q&A Discussion</a>
+        on GitHub.
+        {% comment %}<a href="https://github.com/cssnr/link-extractor" target="_blank" rel="noopener">GitHub</a>.{% endcomment %}
+    </p>
+    <p>
+        You can also easily report any issues through the
+        <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor%20Website" target="_blank" rel="noopener">feedback form</a>.
+    </p>
+    <p>
+        Support is also provided on the
+        <a href="{{ site.discord_invite }}" target="_blank" rel="noopener">CSSNR Discord</a> server.
+    </p>
+    <p>Additional information can be found on the <a href="{{ "/docs/" | relative_url }}">Documentation page</a>.</p>
+</div>
+
+<script type="text/javascript" src="{{ "/js/faq.js" | relative_url }}"></script>
