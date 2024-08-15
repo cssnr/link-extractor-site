@@ -1,1 +1,4 @@
-[{ "value": "Check Config Values", "fileMask": "*src\\_config.yml" }]
+[
+  { "value": "Check Config Values", "fileMask": "*src\\_config.yml" },
+  { "value": "Confirm Cache Name is v1", "fileMask": "*src\\sw.js" }
+]

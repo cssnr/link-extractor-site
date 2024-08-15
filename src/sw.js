@@ -140,6 +140,7 @@ self.addEventListener('fetch', (event) => {
 
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
+    self.skipWaiting()
     event.waitUntil(addResourcesToCache(resources))
 })
 
