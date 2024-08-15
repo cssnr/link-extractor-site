@@ -1,6 +1,6 @@
 // Service Worker
 
-const cacheName = 'v6'
+const cacheName = 'v1'
 
 const resources = [
     '/',
