@@ -1,6 +1,6 @@
 // Service Worker
 
-const cacheName = 'v1'
+const cacheName = 'v6'
 
 const resources = [
     '/',
@@ -140,6 +140,7 @@ self.addEventListener('fetch', (event) => {
 
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
+    self.skipWaiting()
     event.waitUntil(addResourcesToCache(resources))
 })
 
