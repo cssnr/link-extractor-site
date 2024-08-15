@@ -161,14 +161,16 @@ function detectBrowser() {
 
 /**
  * @function processBrowser
- * @return {Browser}
+ * @return {Promise<Browser>}
  */
 function processBrowser() {
-    const browser = detectBrowser()
-    document
-        .querySelectorAll(browser.class)
-        .forEach((el) => el.classList.remove('d-none'))
-    return browser
+    return new Promise((resolve) => {
+        const browser = detectBrowser()
+        document
+            .querySelectorAll(browser.class)
+            .forEach((el) => el.classList.remove('d-none'))
+        resolve(browser)
+    })
 }
 
 const animateCSS = (selector, animation, prefix = 'animate__') => {
