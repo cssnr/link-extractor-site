@@ -64,12 +64,23 @@ function domContentLoaded() {
         history.pushState(null, '', location.href.split('?')[0])
         document.getElementById('feedback').classList.remove('d-none')
     }
-    if (url.hash) {
-        console.log('url.hash:', url.hash)
-        const bsCollapse = new bootstrap.Collapse(url.hash, {
+    showHash(url.hash)
+}
+
+window.addEventListener('hashchange', (event) => {
+    // console.log('hashchange:', event)
+    // console.log('location.hash:', location.hash)
+    showHash(location.hash)
+})
+
+function showHash(hash) {
+    console.log('showHash:', hash)
+    if (hash) {
+        const bsCollapse = new bootstrap.Collapse(hash, {
             toggle: false,
         })
-        // console.log('bsCollapse:', bsCollapse)
         bsCollapse.show()
+        // console.log('el', bsCollapse._element.previousElementSibling)
+        bsCollapse._element.previousElementSibling.scrollIntoView()
     }
 }

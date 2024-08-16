@@ -45,24 +45,24 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
         </a>
     </h4>
     <div class="collapse" id="noLinks">
-        <div class="">
-            <ol>
-                <li>If you just installed the extension, you may need to close and re-open the tab to extract links.</li>
-                <li>Try re-starting your browser. Make sure to close all open windows then re-open the browser.</li>
-                <li>If you cant extract links from any tabs try re-installing the extension. Make sure to export any saved filters first.</li>
-                <li>
-                    If you are still unable to extract links, please
-                    <a href="https://github.com/cssnr/link-extractor/issues" target="_blank" rel="noopener">open an issue on GitHub</a>;
-                    and we will do our best to resolve the issue.
-                </li>
-            </ol>
-            <span>
-                If you don't have a GitHub account, you can
-                <a href="https://cssnr.github.io/feedback/?app=Link%20Extractor" target="_blank" rel="noopener">submit feedback here</a>.
-                <br>
-                Make sure to <b>include a link to the site</b> you are having issues with.
-            </span>
-        </div>
+        <ol>
+            <li>If you just installed the extension, you may need to close and re-open the tab to extract links.</li>
+            <li>Try re-starting your browser. Make sure to close all open windows then re-open the browser.</li>
+            <li>If you cant extract links from any tabs try re-installing the extension. Make sure to export any saved filters first.</li>
+            <li>
+                If you are still unable to extract links, please
+                <a class="body-link" href="https://github.com/cssnr/link-extractor/issues" target="_blank" rel="noopener">
+                    open an issue on GitHub <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+                and we will do our best to resolve the issue.
+            </li>
+        </ol>
+        <span>
+            If you don't have a GitHub account, you can
+            <a class="body-link" href="https://cssnr.github.io/feedback/?app=Link%20Extractor" target="_blank" rel="noopener">
+                submit feedback here <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>.
+            <br>
+            Make sure to <b>include a link to the site</b> you are having issues with.
+        </span>
     </div>
 
     <!-- fileAccess -->
@@ -86,19 +86,15 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
                 <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
                 <li>Scroll until you find <b>Allow access to file URLs</b> and enable the toggle.</li>
             </ol>
-            <span>You should now be able to extract links from file URLs.</span>
         </div>
-        <div class="alert alert-warning mb-0 d-none edge">
-            Edge does <b>not</b> allow access to file:/ URLs.
+        <div class="d-none edge">
+            <ol>
+                <li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>
+                <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
+                <li>Check the box labeled <b>Allow access to file URLs</b>.</li>
+            </ol>
         </div>
-        {% comment %}<div class="d-none edge">{% endcomment %}
-            {% comment %}<ol>{% endcomment %}
-                {% comment %}<li>Navigate to: <kbd role="button" data-clipboard-text="edge://extensions">edge://extensions</kbd></li>{% endcomment %}
-                {% comment %}<li>Scroll until you find Link Extractor and click <b>Details</b>.</li>{% endcomment %}
-                {% comment %}<li>Check the box labeled <b>Allow access to file URLs</b>.</li>{% endcomment %}
-            {% comment %}</ol>{% endcomment %}
-            {% comment %}<span>You should now be able to extract links from file URLs.</span>{% endcomment %}
-        {% comment %}</div>{% endcomment %}
+        <p class="mb-0 d-none chrome edge">You may need to restart the browser, reload the tab, or wait a few minutes for this to take effect.</p>
     </div>
 
     <!-- privateAccess -->
@@ -116,7 +112,7 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
                 <li>Scroll until you find Link Extractor and click on the tile.</li>
                 <li>Scroll until you find <b>Run in Private Windows</b> and toggle the Allow radio.</li>
             </ol>
-            <span>The extension should now load in new Private Windows.</span>
+            <p class="mb-0">The extension should now load in new Private Windows.</p>
         </div>
         <div class="d-none chrome">
             <ol>
@@ -124,7 +120,7 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
                 <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
                 <li>Scroll until you find <b>Allow in Incognito</b> and enable the toggle.</li>
             </ol>
-            <span>The extension should now load in new Incognito Windows.</span>
+            <p class="mb-0">The extension should now load in new Incognito Windows.</p>
         </div>
         <div class="d-none edge">
             <ol>
@@ -132,7 +128,7 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
                 <li>Scroll until you find Link Extractor and click <b>Details</b>.</li>
                 <li>Check the box labeled <b>Allow in InPrivate</b>.</li>
             </ol>
-            <span>The extension should now load in new IniPrivate Windows.</span>
+            <p class="mb-0">The extension should now load in new IniPrivate Windows.</p>
         </div>
     </div>
 
@@ -145,18 +141,61 @@ description: Frequently Asked Questions about the Link Extractor Web Extension.
         </a>
     </h4>
     <div class="collapse" id="multipleTabs">
-        <div class="">
-            <ol>
-                <li>
-                    Ensure you have granted Host Permission to the extension, from the Popup or Options Page.
-                    <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
-                        Screen Shot. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
-                </li>
-                <li>While pressing and holding the <kbd>Ctrl</kbd> key, select all the tabs you wish to extract from.</li>
-                <li>With the tabs highlighted, extract links as normal using either the Popup, Shortcuts, or Omnibox.</li>
-            </ol>
-            <span>The link results page should have results from all the tabs you selected.</span>
-        </div>
+        <ol>
+            <li>
+                Ensure you have granted Host Permission to the extension, from the Popup or Options Page.
+                <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
+                    Screen Shot. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+            </li>
+            <li>While pressing and holding the <kbd>Ctrl</kbd> key, select all the tabs you wish to extract from.</li>
+            <li>With the tabs highlighted, extract links as normal using either the Popup, Shortcuts, or Omnibox.</li>
+        </ol>
+        <p class="mb-0">The link results page should have results from all the tabs you selected.</p>
+    </div>
+
+    <!-- extractPDF -->
+
+    <h4 class="my-4">
+        <a class="body-link" role="button" data-bs-toggle="collapse" aria-expanded="false"
+           aria-controls="extractPDF" href="#extractPDF">
+            <i class="fa-solid fa-angle-right me-2"></i> Unable to extract links from PDF documents?
+        </a>
+    </h4>
+    <div class="collapse" id="extractPDF">
+        <p>
+            <span data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Experimental Feature">
+                <i class="fa-solid fa-flask text-warning-emphasis me-1"></i>
+            </span>
+            Extracting links from PDF documents is currently experimental.
+        </p>
+        <ol>
+            <li>
+                PDF Extraction utilizes the
+                <a class="body-link" href="https://github.com/mozilla/pdf.js" target="_blank" rel="noopener">
+                    pdf.js <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+                library which requires
+                <span class="d-none firefox">Firefox 121 or newer.</span>
+                <span class="d-none chrome">Chrome 119 or newer.</span>
+                <span class="d-none edge">Edge 119 or newer.</span>
+            </li>
+            <li>
+                Ensure you have granted Host Permission to the extension, from the Popup or Options Page.
+                <a class="body-link" href="{{ "/screenshots/02.jpg" | relative_url }}" target="_blank">
+                    Screen Shot. <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+            </li>
+            <li>Try re-starting your browser. Make sure to close all open windows then re-open the browser.</li>
+            <li>
+                If you have tried all the above steps, please
+                <a class="body-link" href="https://github.com/cssnr/link-extractor/issues" target="_blank" rel="noopener">
+                    open an issue on GitHub <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i></a>
+                and we will do our best to resolve the issue.
+            </li>
+        </ol>
+        <p>PDF Files</p>
+        <ol class="mb-0">
+            <li>To extract links from PDF files, you must also grant <a class="body-link" href="#fileAccess">File Access</a>.</li>
+        </ol>
+        {% comment %}<p class="mb-0">PDF Files</p>{% endcomment %}
     </div>
 
     <hr class="mt-4">
