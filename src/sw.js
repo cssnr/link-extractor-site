@@ -7,7 +7,6 @@ const resources = [
     '/docs/',
     '/faq/',
     '/screenshots/',
-    '/uninstall/',
 
     '/css/bootstrap.css',
     '/css/docs.css',

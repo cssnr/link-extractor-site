@@ -54,6 +54,12 @@ collapses.forEach((el) => {
     })
 })
 
+window.addEventListener('hashchange', (event) => {
+    // console.log('hashchange:', event)
+    // console.log('window.location.hash:', window.location.hash)
+    showHash(window.location.hash)
+})
+
 function domContentLoaded() {
     // console.debug('DOMContentLoaded')
     processBrowser().then((browser) => {
@@ -61,17 +67,11 @@ function domContentLoaded() {
     })
     const url = new URL(window.location)
     if (url.searchParams.has('feedback')) {
-        history.pushState(null, '', location.href.split('?')[0])
+        history.pushState(null, '', window.location.href.split('?')[0])
         document.getElementById('feedback').classList.remove('d-none')
     }
     showHash(url.hash)
 }
-
-window.addEventListener('hashchange', (event) => {
-    // console.log('hashchange:', event)
-    // console.log('location.hash:', location.hash)
-    showHash(location.hash)
-})
 
 function showHash(hash) {
     console.log('showHash:', hash)
