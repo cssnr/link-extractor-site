@@ -7,21 +7,18 @@
         for <a class="alert-link" href="{{ site.chrome_url }}" target="_blank" rel="noopener">Chrome</a>
         or <a class="alert-link" href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a>.
     </p>
-    {% comment %}<h5>Known Issues:</h5>{% endcomment %}
-    {% comment %}<ul class="mb-1">{% endcomment %}
-        {% comment %}<li>{% endcomment %}
-            {% comment %}Saving Options on the Options Page does not work prior to 0.6.1.{% endcomment %}
-            {% comment %}<br>{% endcomment %}
-            {% comment %}<strong>Work Around:</strong> Set your options in the Popup.{% endcomment %}
-        {% comment %}</li>{% endcomment %}
-        {% comment %}<li>{% endcomment %}
-            {% comment %}Opening Links from the Parse Links Option in the Popup does not work prior to 0.6.1.{% endcomment %}
-            {% comment %}<br>{% endcomment %}
-            {% comment %}<strong>Work Around:</strong> Use Open Lines or Parse URLs then Open from Links Results.{% endcomment %}
-        {% comment %}</li>{% endcomment %}
-    {% comment %}</ul>{% endcomment %}
-    {% comment %}<p class="mb-1 small">{% endcomment %}
-        {% comment %}Chrome Web Store Publishing can take several days (and sometimes weeks) to complete.{% endcomment %}
-        {% comment %}These issues have already been fixed; however, are still awaiting approval from Google.{% endcomment %}
-    {% comment %}</p>{% endcomment %}
+</div>
+
+<div class="alert alert-warning p-2 mb-2" role="alert" data-nosnippet>
+    <h5>Known Issues:</h5>
+    <ul class="mb-1">
+        <li>
+            The <i class="fa-regular fa-trash-can"></i> Delete button is not functioning on the Options page for removing filters.
+            <br>
+            <strong>Work Around:</strong> Click on the text of the filter, delete all the text and press enter.
+        </li>
+    </ul>
+    <p class="mb-1 small">
+        This will be fixed on the next release.
+    </p>
 </div>
