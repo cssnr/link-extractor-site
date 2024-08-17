@@ -7,7 +7,7 @@ redirect.pathname = '/faq/'
 
 const version = url.searchParams.get('version') || 'unknown'
 
-const noAlertVersion = '0.7.2'
+const noAlertVersion = '0.7.5'
 const discordUsername = 'Link Extractor'
 const uninstallMessage = `${discordUsername} Uninstall, Version: **${version}**`
 const discordAvatar = 'https://link-extractor.cssnr.com/media/logo.png'
