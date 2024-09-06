@@ -3,9 +3,6 @@
 const cacheName = 'v1'
 
 const resources = [
-    '/',
-    '/docs/',
-    '/faq/',
     '/screenshots/',
 
     '/css/bootstrap.css',
@@ -62,10 +59,23 @@ const resources = [
     'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png',
 ]
 
-const excludes = ['/admin', '/flower', '/phpmyadmin', '/redis', '/ws']
+const live = ['/', '/docs/', '/faq/', '/uninstall/']
+
+// const excludes = []
 
 const addResourcesToCache = async (resources) => {
     console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
+    // for (const resource of resources) {
+    //     let url
+    //     if (resource.startsWith('http')) {
+    //         url = resource
+    //     } else {
+    //         url = `${self.origin}${resource}`
+    //     }
+    //     console.log(`url: ${url}`)
+    //     const response = await fetch(url)
+    //     console.log(`status: ${response.status}`)
+    // }
     try {
         const cache = await caches.open(cacheName)
         await cache.addAll(resources)
@@ -101,7 +111,7 @@ const cleanupCache = async (event) => {
 }
 
 const cacheFirst = async (event) => {
-    // console.debug('%ccacheFirst:', 'color: Aqua', event.request.url)
+    console.debug('%ccacheFirst:', 'color: Aqua', event.request.url)
 
     const responseFromCache = await caches.match(event.request)
     if (responseFromCache?.ok) {
@@ -111,7 +121,9 @@ const cacheFirst = async (event) => {
     try {
         const responseFromNetwork = await fetch(event.request)
         if (responseFromNetwork?.ok) {
-            await putInCache(event.request, responseFromNetwork.clone())
+            // await putInCache(event.request, responseFromNetwork.clone())
+            // noinspection ES6MissingAwait
+            putInCache(event.request, responseFromNetwork.clone())
         }
         return responseFromNetwork
     } catch (e) {
@@ -126,7 +138,7 @@ const cacheFirst = async (event) => {
 }
 
 const networkFirst = async (event) => {
-    // console.debug('%cnetworkFirst:', 'color: Coral', event.request.url)
+    console.debug('%cnetworkFirst:', 'color: Coral', event.request.url)
 
     try {
         const responseFromNetwork = await fetch(event.request)
@@ -157,24 +169,25 @@ async function fetchResponse(event) {
     // console.debug('url:', url)
     if (
         event.request.method !== 'GET' ||
-        self.location.origin !== url.origin ||
-        excludes.some((e) => url.pathname.startsWith(e))
+        self.location.origin !== url.origin // || excludes.some((e) => url.pathname.startsWith(e))
     ) {
         console.debug('%cExcluded Request:', 'color: Yellow', event.request.url)
         return
     }
-    if (url.pathname.startsWith('/static/')) {
-        return event.respondWith(cacheFirst(event))
+    // console.debug('pathname:', url.pathname)
+    if (live.some((e) => url.pathname === e)) {
+        return event.respondWith(networkFirst(event))
     }
-    return event.respondWith(networkFirst(event))
+    return event.respondWith(cacheFirst(event))
 }
 
 self.addEventListener('fetch', fetchResponse)
 
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
+    // noinspection JSIgnoredPromiseFromCall
     self.skipWaiting()
-    event.waitUntil(addResourcesToCache(resources))
+    event.waitUntil(addResourcesToCache([].concat(resources, live)))
 })
 
 self.addEventListener('activate', (event) => {
