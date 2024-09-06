@@ -52,6 +52,7 @@ a.body-link:hover {
 }
 
 /* Grow */
+.hvr-grow-sm,
 .hvr-grow-lg,
 .hvr-grow {
     display: inline-block;
@@ -62,6 +63,10 @@ a.body-link:hover {
     -moz-osx-font-smoothing: grayscale;
     transition-duration: 0.3s;
     transition-property: transform;
+}
+
+.hvr-grow-sm:hover {
+    transform: scale(1.05);
 }
 
 .hvr-grow:hover {

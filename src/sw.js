@@ -62,6 +62,8 @@ const resources = [
     'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png',
 ]
 
+const excludes = ['/admin', '/flower', '/phpmyadmin', '/redis', '/ws']
+
 const addResourcesToCache = async (resources) => {
     console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
     try {
@@ -73,13 +75,7 @@ const addResourcesToCache = async (resources) => {
 }
 
 const putInCache = async (request, response) => {
-    console.debug(
-        '%c putInCache:',
-        'color: Yellow',
-        `${request.url}`,
-        request,
-        response
-    )
+    console.debug('%c putInCache:', 'color: Khaki', `${request.url}`)
     try {
         const cache = await caches.open(cacheName)
         await cache.put(request, response)
@@ -89,7 +85,7 @@ const putInCache = async (request, response) => {
 }
 
 const cleanupCache = async (event) => {
-    console.debug('%c cleanupCache:', 'color: Magenta', event)
+    console.debug('%c cleanupCache:', 'color: Coral', event)
     const keys = await caches.keys()
     console.debug('keys:', keys)
     for (const key of keys) {
@@ -104,38 +100,76 @@ const cleanupCache = async (event) => {
     }
 }
 
-const fetchResponse = async (event) => {
+const cacheFirst = async (event) => {
+    // console.debug('%ccacheFirst:', 'color: Aqua', event.request.url)
+
     const responseFromCache = await caches.match(event.request)
     if (responseFromCache?.ok) {
-        console.debug(
-            `%c responseFromCache:`,
-            'color: LimeGreen',
-            `${event.request.url}`,
-            responseFromCache
-        )
         return responseFromCache
     }
 
-    const responseFromNetwork = await fetch(event.request)
-    console.debug(
-        `%c responseFromNetwork:`,
-        'color: OrangeRed',
-        `${event.request.url}`,
-        responseFromNetwork
-    )
-    if (responseFromNetwork.ok) {
-        const url = new URL(event.request.url)
-        console.debug('%c checking url:', 'color: Magenta', url)
-        if (resources.some((p) => p === url.pathname)) {
+    try {
+        const responseFromNetwork = await fetch(event.request)
+        if (responseFromNetwork?.ok) {
             await putInCache(event.request, responseFromNetwork.clone())
         }
+        return responseFromNetwork
+    } catch (e) {
+        console.debug(`fetch error: ${e.message}`, 'color: OrangeRed')
     }
-    return responseFromNetwork
+
+    console.debug('%cNo Cache or Network:', 'color: Red', event.request.url)
+    return new Response('No Cache or Network Available', {
+        status: 408,
+        headers: { 'Content-Type': 'text/plain' },
+    })
 }
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(fetchResponse(event))
-})
+const networkFirst = async (event) => {
+    // console.debug('%cnetworkFirst:', 'color: Coral', event.request.url)
+
+    try {
+        const responseFromNetwork = await fetch(event.request)
+        if (responseFromNetwork?.ok) {
+            // await putInCache(event.request, responseFromNetwork.clone())
+            putInCache(event.request, responseFromNetwork.clone()).then()
+            return responseFromNetwork
+        }
+    } catch (e) {
+        console.debug(`fetch error: ${e.message}`, 'color: OrangeRed')
+    }
+
+    const responseFromCache = await caches.match(event.request)
+    if (responseFromCache?.ok) {
+        return responseFromCache
+    }
+
+    console.debug('%cNo Network or Cache:', 'color: Red', event.request.url)
+    return new Response('No Network or Cache Available', {
+        status: 408,
+        headers: { 'Content-Type': 'text/plain' },
+    })
+}
+
+async function fetchResponse(event) {
+    // console.debug('fetchResponse:', event.request)
+    const url = new URL(event.request.url)
+    // console.debug('url:', url)
+    if (
+        event.request.method !== 'GET' ||
+        self.location.origin !== url.origin ||
+        excludes.some((e) => url.pathname.startsWith(e))
+    ) {
+        console.debug('%cExcluded Request:', 'color: Yellow', event.request.url)
+        return
+    }
+    if (url.pathname.startsWith('/static/')) {
+        return event.respondWith(cacheFirst(event))
+    }
+    return event.respondWith(networkFirst(event))
+}
+
+self.addEventListener('fetch', fetchResponse)
 
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
