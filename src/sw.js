@@ -2,7 +2,7 @@
 
 const cacheName = 'v1'
 
-const resources = [
+const cacheResources = [
     '/screenshots/',
 
     '/css/bootstrap.css',
@@ -59,7 +59,7 @@ const resources = [
     'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png',
 ]
 
-const live = ['/', '/docs/', '/faq/', '/uninstall/']
+const liveResources = ['/', '/docs/', '/faq/', '/uninstall/']
 
 // const excludes = []
 
@@ -121,7 +121,6 @@ const cacheFirst = async (event) => {
     try {
         const responseFromNetwork = await fetch(event.request)
         if (responseFromNetwork?.ok) {
-            // await putInCache(event.request, responseFromNetwork.clone())
             // noinspection ES6MissingAwait
             putInCache(event.request, responseFromNetwork.clone())
         }
@@ -143,8 +142,8 @@ const networkFirst = async (event) => {
     try {
         const responseFromNetwork = await fetch(event.request)
         if (responseFromNetwork?.ok) {
-            // await putInCache(event.request, responseFromNetwork.clone())
-            putInCache(event.request, responseFromNetwork.clone()).then()
+            // noinspection ES6MissingAwait
+            putInCache(event.request, responseFromNetwork.clone())
             return responseFromNetwork
         }
     } catch (e) {
@@ -163,22 +162,34 @@ const networkFirst = async (event) => {
     })
 }
 
+/**
+ *
+ * @param {URL} url
+ * @return {boolean}
+ */
+function matchResource(url) {
+    return cacheResources.some((p) => url.pathname === p || url.href === p)
+}
+
 async function fetchResponse(event) {
     // console.debug('fetchResponse:', event.request)
+    // console.debug('event.request.url:', event.request.url)
     const url = new URL(event.request.url)
     // console.debug('url:', url)
+    const match = matchResource(url)
+    // console.debug('match:', match)
     if (
         event.request.method !== 'GET' ||
-        self.location.origin !== url.origin // || excludes.some((e) => url.pathname.startsWith(e))
+        (!match && self.location.origin !== url.origin)
     ) {
         console.debug('%cExcluded Request:', 'color: Yellow', event.request.url)
         return
     }
     // console.debug('pathname:', url.pathname)
-    if (live.some((e) => url.pathname === e)) {
-        return event.respondWith(networkFirst(event))
+    if (match) {
+        return event.respondWith(cacheFirst(event))
     }
-    return event.respondWith(cacheFirst(event))
+    return event.respondWith(networkFirst(event))
 }
 
 self.addEventListener('fetch', fetchResponse)
@@ -187,7 +198,8 @@ self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
     // noinspection JSIgnoredPromiseFromCall
     self.skipWaiting()
-    event.waitUntil(addResourcesToCache([].concat(resources, live)))
+    const resources = [].concat(cacheResources, liveResources)
+    event.waitUntil(addResourcesToCache(resources))
 })
 
 self.addEventListener('activate', (event) => {
