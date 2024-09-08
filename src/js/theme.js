@@ -39,7 +39,8 @@
         // console.debug(`showActiveTheme: ${theme}`)
         const themeIcon = document.querySelector('#theme-icon')
         if (!themeIcon) {
-            return console.debug('No Theme Icon to Set.')
+            // console.debug('No Theme Icon to Set.')
+            return
         }
         document.querySelectorAll('[data-bs-theme-value]').forEach((el) => {
             if (el.dataset.bsThemeValue === theme) {
@@ -53,6 +54,14 @@
             }
         })
     }
+
+    window.addEventListener('storage', (event) => {
+        // console.log('storage:', event)
+        if (event.key === 'theme') {
+            setTheme(event.newValue)
+            showActiveTheme(event.newValue)
+        }
+    })
 
     window
         .matchMedia('(prefers-color-scheme: dark)')

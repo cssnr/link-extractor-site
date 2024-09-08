@@ -64,7 +64,7 @@ const liveResources = ['/', '/docs/', '/faq/', '/uninstall/']
 // const excludes = []
 
 const addResourcesToCache = async (resources) => {
-    console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
+    console.debug('%caddResourcesToCache:', 'color: Cyan', resources)
     // for (const resource of resources) {
     //     let url
     //     if (resource.startsWith('http')) {
@@ -85,22 +85,23 @@ const addResourcesToCache = async (resources) => {
 }
 
 const putInCache = async (request, response) => {
-    console.debug('%c putInCache:', 'color: Khaki', `${request.url}`)
+    console.debug('%cputInCache:', 'color: Khaki', `${request.url}`)
     try {
         const cache = await caches.open(cacheName)
         await cache.put(request, response)
     } catch (e) {
         console.error(`cache.put error: ${e.message}`, e)
     }
+    // console.debug('%cputInCache Success', 'color: Lime')
 }
 
 const cleanupCache = async (event) => {
-    console.debug('%c cleanupCache:', 'color: Coral', event)
+    console.debug('%ccleanupCache:', 'color: Coral', event)
     const keys = await caches.keys()
     console.debug('keys:', keys)
     for (const key of keys) {
         if (key !== cacheName) {
-            console.log('%c Removing Old Cache:', 'color: Yellow', `${key}`)
+            console.log('%cRemoving Old Cache:', 'color: Yellow', `${key}`)
             try {
                 await caches.delete(key)
             } catch (e) {
@@ -109,6 +110,23 @@ const cleanupCache = async (event) => {
         }
     }
 }
+
+// const setOffline = async (event) => {
+//     console.debug('setOffline:', event.clientId)
+//     if (!event.clientId) {
+//         return
+//     }
+//     const client = await self.clients.get(event.clientId)
+//     console.debug('client:', client)
+//     if (!client) {
+//         return
+//     }
+//
+//     // Send a message to the client.
+//     const message = { offline: true }
+//     console.debug('client.postMessage:', message)
+//     client.postMessage(message)
+// }
 
 const cacheFirst = async (event) => {
     console.debug('%ccacheFirst:', 'color: Aqua', event.request.url)
@@ -126,7 +144,7 @@ const cacheFirst = async (event) => {
         }
         return responseFromNetwork
     } catch (e) {
-        console.debug(`fetch error: ${e.message}`, 'color: OrangeRed')
+        console.debug(`fetch error: %c${e.message}`, 'color: OrangeRed')
     }
 
     console.debug('%cNo Cache or Network:', 'color: Red', event.request.url)
@@ -147,7 +165,7 @@ const networkFirst = async (event) => {
             return responseFromNetwork
         }
     } catch (e) {
-        console.debug(`fetch error: ${e.message}`, 'color: OrangeRed')
+        console.debug(`fetch error: %c${e.message}`, 'color: OrangeRed')
     }
 
     const responseFromCache = await caches.match(event.request)
@@ -195,14 +213,14 @@ async function fetchResponse(event) {
 self.addEventListener('fetch', fetchResponse)
 
 self.addEventListener('install', (event) => {
-    console.debug('%c install:', 'color: Cyan', event)
-    // noinspection JSIgnoredPromiseFromCall
-    self.skipWaiting()
+    console.debug('%cinstall:', 'color: Cyan', event)
     const resources = [].concat(cacheResources, liveResources)
     event.waitUntil(addResourcesToCache(resources))
+    // noinspection JSIgnoredPromiseFromCall
+    self.skipWaiting()
 })
 
 self.addEventListener('activate', (event) => {
-    console.debug('%c activate:', 'color: Cyan', event)
+    console.debug('%cactivate:', 'color: Cyan', event)
     event.waitUntil(cleanupCache(event))
 })
