@@ -35,6 +35,14 @@ if (typeof ClipboardJS !== 'undefined') {
     })
 }
 
+// window.addEventListener('offline', () => {
+//     console.debug('%cOFFLINE', 'color: OrangeRed')
+// })
+
+// navigator.serviceWorker.addEventListener('message', (event) => {
+//     console.log('message:', event.data)
+// })
+
 document.addEventListener('DOMContentLoaded', domContentLoaded)
 
 async function domContentLoaded() {
