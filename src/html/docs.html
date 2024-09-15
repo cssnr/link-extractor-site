@@ -217,6 +217,28 @@ description: Documentation and instructions for configuring and using the Link E
         Tip: Additional Data, Number of Links Shown, and Column Sorting options will be saved
         across sessions if you enable the <code>Save Links Page Options</code> Option.
     </p>
+    <h5 id="find-replace"><i class="fa-solid fa-magnifying-glass"></i> Find and Replace</h5>
+    <p>
+        <i class="fa-solid fa-flask text-warning-emphasis ms-1" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Experimental Feature"></i>
+        This is an experimental feature and may have bugs or missing options.
+    </p>
+    <ul class="list-unstyled ms-2">
+        <li>
+            <i class="fa-regular fa-circle-dot"></i> Normal - Normal find and replace.
+        </li>
+        <li>
+            <i class="fa-regular fa-circle-dot"></i> Normal w/ Regex - Normal find and replace supporting regular expressions.
+        </li>
+        <li>
+            <i class="fa-regular fa-circle-dot"></i> Regex w/ Match Groups - Regex find and replace using Match Groups.
+            <br>
+            <span class="ms-4">
+                This requires you to build the full replace value using <kbd>$1</kbd>, <kbd>$2</kbd>, etc.
+                as a substitution for the find value which must contain match groups <kbd>()</kbd>.
+            </span>
+        </li>
+    </ul>
+
     <p>
         For more information view the
         <a class="body-link" href="{{ site.github_url }}?tab=readme-ov-file#readme" target="_blank" rel="noopener">README.md</a>
