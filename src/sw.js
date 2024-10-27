@@ -162,7 +162,7 @@ const cacheFirst = async (event) => {
         }
         return responseFromNetwork
     } catch (e) {
-        console.debug(`fetch error: %c ${e.message}`, 'color: OrangeRed')
+        console.debug(`fetch error: %c${e.message}`, 'color: OrangeRed')
     }
 
     console.debug('%c No Cache or Network:', 'color: Red', event.request.url)
@@ -183,7 +183,7 @@ const networkFirst = async (event) => {
             return responseFromNetwork
         }
     } catch (e) {
-        console.debug(`fetch error: %c ${e.message}`, 'color: OrangeRed')
+        console.debug(`fetch error: %c${e.message}`, 'color: OrangeRed')
     }
 
     const responseFromCache = await caches.match(event.request)
@@ -200,12 +200,12 @@ const networkFirst = async (event) => {
 
 /**
  *
- * @param {Array} resource
+ * @param {Array} resources
  * @param {URL} url
  * @return {boolean}
  */
-function matchResource(resource, url) {
-    return resource.some((p) => url.pathname === p || url.href === p)
+function matchResource(resources, url) {
+    return resources.some((p) => url.pathname === p || url.href === p)
 }
 
 async function fetchResponse(event) {
@@ -214,7 +214,7 @@ async function fetchResponse(event) {
     const url = new URL(event.request.url)
     // console.debug('url:', url)
     // console.debug('url.pathname:', url.pathname)
-    console.debug('url.href:', url.href)
+    // console.debug('url.href:', url.href)
     const cacheMatch = matchResource(cacheFirstResources, url)
     const swMatch = cacheMatch || matchResource(allResources, url)
     // console.debug('match:', match)
