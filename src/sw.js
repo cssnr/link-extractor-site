@@ -63,8 +63,20 @@ const preCacheResources = [
     '/',
     '/docs/',
     '/faq/',
-    '/screenshots/',
     '/uninstall/',
+    'https://img.shields.io/amo/rating/link-extractor?style=for-the-badge&logo=mozilla&logoColor=white',
+    'https://img.shields.io/amo/users/link-extractor?style=for-the-badge&logo=mozilla&label=mozilla%20users',
+    'https://img.shields.io/amo/v/link-extractor?style=for-the-badge&label=firefox&logo=firefox',
+    'https://img.shields.io/chrome-web-store/rating/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&logo=google&logoColor=white',
+    'https://img.shields.io/chrome-web-store/users/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&logo=google&logoColor=white&label=google%20users',
+    'https://img.shields.io/chrome-web-store/v/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&label=chrome&logo=googlechrome',
+    'https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da',
+    'https://img.shields.io/github/stars/cssnr/link-extractor?style=for-the-badge&logo=github&logoColor=white',
+    'https://img.shields.io/github/v/release/cssnr/link-extractor?style=for-the-badge&logo=github',
+]
+
+const allResources = [
+    ...new Set([].concat(cacheFirstResources, preCacheResources)),
 ]
 
 // const excludes = []
@@ -188,11 +200,12 @@ const networkFirst = async (event) => {
 
 /**
  *
+ * @param {Array} resource
  * @param {URL} url
  * @return {boolean}
  */
-function matchResource(url) {
-    return cacheFirstResources.some((p) => url.pathname === p || url.href === p)
+function matchResource(resource, url) {
+    return resource.some((p) => url.pathname === p || url.href === p)
 }
 
 async function fetchResponse(event) {
@@ -201,16 +214,18 @@ async function fetchResponse(event) {
     const url = new URL(event.request.url)
     // console.debug('url:', url)
     // console.debug('url.pathname:', url.pathname)
-    const match = matchResource(url)
+    console.debug('url.href:', url.href)
+    const cacheMatch = matchResource(cacheFirstResources, url)
+    const swMatch = cacheMatch || matchResource(allResources, url)
     // console.debug('match:', match)
     if (
         event.request.method !== 'GET' ||
-        (!match && self.location.origin !== url.origin)
+        (!swMatch && self.location.origin !== url.origin)
     ) {
         console.debug('%c Excluded:', 'color: Yellow', event.request.url)
         return
     }
-    if (match) {
+    if (cacheMatch) {
         return event.respondWith(cacheFirst(event))
     }
     return event.respondWith(networkFirst(event))
@@ -220,8 +235,7 @@ self.addEventListener('fetch', fetchResponse)
 
 self.addEventListener('install', (event) => {
     console.debug('%c install:', 'color: Cyan', event)
-    const resources = [].concat(cacheFirstResources, preCacheResources)
-    event.waitUntil(addResourcesToCache(resources))
+    event.waitUntil(addResourcesToCache(allResources))
     // noinspection JSIgnoredPromiseFromCall
     self.skipWaiting()
 })
