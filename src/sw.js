@@ -2,7 +2,7 @@
 
 const cacheName = 'v1'
 
-const cacheResources = [
+const cacheFirstResources = [
     '/screenshots/',
 
     '/css/bootstrap.css',
@@ -59,12 +59,30 @@ const cacheResources = [
     'https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/yandex_48.png',
 ]
 
-const liveResources = ['/', '/docs/', '/faq/', '/uninstall/']
+const preCacheResources = [
+    '/',
+    '/docs/',
+    '/faq/',
+    '/uninstall/',
+    'https://img.shields.io/amo/rating/link-extractor?style=for-the-badge&logo=mozilla&logoColor=white',
+    'https://img.shields.io/amo/users/link-extractor?style=for-the-badge&logo=mozilla&label=mozilla%20users',
+    'https://img.shields.io/amo/v/link-extractor?style=for-the-badge&label=firefox&logo=firefox',
+    'https://img.shields.io/chrome-web-store/rating/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&logo=google&logoColor=white',
+    'https://img.shields.io/chrome-web-store/users/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&logo=google&logoColor=white&label=google%20users',
+    'https://img.shields.io/chrome-web-store/v/ifefifghpkllfibejafbakmflidjcjfp?style=for-the-badge&label=chrome&logo=googlechrome',
+    'https://img.shields.io/discord/899171661457293343?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da',
+    'https://img.shields.io/github/stars/cssnr/link-extractor?style=for-the-badge&logo=github&logoColor=white',
+    'https://img.shields.io/github/v/release/cssnr/link-extractor?style=for-the-badge&logo=github',
+]
+
+const allResources = [
+    ...new Set([].concat(cacheFirstResources, preCacheResources)),
+]
 
 // const excludes = []
 
 const addResourcesToCache = async (resources) => {
-    console.debug('%caddResourcesToCache:', 'color: Cyan', resources)
+    console.debug('%c addResourcesToCache:', 'color: Cyan', resources)
     // for (const resource of resources) {
     //     let url
     //     if (resource.startsWith('http')) {
@@ -85,23 +103,23 @@ const addResourcesToCache = async (resources) => {
 }
 
 const putInCache = async (request, response) => {
-    console.debug('%cputInCache:', 'color: Khaki', `${request.url}`)
+    console.debug('%c putInCache:', 'color: Khaki', `${request.url}`)
     try {
         const cache = await caches.open(cacheName)
         await cache.put(request, response)
     } catch (e) {
         console.error(`cache.put error: ${e.message}`, e)
     }
-    // console.debug('%cputInCache Success', 'color: Lime')
+    // console.debug('%c putInCache Success', 'color: Lime')
 }
 
 const cleanupCache = async (event) => {
-    console.debug('%ccleanupCache:', 'color: Coral', event)
+    console.debug('%c cleanupCache:', 'color: Coral', event)
     const keys = await caches.keys()
     console.debug('keys:', keys)
     for (const key of keys) {
         if (key !== cacheName) {
-            console.log('%cRemoving Old Cache:', 'color: Yellow', `${key}`)
+            console.log('%c Removing Old Cache:', 'color: Yellow', key)
             try {
                 await caches.delete(key)
             } catch (e) {
@@ -129,7 +147,7 @@ const cleanupCache = async (event) => {
 // }
 
 const cacheFirst = async (event) => {
-    console.debug('%ccacheFirst:', 'color: Aqua', event.request.url)
+    console.debug('%c cacheFirst:', 'color: Aqua', event.request.url)
 
     const responseFromCache = await caches.match(event.request)
     if (responseFromCache?.ok) {
@@ -147,7 +165,7 @@ const cacheFirst = async (event) => {
         console.debug(`fetch error: %c${e.message}`, 'color: OrangeRed')
     }
 
-    console.debug('%cNo Cache or Network:', 'color: Red', event.request.url)
+    console.debug('%c No Cache or Network:', 'color: Red', event.request.url)
     return new Response('No Cache or Network Available', {
         status: 408,
         headers: { 'Content-Type': 'text/plain' },
@@ -155,7 +173,7 @@ const cacheFirst = async (event) => {
 }
 
 const networkFirst = async (event) => {
-    console.debug('%cnetworkFirst:', 'color: Coral', event.request.url)
+    console.debug('%c networkFirst:', 'color: Coral', event.request.url)
 
     try {
         const responseFromNetwork = await fetch(event.request)
@@ -173,7 +191,7 @@ const networkFirst = async (event) => {
         return responseFromCache
     }
 
-    console.debug('%cNo Network or Cache:', 'color: Red', event.request.url)
+    console.debug('%c No Network or Cache:', 'color: Red', event.request.url)
     return new Response('No Network or Cache Available', {
         status: 408,
         headers: { 'Content-Type': 'text/plain' },
@@ -182,11 +200,12 @@ const networkFirst = async (event) => {
 
 /**
  *
+ * @param {Array} resources
  * @param {URL} url
  * @return {boolean}
  */
-function matchResource(url) {
-    return cacheResources.some((p) => url.pathname === p || url.href === p)
+function matchResource(resources, url) {
+    return resources.some((p) => url.pathname === p || url.href === p)
 }
 
 async function fetchResponse(event) {
@@ -194,17 +213,19 @@ async function fetchResponse(event) {
     // console.debug('event.request.url:', event.request.url)
     const url = new URL(event.request.url)
     // console.debug('url:', url)
-    const match = matchResource(url)
+    // console.debug('url.pathname:', url.pathname)
+    // console.debug('url.href:', url.href)
+    const cacheMatch = matchResource(cacheFirstResources, url)
+    const swMatch = cacheMatch || matchResource(allResources, url)
     // console.debug('match:', match)
     if (
         event.request.method !== 'GET' ||
-        (!match && self.location.origin !== url.origin)
+        (!swMatch && self.location.origin !== url.origin)
     ) {
-        console.debug('%cExcluded Request:', 'color: Yellow', event.request.url)
+        console.debug('%c Excluded:', 'color: Yellow', event.request.url)
         return
     }
-    // console.debug('pathname:', url.pathname)
-    if (match) {
+    if (cacheMatch) {
         return event.respondWith(cacheFirst(event))
     }
     return event.respondWith(networkFirst(event))
@@ -213,14 +234,13 @@ async function fetchResponse(event) {
 self.addEventListener('fetch', fetchResponse)
 
 self.addEventListener('install', (event) => {
-    console.debug('%cinstall:', 'color: Cyan', event)
-    const resources = [].concat(cacheResources, liveResources)
-    event.waitUntil(addResourcesToCache(resources))
+    console.debug('%c install:', 'color: Cyan', event)
+    event.waitUntil(addResourcesToCache(allResources))
     // noinspection JSIgnoredPromiseFromCall
     self.skipWaiting()
 })
 
 self.addEventListener('activate', (event) => {
-    console.debug('%cactivate:', 'color: Cyan', event)
+    console.debug('%c activate:', 'color: Cyan', event)
     event.waitUntil(cleanupCache(event))
 })
