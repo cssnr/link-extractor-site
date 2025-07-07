@@ -21,6 +21,15 @@ noindex: true
                 Any <a class="body-link" href="{{ site.github_url }}/discussions/categories/feature-requests" target="_blank" rel="noopener">Feature Requests</a> are appreciated.
                 Support is also available on <a class="body-link" href="{{ site.discord_invite }}" target="_blank" rel="noopener">Discord</a>.
             </p>
+            <a href="https://ko-fi.com/cssnr" class="text-decoration-none" target="_blank" rel="noopener">
+                <picture>
+                    <source srcset="{{ "/media/images/kofi_dark.png" | relative_url }}"
+                            media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" />
+                    <source srcset="{{ "/media/images/kofi_blue.png" | relative_url }}"
+                            media="(prefers-color-scheme: light)" />
+                    <img alt="Support on Ko-fi" class="mb-1" height="36" src="{{ "/media/kofi_dark.png" | relative_url }}" />
+                </picture>
+            </a>
         </div>
         {% include alerts.html %}
         <form id="uninstall-form">

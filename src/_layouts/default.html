@@ -73,7 +73,11 @@
                 </ul>
                 <ul class="navbar-nav nav-icons d-flex flex-row">
                     <li class="nav-item">
-                        <a class="nav-link hvr-grow-lg" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
+                        <a class="nav-link hvr-grow-lg heart" href="{{ site.kofi_link }}" target="_blank" rel="noopener">
+                            <i class="fa-classic fa-solid fa-heart fa-xl"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hvr-grow-lg discord" href="{{ site.discord_invite }}" target="_blank" rel="noopener">
                             <i class="fa-brands fa-discord fa-xl"></i></a>
                     </li>
                     <li class="nav-item">
@@ -98,6 +102,7 @@
     </nav>
 </header>
 
+
 <main class="flex-grow-1 px-0 px-sm-3">
     {{ content }}
 </main>
@@ -107,9 +112,15 @@
 <footer class="footer mt-auto px-1 flex-shrink-0 bg-body-tertiary">
     <div class="container-fluid py-2">
         <div class="d-flex flex-column flex-md-row">
-            <div class="me-md-auto mb-2 mb-md-0">
-                <a class="link-body-emphasis text-decoration-none" href="{{ site.github_url }}" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i> {{ site.site_name }}</a>
+            <div class="me-md-auto mb-2 mb-md-0 d-flex flex-column flex-sm-row">
+                <div class="me-3 mb-2 mb-sm-0">
+                    <a class="link-body-emphasis text-decoration-none" href="{{ site.github_url }}" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> {{ site.site_name }}</a>
+                </div>
+                <div>
+                    <a class="link-body-emphasis text-decoration-none" href="{{ site.kofi_link }}" target="_blank" rel="noopener">
+                        <i class="fa-classic fa-solid fa-heart"></i> Ko-fi</a>
+                </div>
             </div>
             <div class="ms-md-auto">
                 <nav aria-label="Secondary Navigation">

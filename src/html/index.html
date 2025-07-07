@@ -13,20 +13,28 @@ description: Easily extract, parse or open all links/domains from a site or text
             <img alt="Chrome Web Store Users" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/users/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white&label=google%20users"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
             <img alt="Mozilla Add-on Users" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/users/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&label=mozilla%20users"></a>
+        <a href="{{ site.microsoft_url }}" title="Microsoft" target="_blank" rel="noopener">
+            <img alt="Microsoft Add-on Users" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=users&logo=gmail&logoColor=white&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2F{{ site.microsoft_id }}"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
             <img alt="Chrome Web Store Rating" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/rating/{{ site.chrome_id }}?style=for-the-badge&logo=google&logoColor=white"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
             <img alt="Mozilla Add-on Rating" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/rating/{{ site.firefox_id }}?style=for-the-badge&logo=mozilla&logoColor=white"></a>
+        <a href="{{ site.microsoft_url }}" title="Microsoft" target="_blank" rel="noopener">
+            <img alt="Microsoft Add-on Rating" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=rating&logo=gmail&logoColor=white&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2F{{ site.microsoft_id }}"></a>
         <a href="{{ site.github_url }}" title="GitHub" target="_blank" rel="noopener">
             <img alt="GitHub Stars" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/github/stars/{{ site.github_name }}?style=for-the-badge&logo=github&logoColor=white"></a>
         <a href="{{ site.chrome_url }}" title="Google" target="_blank" rel="noopener">
             <img alt="Chrome Web Store Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/chrome-web-store/v/{{ site.chrome_id }}?style=for-the-badge&label=chrome&logo=googlechrome"></a>
         <a href="{{ site.firefox_url }}" title="Mozilla" target="_blank" rel="noopener">
             <img alt="Mozilla Add-on Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/amo/v/{{ site.firefox_id }}?style=for-the-badge&label=firefox&logo=firefox"></a>
+        <a href="{{ site.microsoft_url }}" title="Microsoft" target="_blank" rel="noopener">
+            <img alt="Microsoft Add-on Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=microsoft&logo=leptos&logoColor=2bc3d2&&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2F{{ site.microsoft_id }}"></a>
         <a href="{{ site.github_url }}/releases/latest" title="GitHub" target="_blank" rel="noopener">
             <img alt="GitHub Release Version" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/github/v/release/{{ site.github_name }}?style=for-the-badge&logo=github"></a>
         <a href="{{ site.discord_invite }}" title="Discord" target="_blank" rel="noopener">
             <img alt="Join Discord" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/discord/{{ site.discord_server }}?style=for-the-badge&logo=discord&logoColor=white&label=discord&color=7289da"></a>
+        <a href="{{ site.kofi_link }}" title="Ko-fi" target="_blank" rel="noopener">
+            <img alt="Support on Ko-fi" class="mb-1 animate__animated animate__zoomIn" src="https://img.shields.io/badge/Ko--fi-72a5f2?style=for-the-badge&logo=kofi&label=Support"></a>
     </div>
 
     <p class="lead">
@@ -43,7 +51,7 @@ description: Easily extract, parse or open all links/domains from a site or text
         <a href="{{ site.firefox_url }}" title="Firefox" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Firefox" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn animate__slow" /></a>
-        <a href="{{ site.chrome_url }}" title="Edge" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
+        <a href="{{ site.microsoft_url }}" title="Edge" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
             <img alt="Edge" src="https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png" width="48" height="auto"
                  class="mw-100 animate__animated animate__rotateIn animate__slow" /></a>
         <a href="{{ site.chrome_url }}" title="Opera" class="px-1 hvr-grow-lg" target="_blank" rel="noopener">
@@ -91,6 +99,9 @@ description: Easily extract, parse or open all links/domains from a site or text
         <br>
         <i class="fa-brands fa-firefox-browser fa-lg me-1"></i>
         <a class="body-link" href="{{ site.firefox_url }}" target="_blank" rel="noopener">Mozilla Firefox Add-ons</a>
+        <br>
+        <i class="fa-brands fa-edge fa-lg me-1"></i>
+        <a class="body-link" href="{{ site.microsoft_url }}" target="_blank" rel="noopener">Microsoft Edge Add-ons</a>
     </p>
 
     <p>
@@ -103,6 +114,12 @@ description: Easily extract, parse or open all links/domains from a site or text
         <a class="body-link" href="{{ site.firefox_url }}" target="_blank" rel="noopener">Firefox</a> and
         <a class="body-link" href="{{ site.chrome_url }}" target="_blank" rel="noopener">Yandex</a>.
     </p>
+
+    <div class="mb-3">
+        <a href="{{ site.firefox_url }}" target="_blank" rel="noopener">
+            <img alt="Firefox Android" class="img-fluid" width="212" height="256"
+                 src="{{ "/media/images/qr-code-firefox.png" | relative_url }}"></a>
+    </div>
 
     <h2 id="support">Support</h2>
 
@@ -132,4 +149,11 @@ description: Easily extract, parse or open all links/domains from a site or text
         <a class="body-link" href="{{ site.feedback_link }}" target="_blank" rel="noopener">
             General Feedback</a>.
     </p>
+
+    <div class="mb-3">
+        <a href="{{ site.kofi_link }}" target="_blank" rel="noopener">
+            <img alt="Firefox Android" class="img-fluid" height="64" style="max-height: 64px;"
+                 src="{{ "/media/images/kofi_blue.png" | relative_url }}"></a>
+    </div>
+
 </div> <!-- container -->

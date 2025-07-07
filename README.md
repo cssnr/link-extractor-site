@@ -1,30 +1,35 @@
 [![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/ifefifghpkllfibejafbakmflidjcjfp?logo=google&logoColor=white&label=users)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Mozilla Add-on Users](https://img.shields.io/amo/users/link-extractor?logo=mozilla&label=users)](https://addons.mozilla.org/addon/link-extractor)
+[![Edge Add-on Users](https://img.shields.io/badge/dynamic/json?label=users&logo=gmail&logoColor=white&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fnmndaimimedljcfgnnoahempcajdamej)](https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej)
 [![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/rating/ifefifghpkllfibejafbakmflidjcjfp?logo=google&logoColor=white)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Mozilla Add-on Rating](https://img.shields.io/amo/rating/link-extractor?logo=mozilla&logoColor=white)](https://addons.mozilla.org/addon/link-extractor)
+[![Edge Add-on Rating](https://img.shields.io/badge/dynamic/json?label=rating&logo=gmail&logoColor=white&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fnmndaimimedljcfgnnoahempcajdamej)](https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/cssnr/link-extractor?style=flat&logo=github&logoColor=white)](https://github.com/cssnr/link-extractor/stargazers)
 [![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/ifefifghpkllfibejafbakmflidjcjfp?label=chrome&logo=googlechrome)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Mozilla Add-on Version](https://img.shields.io/amo/v/link-extractor?label=firefox&logo=firefox)](https://addons.mozilla.org/addon/link-extractor)
+[![Edge Add-on Version](https://img.shields.io/badge/dynamic/json?label=microsoft&logo=leptos&logoColor=2bc3d2&&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fnmndaimimedljcfgnnoahempcajdamej)](https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/link-extractor?logo=github)](https://github.com/cssnr/link-extractor/releases/latest)
 [![Pages](https://img.shields.io/github/actions/workflow/status/cssnr/link-extractor-site/pages.yaml?logo=github&logoColor=white&label=pages)](https://github.com/cssnr/link-extractor-site/actions/workflows/pages.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/link-extractor?logo=github&logoColor=white&label=updated)](https://github.com/cssnr/link-extractor/graphs/commit-activity)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&logoColor=white&label=org%20stars)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=Support)](https://ko-fi.com/cssnr)
 
 # Link Extractor Site
 
-* Website: https://link-extractor.cssnr.com
-* Github: https://github.com/cssnr/link-extractor
-* Discord: https://discord.gg/wXy6m2X8wY
+-   Website: https://link-extractor.cssnr.com
+-   Github: https://github.com/cssnr/link-extractor
+-   Discord: https://discord.gg/wXy6m2X8wY
 
 ## Install
 
-* [Google Chrome Web Store](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
-* [Mozilla Firefox Add-ons](https://addons.mozilla.org/addon/link-extractor)
+-   [Google Chrome Web Store](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
+-   [Mozilla Firefox Add-ons](https://addons.mozilla.org/addon/link-extractor)
+-   [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej)
 
 [![Chrome](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chrome_48.png)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Firefox](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/firefox_48.png)](https://addons.mozilla.org/addon/link-extractor)
-[![Edge](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
+[![Edge](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/edge_48.png)](https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej)
 [![Opera](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/opera_48.png)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Brave](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/brave_48.png)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
 [![Chromium](https://raw.githubusercontent.com/smashedr/logo-icons/master/browsers/chromium_48.png)](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp)
@@ -36,6 +41,8 @@ All **Chromium** Based Browsers can install the extension from the
 Mobile browser support available for
 [Firefox](https://addons.mozilla.org/addon/link-extractor) and
 [Yandex](https://chromewebstore.google.com/detail/link-extractor/ifefifghpkllfibejafbakmflidjcjfp).
+
+[![QR Code Firefox](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/link-extractor/qr-code-firefox.png)](https://addons.mozilla.org/addon/link-extractor)
 
 ## Development
 
@@ -49,3 +56,12 @@ rebuild the site and refresh the site in your browser, happy coding...
 For more information see `jekyll help` and `jekyll serve --help` or visit: https://jekyllrb.com/docs/
 
 For production, this site is built with GitHub Actions: [.github/workflows/pages.yaml](.github/workflows/pages.yaml)
+
+# Contributing
+
+Please consider making a donation to support the development of this project
+and [additional](https://cssnr.com/) open source projects.
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/cssnr)
+
+For a full list of current projects visit: [https://cssnr.github.io/](https://cssnr.github.io/)

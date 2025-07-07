@@ -1,7 +1,7 @@
 // JS Main
 
 document
-    .querySelectorAll('[data-clipboard-text]')
+    .querySelectorAll('[data-clipboard-text], [data-clipboard-target]')
     .forEach((el) => el.addEventListener('click', (e) => e.preventDefault()))
 document
     .querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -18,7 +18,9 @@ if (backToTop) {
 }
 
 if (typeof ClipboardJS !== 'undefined') {
-    const clipboard = new ClipboardJS('[data-clipboard-text]')
+    const clipboard = new ClipboardJS(
+        '[data-clipboard-text], [data-clipboard-target]'
+    )
     clipboard.on('success', function (event) {
         // console.debug('clipboard.success:', event)
         // const text = event.text

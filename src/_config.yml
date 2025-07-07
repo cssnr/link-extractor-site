@@ -25,8 +25,13 @@ chrome_url: https://chromewebstore.google.com/detail/link-extractor/ifefifghpkll
 firefox_id: link-extractor
 firefox_url: https://addons.mozilla.org/addon/link-extractor
 
+microsoft_id: nmndaimimedljcfgnnoahempcajdamej
+microsoft_url: https://microsoftedge.microsoft.com/addons/detail/link-extractor/nmndaimimedljcfgnnoahempcajdamej
+
 discord_server: 899171661457293343
 discord_invite: https://discord.gg/wXy6m2X8wY
 
 feedback_link: https://cssnr.github.io/feedback/?app=Link%20Extractor
 relay_url: https://relay.cssnr.com/discord/1258944618389569566
+
+kofi_link: https://ko-fi.com/cssnr
